@@ -1,0 +1,63 @@
+var request = require('request');
+var methods = require('./api-methods');
+
+function serializeObjToUri(obj) {
+  return Object.keys(obj).map(function(key) {
+    return key + '=' + encodeURIComponent(obj[key]);
+  }).join('&');
+}
+
+var Api = function(config) {
+  this._protocol = config.protocol || 'http'; // or https
+  this._auth = (config.basicAuth) ? config.basicAuth.username + ':' + config.basicAuth.password + '@' : '';
+  this._host = config.host || 'localhost';
+  this._port = config.port || '12900';
+  this._uri = this._protocol + '://' + this._auth + this._host + ':' + this._port;
+};
+
+Object.keys(methods).forEach(function(mName) {
+
+  var m = methods[mName];
+
+  Api.prototype[mName] = function(parameters, path, callback) {
+
+    if (arguments.length === 2) callback = path;
+
+    if (typeof arguments[1] === 'object') {
+      m.path = m.path.replace(/{([^}]*)}/g, function(s, p) {
+        return path[p];
+      });
+    }
+
+    var reqUri = this._uri + m.path;
+
+    if (m.method === 'GET') {
+      reqUri = reqUri + '?' + serializeObjToUri(parameters);
+    }
+
+    var opts = {
+      url: reqUri,
+      method: m.method,
+      body: (m.method !== 'GET') ? parameters : null,
+      json: false
+    };
+
+    request(opts, function(error, response, body) {
+      if (!error) {
+        callback(null, JSON.parse(body));
+      } else {
+        callback((error === null && body === '') ? 'Unknown error' : [error, body]);
+      }
+    });
+  }
+
+});
+
+var connect = function(config, callback) {
+  var that = new Api(config);
+  return that;
+};
+
+connect.connect = connect; // backwards compatible
+connect.Api = Api;
+module.exports = connect;
