@@ -409,13 +409,15 @@ Get a list of all alarm callbacks for this stream
 __Arguments__
 
 ```javascript
-{
-  name: 'streamid',
-  description: 'The id of the stream whose alarm callbacks we want.',
-  required: true,
-  paramType: 'path',
-  type: 'String'
-}
+  [
+    {
+      name: 'streamid',
+      description: 'The id of the stream whose alarm callbacks we want',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
 ```
 
 <a name="createAlarmCallback">
@@ -425,7 +427,24 @@ Create an alarm callback
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamid',
+      description: 'The stream id this new alarm callback belongs to',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'CreateAlarmCallbackRequest'
+    }
+  ]
+```
 
 <a name="getAlarmCallbacksAvailable">
 ### getAlarmCallbacksAvailable(parameters[, path][, callback])
@@ -434,7 +453,17 @@ Get a list of all alarm callback types
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamid',
+      description: 'The id of the stream whose alarm callbacks we want',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="getAlarmCallback">
 ### getAlarmCallback(parameters[, path][, callback])
@@ -443,7 +472,24 @@ Get a single specified alarm callback for this stream
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamid',
+      description: 'The id of the stream whose alarm callbacks we want',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'alarmCallbackId',
+      description: 'The alarm callback id we are getting',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="updateAlarmCallback">
 ### updateAlarmCallback(parameters[, path][, callback])
@@ -452,7 +498,31 @@ Update an alarm callback
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamid',
+      description: 'The stream id this alarm callback belongs to',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'alarmCallbackId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'Map'
+    }
+  ]
+```
 
 <a name="removeAlarmCallback">
 ### removeAlarmCallback(parameters[, path][, callback])
@@ -461,7 +531,24 @@ Delete an alarm callback
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamid',
+      description: 'The stream id this alarm callback belongs to',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'alarmCallbackId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 ## AlertConditions: Manage stream alert conditions
 
@@ -472,7 +559,24 @@ Create an alert condition
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamId',
+      description: 'The stream id this new alert condition belongs to',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'CreateConditionRequest'
+    }
+  ]
+```
 
 <a name="getAlertConditions">
 ### getAlertConditions(parameters[, path][, callback])
@@ -481,7 +585,17 @@ Get all alert conditions of this stream
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamId',
+      description: 'The stream id this new alert condition belongs to',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="updateAlertCondition">
 ### updateAlertCondition(parameters[, path][, callback])
@@ -490,7 +604,31 @@ Modify an alert condition
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamId',
+      description: 'The stream id the alert condition belongs to',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'conditionId',
+      description: 'The alert condition id',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'CreateConditionRequest'
+    }
+  ]
+```
 
 <a name="removeAlertCondition">
 ### removeAlertCondition(parameters[, path][, callback])
@@ -499,7 +637,24 @@ Delete an alert condition
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamId',
+      description: 'The stream id this new alert condition belongs to',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'conditionId',
+      description: 'The stream id this new alert condition belongs to',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 ## AlertReceivers: Manage stream alert receivers
 
@@ -510,7 +665,24 @@ Get the 300 most recent alarms of this stream
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamId',
+      description: 'The stream id this new alert condition belongs to',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'since',
+      description: 'Optional parameter to define a lower date boundary. (UNIX timestamp)',
+      required: false,
+      argument: 'query',
+      type: 'Integer'
+    }
+  ]
+```
 
 <a name="getAlertsCheck">
 ### getAlertsCheck(parameters[, path][, callback])
@@ -519,7 +691,17 @@ Check for triggered alert conditions of this streams. Results cached for 30 seco
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamId',
+      description: 'The ID of the stream to check',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="createAlertReceiver">
 ### createAlertReceiver(parameters[, path][, callback])
@@ -528,7 +710,31 @@ Add an alert receiver
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamId',
+      description: 'The stream id this new alert condition belongs to',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'entity',
+      description: 'Name/ID of user or email address to add as alert receiver',
+      required: true,
+      argument: 'query',
+      type: 'String'
+    },
+    {
+      name: 'type',
+      description: 'Type: users or emails',
+      required: true,
+      argument: 'query',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="removeAlertReceiver">
 ### removeAlertReceiver(parameters[, path][, callback])
@@ -537,7 +743,31 @@ Remove an alert receiver
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamId',
+      description: 'The stream id this new alert condition belongs to',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'entity',
+      description: 'Name/ID of user or email address to remove from alert receivers',
+      required: true,
+      argument: 'query',
+      type: 'String'
+    },
+    {
+      name: 'type',
+      description: 'Type: users or emails',
+      required: true,
+      argument: 'query',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="testAlertSendDummy">
 ### testAlertSendDummy(parameters[, path][, callback])
@@ -546,7 +776,17 @@ Send a test mail for a given stream
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamId',
+      description: 'The stream id this new alert condition belongs to',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 ## Alerts: Manage stream alerts
 
@@ -557,7 +797,24 @@ Get the 300 most recent alarms of this stream
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamId',
+      description: 'The stream id this new alert condition belongs to',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'since',
+      description: 'Optional parameter to define a lower date boundary. (UNIX timestamp)',
+      required: false,
+      argument: 'parameters',
+      type: 'Integer'
+    }
+  ]
+```
 
 <a name="getAlertsCheck">
 ### getAlertsCheck(parameters[, path][, callback])
@@ -566,7 +823,17 @@ Check for triggered alert conditions of this streams. Results cached for 30 seco
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamId',
+      description: 'The ID of the stream to check',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="createAlertReceiver">
 ### createAlertReceiver(parameters[, path][, callback])
@@ -575,7 +842,31 @@ Add an alert receiver
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamId',
+      description: 'The stream id this new alert condition belongs to',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'entity',
+      description: 'Name/ID of user or email address to add as alert receiver',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'type',
+      description: 'Type: users or emails',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="removeAlertReceiver">
 ### removeAlertReceiver(parameters[, path][, callback])
@@ -584,7 +875,31 @@ Remove an alert receiver
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamId',
+      description: 'The stream id this new alert condition belongs to',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'entity',
+      description: 'Name/ID of user or email address to remove from alert receivers',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'type',
+      description: 'Type: users or emails',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="testAlertSendDummy">
 ### testAlertSendDummy(parameters[, path][, callback])
@@ -593,7 +908,17 @@ Send a test mail for a given stream
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamId',
+      description: 'The stream id this new alert condition belongs to',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 ## Counts: Message counts
 
@@ -604,7 +929,9 @@ Total number of messages in all your indices
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 ## Dashboards: Manage dashboards
 
@@ -615,7 +942,17 @@ Create a dashboard
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'CreateDashboardRequest'
+    }
+  ]
+```
 
 <a name="getDashboards">
 ### getDashboards(parameters[, path][, callback])
@@ -624,7 +961,9 @@ Get a list of all dashboards and all configurations of their widgets
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="getDashboard">
 ### getDashboard(parameters[, path][, callback])
@@ -633,7 +972,17 @@ Get a single dashboards and all configurations of its widgets
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'dashboardId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="updateDashboard">
 ### updateDashboard(parameters[, path][, callback])
@@ -642,7 +991,24 @@ Update the settings of a dashboard
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'dashboardId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'UpdateDashboardRequest'
+    }
+  ]
+```
 
 <a name="removeDashboard">
 ### removeDashboard(parameters[, path][, callback])
@@ -651,7 +1017,17 @@ Delete a dashboard and all its widgets
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'dashboardId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="updateDashboardPositions">
 ### updateDashboardPositions(parameters[, path][, callback])
@@ -660,7 +1036,24 @@ Update/set the positions of dashboard widgets
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'dashboardId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'WidgetPositionsRequest'
+    }
+  ]
+```
 
 <a name="createDashboardWidget">
 ### createDashboardWidget(parameters[, path][, callback])
@@ -669,7 +1062,24 @@ Add a widget to a dashboard
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'dashboardId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'AddWidgetRequest'
+    }
+  ]
+```
 
 <a name="updateDashboardWidget">
 ### updateDashboardWidget(parameters[, path][, callback])
@@ -678,7 +1088,31 @@ Update a widget
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'dashboardId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'widgetId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'AddWidgetRequest'
+    }
+  ]
+```
 
 <a name="removeDashboardWidget">
 ### removeDashboardWidget(parameters[, path][, callback])
@@ -687,7 +1121,24 @@ Delete a widget
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'dashboardId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'widgetId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="updateDashboardWidgetCacheTime">
 ### updateDashboardWidgetCacheTime(parameters[, path][, callback])
@@ -696,7 +1147,31 @@ Update cache time of a widget
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'dashboardId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'widgetId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'UpdateWidgetRequest'
+    }
+  ]
+```
 
 <a name="updateDashboardWidgetDescription">
 ### updateDashboardWidgetDescription(parameters[, path][, callback])
@@ -705,7 +1180,31 @@ Update description of a widget
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'dashboardId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'widgetId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'UpdateWidgetRequest'
+    }
+  ]
+```
 
 <a name="getDashboardWidgetValue">
 ### getDashboardWidgetValue(parameters[, path][, callback])
@@ -714,7 +1213,24 @@ Get a single widget value
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'dashboardId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'widgetId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 ## Extractors: Extractors of an input
 
@@ -725,7 +1241,24 @@ Add an extractor to an input
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'inputId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'CreateExtractorRequest'
+    }
+  ]
+```
 
 <a name="getInputExtractors">
 ### getInputExtractors(parameters[, path][, callback])
@@ -734,7 +1267,17 @@ List all extractors of an input
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'inputId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="updateInputExtractorOrder">
 ### updateInputExtractorOrder(parameters[, path][, callback])
@@ -743,7 +1286,24 @@ Update extractor order of an input
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'inputId',
+      description: 'Persist ID (!) of input',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'OrderExtractorsRequest'
+    }
+  ]
+```
 
 <a name="updateInputExtractor">
 ### updateInputExtractor(parameters[, path][, callback])
@@ -752,7 +1312,31 @@ Update an extractor
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'inputId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'extractorId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'CreateExtractorRequest'
+    }
+  ]
+```
 
 <a name="removeInputExtractor">
 ### removeInputExtractor(parameters[, path][, callback])
@@ -761,7 +1345,24 @@ Delete an extractor
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'inputId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'extractorId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="getInputExtractor">
 ### getInputExtractor(parameters[, path][, callback])
@@ -770,7 +1371,24 @@ Get information of a single extractor of an input
 
 __Arguments__
 
-* `-`
+``javascript
+  [
+    {
+      name: 'inputId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'extractorId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 ## Filters: Message blacklist filters
 
@@ -783,7 +1401,17 @@ It can take up to a second until the change is applied
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'filterEntry',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'FilterDescription'
+    }
+  ]
+```
 
 <a name="getBlacklistFilters">
 ### getBlacklistFilters(parameters[, path][, callback])
@@ -792,7 +1420,9 @@ Get all blacklist filters
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="getBlacklistFilter">
 ### getBlacklistFilter(parameters[, path][, callback])
@@ -801,7 +1431,17 @@ Get the existing blacklist filter
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'filterId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="updateBlacklistFilter">
 ### updateBlacklistFilter(parameters[, path][, callback])
@@ -812,7 +1452,24 @@ It can take up to a second until the change is applied
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'filterId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'filterEntry',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'FilterDescription'
+    }
+  ]
+```
 
 <a name="removeBlacklistFilter">
 ### removeBlacklistFilter(parameters[, path][, callback])
@@ -823,7 +1480,17 @@ It can take up to a second until the change is applied
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'filterId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 ## Indexer/Cluster: Indexer cluster information
 
@@ -834,7 +1501,9 @@ Get cluster and shard health overview
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="getClusterName">
 ### getClusterName(parameters[, path][, callback])
@@ -843,7 +1512,9 @@ Get the cluster name
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 ## Indexer/Failures: Indexer failures
 
@@ -854,7 +1525,24 @@ Get a list of failed index operations
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'limit',
+      description: 'Limit',
+      required: true,
+      argument: 'parameters',
+      type: 'Integer'
+    },
+    {
+      name: 'offset',
+      description: 'Offset',
+      required: true,
+      argument: 'parameters',
+      type: 'Integer'
+    }
+  ]
+```
 
 <a name="getFailuresCount">
 ### getFailuresCount(parameters[, path][, callback])
@@ -863,7 +1551,17 @@ Total count of failed index operations since the given date
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'since',
+      description: 'ISO8601 date',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    }
+  ]
+```
 
 ## Indexer/Indices: Index information
 
@@ -874,7 +1572,9 @@ Get a list of closed indices that can be reopened
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="getIndicesReopened">
 ### getIndicesReopened(parameters[, path][, callback])
@@ -883,7 +1583,9 @@ Get a list of reopened indices, which will not be cleaned by retention cleaning
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="removeIndex">
 ### removeIndex(parameters[, path][, callback])
@@ -892,7 +1594,17 @@ Delete an index. This will also trigger an index ranges rebuild job
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'index',
+      description: '',
+      required: false,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="getIndices">
 ### getIndices(parameters[, path][, callback])
@@ -901,7 +1613,17 @@ Get information of an index and its shards
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'index',
+      description: '',
+      required: false,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="closeIndex">
 ### closeIndex(parameters[, path][, callback])
@@ -910,7 +1632,17 @@ Close an index. This will also trigger an index ranges rebuild job
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'index',
+      description: '',
+      required: false,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="reopenIndex">
 ### reopenIndex(parameters[, path][, callback])
@@ -919,18 +1651,47 @@ Reopen a closed index. This will also trigger an index ranges rebuild job
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'index',
+      description: '',
+      required: false,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 ## Messages: Single messages
 
 <a name="analyzeMessage">
 ### analyzeMessage(parameters[, path][, callback])
 
+Analyze a message string
+
 Returns what tokens/terms a message string (message or full_message) is split to
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'index',
+      description: 'The index the message containing the string is stored in',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'string',
+      description: 'The string to analyze',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="getMessage">
 ### getMessage(parameters[, path][, callback])
@@ -939,7 +1700,24 @@ Get a single message
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'index',
+      description: 'The index this message is stored in',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'messageId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 ## Search/Absolute: Message search
 
@@ -952,7 +1730,59 @@ Search for messages using an absolute timerange, specified as from/to with forma
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'query',
+      description: 'Query (Lucene syntax)',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'from',
+      description: 'Timerange start. See description for date format',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'to',
+      description: 'Timerange end. See description for date format',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'limit',
+      description: 'Maximum number of messages to return',
+      required: false,
+      argument: 'parameters',
+      type: 'Integer'
+    },
+    {
+      name: 'offset',
+      description: 'Offset',
+      required: false,
+      argument: 'parameters',
+      type: 'Integer'
+    },
+    {
+      name: 'filter',
+      description: 'Filter',
+      required: false,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'fields',
+      description: 'Comma separated list of fields to return',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="searchAbsoluteFieldHistogram">
 ### searchAbsoluteFieldHistogram(parameters[, path][, callback])
@@ -961,7 +1791,52 @@ Field value histogram of a query using an absolute timerange
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'query',
+      description: 'Query (Lucene syntax)',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'field',
+      description: 'Field of whose values to get the histogram of',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'interval',
+      description: 'Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'from',
+      description: 'Timerange start. See search method description for date format',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'to',
+      description: 'Timerange end. See search method description for date format',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'filter',
+      description: 'Filter',
+      required: false,
+      argument: 'parameters',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="searchAbsoluteHistogram">
 ### searchAbsoluteHistogram(parameters[, path][, callback])
@@ -970,7 +1845,45 @@ Datetime histogram of a query using an absolute timerange
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'query',
+      description: 'Query (Lucene syntax)',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'interval',
+      description: 'Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'from',
+      description: 'Timerange start. See search method description for date format',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'to',
+      description: 'Timerange end. See search method description for date format',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'filter',
+      description: 'Filter',
+      required: false,
+      argument: 'parameters',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="searchAbsoluteStats">
 ### searchAbsoluteStats(parameters[, path][, callback])
@@ -981,7 +1894,45 @@ Returns statistics like min/max or standard deviation of numeric fields over the
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'field',
+      description: 'Message field of numeric type to return statistics for',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'query',
+      description: 'Query (Lucene syntax)',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'from',
+      description: 'Timerange start. See search method description for date format',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'to',
+      description: 'Timerange end. See search method description for date format',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'filter',
+      description: 'Filter',
+      required: false,
+      argument: 'parameters',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="searchAbsoluteTerms">
 ### searchAbsoluteTerms(parameters[, path][, callback])
@@ -990,7 +1941,52 @@ Most common field terms of a query using an absolute timerange
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'field',
+      description: 'Message field of to return terms of',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'query',
+      description: 'Query (Lucene syntax)',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'size',
+      description: 'Maximum number of terms to return',
+      required: false,
+      argument: 'parameters',
+      type: 'Integer'
+    },
+    {
+      name: 'from',
+      description: 'Timerange start. See search method description for date format',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'to',
+      description: 'Timerange end. See search method description for date format',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'filter',
+      description: 'Filter',
+      required: false,
+      argument: 'parameters',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="searchAbsoluteTermsStats">
 ### searchAbsoluteTermsStats(parameters[, path][, callback])
@@ -999,7 +1995,66 @@ Ordered field terms of a query computed on another field using an absolute timer
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'key_field',
+      description: 'Message field of to return terms of',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'value_field',
+      description: 'Value field used for computation',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'order',
+      description: 'What to order on (Allowed values: TERM, REVERSE_TERM, COUNT, REVERSE_COUNT, TOTAL, REVERSE_TOTAL, MIN, REVERSE_MIN, MAX, REVERSE_MAX, MEAN, REVERSE_MEAN)',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'query',
+      description: 'Query (Lucene syntax)',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'size',
+      description: 'Maximum number of terms to return',
+      required: false,
+      argument: 'parameters',
+      type: 'Integer'
+    },
+    {
+      name: 'from',
+      description: 'Timerange start. See search method description for date format',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'to',
+      description: 'Timerange end. See search method description for date format',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'filter',
+      description: 'Filter',
+      required: false,
+      argument: 'parameters',
+      type: 'String'
+    }
+  ]
+```
 
 ## Search/Keyword: Message search
 
@@ -1012,7 +2067,59 @@ Search for messages in a timerange defined by a keyword like "yesterday" or "2 w
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'query',
+      description: 'Query (Lucene syntax)',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'keyword',
+      description: 'Range keyword',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'limit',
+      description: 'Maximum number of messages to return',
+      required: false,
+      argument: 'parameters',
+      type: 'Integer'
+    },
+    {
+      name: 'offset',
+      description: 'Offset',
+      required: false,
+      argument: 'parameters',
+      type: 'Integer'
+    },
+    {
+      name: 'filter',
+      description: 'Filter',
+      required: false,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'fields',
+      description: 'Comma separated list of fields to return',
+      required: false,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'sort',
+      description: 'Sorting (field:asc / field:desc)',
+      required: false,
+      argument: 'parameters',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="searchKeywordFieldHistogram">
 ### searchKeywordFieldHistogram(parameters[, path][, callback])
@@ -1021,7 +2128,45 @@ Datetime histogram of a query using keyword timerange
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'query',
+      description: 'Query (Lucene syntax)',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'field',
+      description: 'Field of whose values to get the histogram of',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'interval',
+      description: 'Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'keyword',
+      description: 'Range keyword',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'filter',
+      description: 'Filter',
+      required: false,
+      argument: 'parameters',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="searchKeywordHistogram">
 ### searchKeywordHistogram(parameters[, path][, callback])
@@ -1030,7 +2175,38 @@ Datetime histogram of a query using keyword timerange
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'query',
+      description: 'Query (Lucene syntax)',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'interval',
+      description: 'Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'keyword',
+      description: 'Range keyword',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'filter',
+      description: 'Filter',
+      required: false,
+      argument: 'parameters',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="searchKeywordStats">
 ### searchKeywordStats(parameters[, path][, callback])
@@ -1041,7 +2217,38 @@ Returns statistics like min/max or standard deviation of numeric fields over the
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'field',
+      description: 'Message field of numeric type to return statistics for',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'query',
+      description: 'Query (Lucene syntax)',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'keyword',
+      description: 'Range keyword',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'filter',
+      description: 'Filter',
+      required: false,
+      argument: 'parameters',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="searchKeywordTerms">
 ### searchKeywordTerms(parameters[, path][, callback])
@@ -1050,7 +2257,45 @@ Most common field terms of a query using a keyword timerange
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'field',
+      description: 'Message field of to return terms of',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'query',
+      description: 'Query (Lucene syntax)',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'size',
+      description: 'Maximum number of terms to return',
+      required: false,
+      argument: 'parameters',
+      type: 'Integer'
+    },
+    {
+      name: 'keyword',
+      description: 'Range keyword',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'filter',
+      description: 'Filter',
+      required: false,
+      argument: 'parameters',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="searchKeywordTermsStats">
 ### searchKeywordTermsStats(parameters[, path][, callback])
@@ -1059,7 +2304,59 @@ Ordered field terms of a query computed on another field using a keyword timeran
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'key_field',
+      description: 'Message field of to return terms of',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'value_field',
+      description: 'Value field used for computation',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'order',
+      description: 'What to order on (Allowed values: TERM, REVERSE_TERM, COUNT, REVERSE_COUNT, TOTAL, REVERSE_TOTAL, MIN, REVERSE_MIN, MAX, REVERSE_MAX, MEAN, REVERSE_MEAN)',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'query',
+      description: 'Query (Lucene syntax)',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'size',
+      description: 'Maximum number of terms to return',
+      required: false,
+      argument: 'parameters',
+      type: 'Integer'
+    },
+    {
+      name: 'keyword',
+      description: 'Keyword timeframe',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'filter',
+      description: 'Filter',
+      required: false,
+      argument: 'parameters',
+      type: 'String'
+    }
+  ]
+```
 
 ## Search/Relative: Message search
 
@@ -1072,7 +2369,52 @@ Search for messages in a relative timerange, specified as seconds from now. Exam
 
 __Arguments__
 
-* `-`
+``javascript
+  [
+    {
+      name: 'query',
+      description: 'Query (Lucene syntax)',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'range',
+      description: 'Relative timeframe to search in. See method description',
+      required: true,
+      argument: 'parameters',
+      type: 'Integer'
+    },
+    {
+      name: 'limit',
+      description: 'Maximum number of messages to return',
+      required: false,
+      argument: 'parameters',
+      type: 'Integer'
+    },
+    {
+      name: 'offset',
+      description: 'Offset',
+      required: false,
+      argument: 'parameters',
+      type: 'Integer'
+    },
+    {
+      name: 'filter',
+      description: 'Filter',
+      required: false,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'fields',
+      description: 'Comma separated list of fields to return',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="searchRelativeFieldHistogram">
 ### searchRelativeFieldHistogram(parameters[, path][, callback])
@@ -1081,7 +2423,45 @@ Field value histogram of a query using a relative timerange
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'query',
+      description: 'Query (Lucene syntax)',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'field',
+      description: 'Field of whose values to get the histogram of',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'interval',
+      description: 'Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'range',
+      description: 'Relative timeframe to search in. See search method description',
+      required: true,
+      argument: 'parameters',
+      type: 'Integer'
+    },
+    {
+      name: 'filter',
+      description: 'Filter',
+      required: false,
+      argument: 'parameters',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="searchRelativeHistogram">
 ### searchRelativeHistogram(parameters[, path][, callback])
@@ -1090,7 +2470,38 @@ Datetime histogram of a query using a relative timerange
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'query',
+      description: 'Query (Lucene syntax)',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'interval',
+      description: 'Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'range',
+      description: 'Relative timeframe to search in. See search method description',
+      required: true,
+      argument: 'parameters',
+      type: 'Integer'
+    },
+    {
+      name: 'filter',
+      description: 'Filter',
+      required: false,
+      argument: 'parameters',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="searchRelativeStats">
 ### searchRelativeStats(parameters[, path][, callback])
@@ -1101,7 +2512,38 @@ Returns statistics like min/max or standard deviation of numeric fields over the
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'field',
+      description: 'Message field of numeric type to return statistics for',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'query',
+      description: 'Query (Lucene syntax)',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'range',
+      description: 'Relative timeframe to search in. See search method description',
+      required: true,
+      argument: 'parameters',
+      type: 'Integer'
+    },
+    {
+      name: 'filter',
+      description: 'Filter',
+      required: false,
+      argument: 'parameters',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="searchRelativeTerms">
 ### searchRelativeTerms(parameters[, path][, callback])
@@ -1110,7 +2552,45 @@ Most common field terms of a query using a relative timerange
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'field',
+      description: 'Message field of to return terms of',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'query',
+      description: 'Query (Lucene syntax)',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'size',
+      description: 'Maximum number of terms to return',
+      required: false,
+      argument: 'parameters',
+      type: 'Integer'
+    },
+    {
+      name: 'range',
+      description: 'Relative timeframe to search in. See search method description',
+      required: true,
+      argument: 'parameters',
+      type: 'Integer'
+    },
+    {
+      name: 'filter',
+      description: 'Filter',
+      required: false,
+      argument: 'parameters',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="searchRelativeTermsStats">
 ### searchRelativeTermsStats(parameters[, path][, callback])
@@ -1119,7 +2599,59 @@ Ordered field terms of a query computed on another field using a relative timera
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'key_field',
+      description: 'Message field of to return terms of',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'value_field',
+      description: 'Value field used for computation',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'order',
+      description: 'What to order on (Allowed values: TERM, REVERSE_TERM, COUNT, REVERSE_COUNT, TOTAL, REVERSE_TOTAL, MIN, REVERSE_MIN, MAX, REVERSE_MAX, MEAN, REVERSE_MEAN)',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'query',
+      description: 'Query (Lucene syntax)',
+      required: true,
+      argument: 'parameters',
+      type: 'String'
+    },
+    {
+      name: 'size',
+      description: 'Maximum number of terms to return',
+      required: false,
+      argument: 'parameters',
+      type: 'Integer'
+    },
+    {
+      name: 'range',
+      description: 'Relative timeframe to search in. See search method description',
+      required: true,
+      argument: 'parameters',
+      type: 'Integer'
+    },
+    {
+      name: 'filter',
+      description: 'Filter',
+      required: false,
+      argument: 'parameters',
+      type: 'String'
+    }
+  ]
+```
 
 ## Search/Saved: Saved searches
 
@@ -1130,7 +2662,17 @@ Create a new saved search
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'CreateSavedSearchRequest'
+    }
+  ]
+```
 
 <a name="getSearchSavedAll">
 ### getSearchSavedAll(parameters[, path][, callback])
@@ -1139,7 +2681,9 @@ Get a list of all saved searches
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="getSearchSaved">
 ### getSearchSaved(parameters[, path][, callback])
@@ -1148,7 +2692,17 @@ Get a single saved search
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'searchId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="updateSearchSaved">
 ### updateSearchSaved(parameters[, path][, callback])
@@ -1157,7 +2711,24 @@ Update a saved search
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'searchId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'CreateSavedSearchRequest'
+    }
+  ]
+```
 
 <a name="removeSearchSaved">
 ### removeSearchSaved(parameters[, path][, callback])
@@ -1166,7 +2737,17 @@ Delete a saved search
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'searchId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 ## Sources: Listing message sources (e.g. hosts sending logs)
 
@@ -1179,7 +2760,17 @@ Range: The parameter is in seconds relative to the current time. 86400 means "in
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'range',
+      description: 'Relative timeframe to search in. See method description',
+      required: true,
+      argument: 'parameters',
+      type: 'Integer'
+    }
+  ]
+```
 
 ## StaticFields: Static fields of an input
 
@@ -1190,7 +2781,24 @@ Add a static field to an input
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'inputId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'CreateStaticFieldRequest'
+    }
+  ]
+```
 
 <a name="removeInputStaticField">
 ### removeInputStaticField(parameters[, path][, callback])
@@ -1199,7 +2807,24 @@ Remove static field of an input
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'Key',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'inputId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 ## StreamOutputs: Manage stream outputs for a given stream
 
@@ -1210,7 +2835,24 @@ Associate outputs with a stream
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamid',
+      description: 'The id of the stream whose outputs we want',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'AddOutputRequest'
+    }
+  ]
+```
 
 <a name="getStreamOutputs">
 ### getStreamOutputs(parameters[, path][, callback])
@@ -1219,7 +2861,17 @@ Associate outputs with a stream
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamid',
+      description: 'The id of the stream whose outputs we want',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="getStreamOutput">
 ### getStreamOutput(parameters[, path][, callback])
@@ -1228,7 +2880,17 @@ Get specific output of a stream
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamid',
+      description: 'The id of the stream whose outputs we want',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="removeStreamOutput">
 ### removeStreamOutput(parameters[, path][, callback])
@@ -1237,7 +2899,24 @@ Delete output of a stream
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamid',
+      description: 'The id of the stream whose outputs we want',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'outputId',
+      description: 'The id of the output that should be deleted',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 ## StreamRules: Manage stream rules
 
@@ -1248,7 +2927,17 @@ Get a list of all stream rules
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamid',
+      description: 'The id of the stream whose stream rule we want',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="getStreamRule">
 ### getStreamRule(parameters[, path][, callback])
@@ -1257,7 +2946,24 @@ Get a single stream rules
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamid',
+      description: 'The id of the stream whose stream rule we want',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'streamRuleId',
+      description: 'The stream rule id we are getting',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="createStreamRule">
 ### createStreamRule(parameters[, path][, callback])
@@ -1266,7 +2972,24 @@ Create a stream rule
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamid',
+      description: 'The stream id this new rule belongs to',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'CreateStreamRuleRequest'
+    }
+  ]
+```
 
 <a name="updateStreamRule">
 ### updateStreamRule(parameters[, path][, callback])
@@ -1275,7 +2998,31 @@ Update a stream rule
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamid',
+      description: 'The stream id this rule belongs to',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'streamRuleId',
+      description: 'The stream rule id we are updating',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'CreateStreamRuleRequest'
+    }
+  ]
+```
 
 <a name="removeStreamRule">
 ### removeStreamRule(parameters[, path][, callback])
@@ -1284,8 +3031,24 @@ Delete a stream rule
 
 __Arguments__
 
-* `-`
-
+```javascript
+  [
+    {
+      name: 'streamid',
+      description: 'The stream id this new rule belongs to',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'streamRuleId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 ## Streams: Manage streams
 
@@ -1296,7 +3059,9 @@ Get a list of all streams
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="createStream">
 ### createStream(parameters[, path][, callback])
@@ -1305,7 +3070,17 @@ Create a stream
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'CreateStreamRequest'
+    }
+  ]
+```
 
 <a name="getStreamsEnabled">
 ### getStreamsEnabled(parameters[, path][, callback])
@@ -1314,7 +3089,9 @@ Get a list of all enabled streams
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="getStreamThroughput">
 ### getStreamThroughput(parameters[, path][, callback])
@@ -1323,7 +3100,17 @@ Current throughput of this stream on this node in messages per second
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="getStreamAllThroughput">
 ### getStreamAllThroughput(parameters[, path][, callback])
@@ -1332,7 +3119,9 @@ Current throughput of all visible streams on this node in messages per second
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="getStream">
 ### getStream(parameters[, path][, callback])
@@ -1341,7 +3130,17 @@ Get a single stream
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="updateStream">
 ### updateStream(parameters[, path][, callback])
@@ -1350,7 +3149,24 @@ Update a stream
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'UpdateStreamRequest'
+    }
+  ]
+```
 
 <a name="removeStream">
 ### removeStream(parameters[, path][, callback])
@@ -1359,7 +3175,17 @@ Delete a stream
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="cloneStream">
 ### cloneStream(parameters[, path][, callback])
@@ -1368,7 +3194,24 @@ Clone a stream
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'CloneStreamRequest'
+    }
+  ]
+```
 
 <a name="pauseStream">
 ### pauseStream(parameters[, path][, callback])
@@ -1377,7 +3220,17 @@ Pause a stream
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="resumeStream">
 ### resumeStream(parameters[, path][, callback])
@@ -1386,7 +3239,17 @@ Resume a stream
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="testMatchStream">
 ### testMatchStream(parameters[, path][, callback])
@@ -1395,7 +3258,24 @@ Test matching of a stream against a supplied message
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'streamId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'Map'
+    }
+  ]
+```
 
 ## System: System information of this node
 
@@ -1406,7 +3286,9 @@ Get system overview
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="getJVM">
 ### getJVM(parameters[, path][, callback])
@@ -1415,7 +3297,9 @@ Get JVM information
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="getThreadDump">
 ### getThreadDump(parameters[, path][, callback])
@@ -1424,7 +3308,9 @@ Get a thread dump
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 ## System/Buffers: Buffer information of this node.
 
@@ -1435,7 +3321,9 @@ Get current utilization of buffers and caches of this node
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="getBuffersClasses">
 ### getBuffersClasses(parameters[, path][, callback])
@@ -1444,7 +3332,9 @@ Get classnames of current buffer implementations
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 ## System/Bundles: Content packs
 
@@ -1455,7 +3345,17 @@ Upload a content pack
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'Request body',
+      description: 'Content pack',
+      required: true,
+      argument: 'parameters',
+      type: 'ConfigurationBundle'
+    }
+  ]
+```
 
 <a name="getBundles">
 ### getBundles(parameters[, path][, callback])
@@ -1464,7 +3364,9 @@ List available content packs
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="exportBundles">
 ### exportBundles(parameters[, path][, callback])
@@ -1473,7 +3375,17 @@ Export entities as a content pack
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'exportBundle',
+      description: 'Export content pack',
+      required: true,
+      argument: 'parameters',
+      type: 'ExportBundle'
+    }
+  ]
+```
 
 <a name="getBundle">
 ### getBundle(parameters[, path][, callback])
@@ -1482,7 +3394,17 @@ Show content pack
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'bundleId',
+      description: 'Content pack ID',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="updateBundle">
 ### updateBundle(parameters[, path][, callback])
@@ -1491,7 +3413,24 @@ Update content pack
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'bundleId',
+      description: 'Content pack ID',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'Request body',
+      description: 'Content pack',
+      required: true,
+      argument: 'parameters',
+      type: 'ConfigurationBundle'
+    }
+  ]
+```
 
 <a name="removeBundle">
 ### removeBundle(parameters[, path][, callback])
@@ -1500,7 +3439,17 @@ Delete content pack
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'bundleId',
+      description: 'Content pack ID',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="applyBundle">
 ### applyBundle(parameters[, path][, callback])
@@ -1509,7 +3458,17 @@ Set up entities described by content pack
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'bundleId',
+      description: 'Content pack ID',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 ## System/Cluster: Node discovery
 
@@ -1522,7 +3481,9 @@ This is returning information of this node in context to its state in the cluste
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="getNodes">
 ### getNodes(parameters[, path][, callback])
@@ -1531,7 +3492,17 @@ List all active nodes in this cluster
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'nodeId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="getNode">
 ### getNode(parameters[, path][, callback])
@@ -1542,7 +3513,17 @@ This is returning information of a node in context to its state in the cluster. 
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'nodeId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 ## System/ClusterStats: Cluster stats
 
@@ -1555,7 +3536,9 @@ This resource returns information about the Graylog cluster
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="getClusterStatsElasticsearch">
 ### getClusterStatsElasticsearch(parameters[, path][, callback])
@@ -1566,7 +3549,9 @@ This resource returns information about the Elasticsearch Cluster
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="getClusterStatsMongo">
 ### getClusterStatsMongo(parameters[, path][, callback])
@@ -1577,7 +3562,10 @@ This resource returns information about MongoDB
 
 __Arguments__
 
-* `-`
+
+```javascript
+  []
+```
 
 ## System/Collectors: Management of Graylog Collectors
 
@@ -1588,7 +3576,9 @@ Lists all existing collector registrations
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="getSystemCollector">
 ### getSystemCollector(parameters[, path][, callback])
@@ -1597,7 +3587,17 @@ Returns at most one collector summary for the specified collector id
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'collectorId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 ## System/Collectors/Registration: Registration resource for Graylog Collector nodes
 
@@ -1610,7 +3610,24 @@ This is a stateless method which upserts a collector registration
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'collectorId',
+      description: 'The collector id this collector is registering as',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'CollectorRegistrationRequest'
+    }
+  ]
+```
 
 ## System/Debug/Events: For debugging local and cluster events.
 
@@ -1621,7 +3638,17 @@ Create and send a cluster debug event
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'text',
+      description: '',
+      required: false,
+      argument: 'parameters',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="getDebugEventsCluster">
 ### getDebugEventsCluster(parameters[, path][, callback])
@@ -1630,7 +3657,9 @@ Show last received cluster debug event
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="createDebugEventsLocal">
 ### createDebugEventsLocal(parameters[, path][, callback])
@@ -1639,7 +3668,17 @@ Create and send a local debug event
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'text',
+      description: '',
+      required: false,
+      argument: 'parameters',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="getDebugEventsLocal">
 ### getDebugEventsLocal(parameters[, path][, callback])
@@ -1648,7 +3687,9 @@ Show last received local debug event
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 ## System/Deflector: Index deflector management
 
@@ -1659,7 +3700,9 @@ Get current deflector status
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="getDeflectorConfig">
 ### getDeflectorConfig(parameters[, path][, callback])
@@ -1668,7 +3711,9 @@ Get deflector configuration. Only available on master nodes
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="nextDeflectorCycle">
 ### nextDeflectorCycle(parameters[, path][, callback])
@@ -1677,8 +3722,9 @@ Cycle deflector to new/next index
 
 __Arguments__
 
-* `-`
-
+```javascript
+  []
+```
 
 ## System/Fields: Get list of message fields that exist.
 
@@ -1691,7 +3737,17 @@ This operation is comparably fast because it reads directly from the indexer map
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'limit',
+      description: 'Maximum number of fields to return. Set to 0 for all fields',
+      required: false,
+      argument: 'parameters',
+      type: 'Integer'
+    }
+  ]
+```
 
 ## System/Grok: Manage grok patterns
 
@@ -1702,7 +3758,9 @@ Get all existing grok patterns
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="getGrok">
 ### getGrok(parameters[, path][, callback])
@@ -1711,7 +3769,17 @@ Get the existing grok pattern
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'patternId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="createGrok">
 ### createGrok(parameters[, path][, callback])
@@ -1720,7 +3788,17 @@ Add a new named pattern
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'pattern',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'GrokPatternSummary'
+    }
+  ]
+```
 
 <a name="createGroks">
 ### createGroks(parameters[, path][, callback])
@@ -1729,7 +3807,17 @@ Update an existing pattern
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'patterns',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'Array'
+    }
+  ]
+```
 
 <a name="updateGrok">
 ### updateGrok(parameters[, path][, callback])
@@ -1738,7 +3826,24 @@ Update an existing pattern
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'patternId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'pattern',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'GrokPatternSummary'
+    }
+  ]
+```
 
 <a name="removeGrok">
 ### removeGrok(parameters[, path][, callback])
@@ -1747,7 +3852,9 @@ Remove an existing pattern by id
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 ## System/IndexRanges: Index timeranges
 
@@ -1758,7 +3865,9 @@ Get a list of all index ranges
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="rebuildIndicesRanges">
 ### rebuildIndicesRanges(parameters[, path][, callback])
@@ -1769,7 +3878,9 @@ This triggers a systemjob that scans every index and stores meta information abo
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 ## System/Inputs: Message inputs of this node
 
@@ -1780,7 +3891,17 @@ Launch input on this node
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'InputLaunchRequest'
+    }
+  ]
+```
 
 <a name="getInput">
 ### getInput(parameters[, path][, callback])
@@ -1789,7 +3910,17 @@ Get information of a single input on this node
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'inputId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="getInputs">
 ### getInputs(parameters[, path][, callback])
@@ -1798,7 +3929,9 @@ Get all inputs of this node
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="updateInput">
 ### updateInput(parameters[, path][, callback])
@@ -1807,7 +3940,24 @@ Update input on this node
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'InputLaunchRequest'
+    },
+    {
+      name: 'inputId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="removeInput">
 ### removeInput(parameters[, path][, callback])
@@ -1816,7 +3966,17 @@ Terminate input on this node
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'inputId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="launchInput">
 ### launchInput(parameters[, path][, callback])
@@ -1825,7 +3985,17 @@ Launch existing input on this node
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'inputId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="restartInput">
 ### restartInput(parameters[, path][, callback])
@@ -1834,7 +4004,17 @@ Restart existing input on this node
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'inputId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="stopInput">
 ### stopInput(parameters[, path][, callback])
@@ -1843,7 +4023,17 @@ Stop existing input on this node
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'inputId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 ## System/Inputs/Types: Message input types of this node
 
@@ -1854,7 +4044,17 @@ Get information about a single input type
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'inputType',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="getInputsTypes">
 ### getInputsTypes(parameters[, path][, callback])
@@ -1863,7 +4063,9 @@ Get all available input types of this node
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 ## System/Jobs: System Jobs
 
@@ -1874,7 +4076,17 @@ Trigger new job
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'TriggerRequest'
+    }
+  ]
+```
 
 <a name="getJobs">
 ### getJobs(parameters[, path][, callback])
@@ -1883,7 +4095,9 @@ List currently running jobs
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="getJob">
 ### getJob(parameters[, path][, callback])
@@ -1892,7 +4106,17 @@ Get information of a specific currently running job
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'jobId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 ## System/Journal: Message journal information of this node.
 
@@ -1903,7 +4127,9 @@ Get current state of the journal on this node
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 ## System/LDAP: LDAP settings
 
@@ -1914,7 +4140,9 @@ Get the LDAP configuration if it is configured
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="updateLDAPSettings">
 ### updateLDAPSettings(parameters[, path][, callback])
@@ -1923,7 +4151,17 @@ Update the LDAP configuration
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'LdapSettingsRequest'
+    }
+  ]
+```
 
 <a name="removeLDAPSettings">
 ### removeLDAPSettings(parameters[, path][, callback])
@@ -1932,7 +4170,9 @@ Remove the LDAP configuration
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="testLDAPSettings">
 ### testLDAPSettings(parameters[, path][, callback])
@@ -1941,7 +4181,17 @@ Test LDAP Configuration
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'Configuration to test',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'LdapTestConfigRequest'
+    }
+  ]
+```
 
 ## System/LoadBalancers: Status propagation for load balancers
 
@@ -1952,7 +4202,9 @@ Get status of this graylog2-server node for load balancers. Returns either ALIVE
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="updateLoadBalancerStatusOverride">
 ### updateLoadBalancerStatusOverride(parameters[, path][, callback])
@@ -1961,7 +4213,17 @@ Override load balancer status of this graylog2-server node. Next lifecycle chang
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'status',
+      description: '',
+      required: false,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 ## System/Loggers: Internal Graylog loggers
 
@@ -1972,7 +4234,9 @@ List all loggers and their current levels
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="getLoggersSubsystems">
 ### getLoggersSubsystems(parameters[, path][, callback])
@@ -1981,7 +4245,9 @@ List all logger subsystems and their current levels
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="setLoggersSubsystemsLevel">
 ### setLoggersSubsystemsLevel(parameters[, path][, callback])
@@ -1992,7 +4258,24 @@ Provided level is falling back to DEBUG if it does not exist
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'subsystem',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'level',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="setLoggersLevel">
 ### setLoggersLevel(parameters[, path][, callback])
@@ -2003,8 +4286,24 @@ Provided level is falling back to DEBUG if it does not exist
 
 __Arguments__
 
-* `-`
-
+* `-````javascript
+  [
+    {
+      name: 'loggerName',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'level',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 ## System/Messages: Internal Graylog messages
 
 <a name="getSystemMessages">
@@ -2014,7 +4313,17 @@ Get internal Graylog system messages
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'page',
+      description: 'Page',
+      required: false,
+      argument: 'parameters',
+      type: 'Integer'
+    }
+  ]
+```
 
 ## System/Metrics: Internal Graylog2 metrics
 
@@ -2025,7 +4334,17 @@ Get a single metric
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'metricName',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="getMetrics">
 ### getMetrics(parameters[, path][, callback])
@@ -2034,7 +4353,9 @@ Get all metrics
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="getMetricsMultiple">
 ### getMetricsMultiple(parameters[, path][, callback])
@@ -2043,7 +4364,17 @@ Get the values of multiple metrics at once
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'Requested metrics',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'MetricsReadRequest'
+    }
+  ]
+```
 
 <a name="getMetricsNames">
 ### getMetricsNames(parameters[, path][, callback])
@@ -2052,7 +4383,9 @@ Get all metrics keys/names
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="getMetricsNamespace">
 ### getMetricsNamespace(parameters[, path][, callback])
@@ -2061,7 +4394,17 @@ Get all metrics of a namespace
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'namespace',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 ## System/Metrics/History: Get history of metrics
 
@@ -2073,7 +4416,24 @@ The maximum retention time is currently only 5 minutes
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'metricName',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'after',
+      description: 'Only values for after this UTC timestamp (1970 epoch)',
+      required: false,
+      argument: 'parameters',
+      type: 'Long'
+    }
+  ]
+```
 
 ## System/Notifications: Notifications generated by the system
 
@@ -2084,7 +4444,9 @@ Get all active notifications
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="removeNotification">
 ### removeNotification(parameters[, path][, callback])
@@ -2093,7 +4455,17 @@ Delete a notification
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'notificationType',
+      description: '',
+      required: false,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 ## System/Outputs: Manage outputs
 
@@ -2104,7 +4476,17 @@ Get specific output
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'outputId',
+      description: 'The id of the output we want',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="getOutputs">
 ### getOutputs(parameters[, path][, callback])
@@ -2113,7 +4495,9 @@ Get a list of all outputs
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="createOutput">
 ### createOutput(parameters[, path][, callback])
@@ -2122,7 +4506,17 @@ Create an output
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'CreateOutputRequest'
+    }
+  ]
+```
 
 <a name="getOutputsAvailable">
 ### getOutputsAvailable(parameters[, path][, callback])
@@ -2131,7 +4525,9 @@ Get all available output modules
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="updateOutput">
 ### updateOutput(parameters[, path][, callback])
@@ -2140,7 +4536,24 @@ Update output
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'outputId',
+      description: 'The id of the output that should be deleted',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'Map'
+    }
+  ]
+```
 
 <a name="removeOutput">
 ### removeOutput(parameters[, path][, callback])
@@ -2149,7 +4562,17 @@ Delete output
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'outputId',
+      description: 'The id of the output that should be deleted',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 ## System/Permissions: Retrieval of system permissions
 
@@ -2160,7 +4583,9 @@ Get all available user permissions
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="getPermissionsReader">
 ### getPermissionsReader(parameters[, path][, callback])
@@ -2169,7 +4594,17 @@ Get the initial permissions assigned to a reader account
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'username',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 ## System/Plugin: Plugin information
 
@@ -2180,7 +4615,9 @@ List all installed plugins on this node
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 ## System/Processing: System processing status control
 
@@ -2191,7 +4628,9 @@ Pauses message processing
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="resumeSystemProcessing">
 ### resumeSystemProcessing(parameters[, path][, callback])
@@ -2200,7 +4639,9 @@ Resume message processing
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 ## System/Radios: Management of graylog2-radio nodes
 
@@ -2213,7 +4654,17 @@ This is returning information of a radio in context to its state in the cluster.
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'radioId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="getRadios">
 ### getRadios(parameters[, path][, callback])
@@ -2222,7 +4673,9 @@ List all active radios in this cluster
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="createRadioInput">
 ### createRadioInput(parameters[, path][, callback])
@@ -2233,7 +4686,24 @@ Radio inputs register their own inputs here for persistence after they successfu
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'radioId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'RegisterInputRequest'
+    }
+  ]
+```
 
 <a name="getRadioInputs">
 ### getRadioInputs(parameters[, path][, callback])
@@ -2244,7 +4714,17 @@ This is returning the configured persisted inputs of a radio node. This is *not*
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'radioId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="removeRadioInput">
 ### removeRadioInput(parameters[, path][, callback])
@@ -2255,7 +4735,24 @@ Radios unregister their inputs when they are stopped/terminated on the radio
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'radioId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'inputId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="pingRadio">
 ### pingRadio(parameters[, path][, callback])
@@ -2266,7 +4763,24 @@ Every graylog2-radio node is regularly pinging to announce that it is active
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'radioId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: '',
+      required: true,
+      argument: 'parameters',
+      type: 'PingRequest'
+    }
+  ]
+```
 
 ## System/ServiceManager: ServiceManager Status
 
@@ -2277,7 +4791,9 @@ List current status of ServiceManager
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 ## System/Sessions: Login for interactive user sessions
 
@@ -2288,7 +4804,17 @@ This request creates a new session for a user or reactivates an existing session
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'Login request',
+      description: 'Username and credentials',
+      required: true,
+      argument: 'parameters',
+      type: 'SessionCreateRequest'
+    }
+  ]
+```
 
 <a name="removeSession">
 ### removeSession(parameters[, path][, callback])
@@ -2299,7 +4825,17 @@ Destroys the session with the given ID: the equivalent of logging out
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'sessionId',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 ## System/Shutdown: Shutdown this node gracefully
 
@@ -2312,7 +4848,9 @@ Attempts to process all buffered and cached messages before exiting, shuts down 
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 ## System/Stats: Node system stats
 
@@ -2325,7 +4863,9 @@ This resource returns information about the system this node is running on
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="getStatsFs">
 ### getStatsFs(parameters[, path][, callback])
@@ -2336,7 +4876,9 @@ This resource returns information about the filesystems of this node
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="getStatsJvm">
 ### getStatsJvm(parameters[, path][, callback])
@@ -2347,7 +4889,9 @@ This resource returns information about the Java Virtual Machine of this node
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="getStatsNetwork">
 ### getStatsNetwork(parameters[, path][, callback])
@@ -2358,7 +4902,9 @@ This resource returns information about the networking system this node is runni
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="getStatsOs">
 ### getStatsOs(parameters[, path][, callback])
@@ -2369,7 +4915,10 @@ This resource returns information about the operating system this node is runnin
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
+
 
 <a name="getStatsProcess">
 ### getStatsProcess(parameters[, path][, callback])
@@ -2381,7 +4930,9 @@ This resource returns information about the process this node is running as
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 ## System/Throughput: Message throughput of this node
 
@@ -2392,7 +4943,9 @@ Current throughput of this node in messages per second
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 ## Users: User accounts
 
@@ -2405,7 +4958,17 @@ The user's permissions are only included if a user asks for his own account or f
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'username',
+      description: 'The username to return information for',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="getUsers">
 ### getUsers(parameters[, path][, callback])
@@ -2416,7 +4979,9 @@ The permissions assigned to the users are always included
 
 __Arguments__
 
-* `-`
+```javascript
+  []
+```
 
 <a name="createUser">
 ### createUser(parameters[, path][, callback])
@@ -2425,7 +4990,17 @@ Create a new user account
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'JSON body',
+      description: 'Must contain username, full_name, email, password and a list of permissions',
+      required: true,
+      argument: 'parameters',
+      type: 'CreateUserRequest'
+    }
+  ]
+```
 
 <a name="updateUser">
 ### updateUser(parameters[, path][, callback])
@@ -2434,7 +5009,24 @@ Modify user details
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'username',
+      description: 'The name of the user to modify',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: 'Updated user information',
+      required: true,
+      argument: 'parameters',
+      type: 'ChangeUserRequest'
+    }
+  ]
+```
 
 <a name="removeUser">
 ### removeUser(parameters[, path][, callback])
@@ -2443,7 +5035,17 @@ Removes a user account
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'username',
+      description: 'The name of the user to delete',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="updateUserPassword">
 ### updateUserPassword(parameters[, path][, callback])
@@ -2452,7 +5054,24 @@ Update the password for a user
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'username',
+      description: 'The name of the user whose password to change',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: 'The old and new passwords',
+      required: true,
+      argument: 'parameters',
+      type: 'ChangePasswordRequest'
+    }
+  ]
+```
 
 <a name="updateUserPermissions">
 ### updateUserPermissions(parameters[, path][, callback])
@@ -2461,7 +5080,24 @@ Update a user's permission set
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'username',
+      description: 'The name of the user to modify',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: 'The list of permissions to assign to the user',
+      required: true,
+      argument: 'parameters',
+      type: 'PermissionEditRequest'
+    }
+  ]
+```
 
 <a name="removeUserPermissions">
 ### removeUserPermissions(parameters[, path][, callback])
@@ -2470,7 +5106,17 @@ Revoke all permissions for a user without deleting the account
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'username',
+      description: 'The name of the user to modify',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="updateUserPreferences">
 ### updateUserPreferences(parameters[, path][, callback])
@@ -2479,7 +5125,24 @@ Update a user's preferences set
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'username',
+      description: 'The name of the user to modify',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'JSON body',
+      description: 'The map of preferences to assign to the user',
+      required: true,
+      argument: 'parameters',
+      type: 'UpdateUserPreferences'
+    }
+  ]
+```
 
 <a name="getUserTokens">
 ### getUserTokens(parameters[, path][, callback])
@@ -2488,7 +5151,17 @@ Retrieves the list of access tokens for a user
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'username',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="createUserToken">
 ### createUserToken(parameters[, path][, callback])
@@ -2497,7 +5170,24 @@ Generates a new access token for a user
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'username',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'name',
+      description: 'Descriptive name for this token (e.g. "cronjob") ',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 <a name="removeUserToken">
 ### removeUserToken(parameters[, path][, callback])
@@ -2506,7 +5196,24 @@ Removes a token for a user
 
 __Arguments__
 
-* `-`
+```javascript
+  [
+    {
+      name: 'username',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    },
+    {
+      name: 'access token',
+      description: '',
+      required: true,
+      argument: 'path',
+      type: 'String'
+    }
+  ]
+```
 
 ## License
 
