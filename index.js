@@ -32,14 +32,14 @@ Object.keys(methods).forEach(function(mName) {
 
     var reqUri = this._uri + m.path;
 
-    if (m.method === 'GET') {
+    if (m.method === 'GET' && parameters) {
       reqUri = reqUri + '?' + serializeObjToUri(parameters);
     }
 
     var opts = {
       url: reqUri,
       method: m.method,
-      body: (m.method !== 'GET') ? parameters : null,
+      body: (m.method !== 'GET' && parameters) ? parameters : null,
       json: false
     };
 
@@ -50,7 +50,7 @@ Object.keys(methods).forEach(function(mName) {
         callback((error === null && body === '') ? 'Unknown error' : [error, body]);
       }
     });
-  }
+  };
 
 });
 

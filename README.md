@@ -2016,7 +2016,7 @@ parameters.[JSON body] {InputLaunchRequest}
 ```
 
 <a name="getInput">
-### getInput(parameters[, path][, callback])
+### getInput(null, path[, callback])
 
 Get information of a single input on this node
 
