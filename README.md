@@ -539,7 +539,7 @@ __Arguments__
 
 ```javascript
 path.streamId {String} The stream id this new alert condition belongs to
-query.since {Integer} Optional. Optional parameter to define a lower date boundary. (UNIX timestamp)
+parameters.since {Integer} Optional. Optional parameter to define a lower date boundary. (UNIX timestamp)
 ```
 
 <a name="getAlertsCheck">
@@ -562,8 +562,8 @@ __Arguments__
 
 ```javascript
 path.streamId {String} The stream id this new alert condition belongs to
-query.entity {String} Name/ID of user or email address to add as alert receiver
-query.type {String} Type: users or emails
+parameters.entity {String} Name/ID of user or email address to add as alert receiver
+parameters.type {String} Type: users or emails
 ```
 
 <a name="removeAlertReceiver">
@@ -575,8 +575,8 @@ __Arguments__
 
 ```javascript
 path.streamId {String} The stream id this new alert condition belongs to
-query.entity {String} Name/ID of user or email address to remove from alert receivers
-query.type {String} Type: users or emails
+parameters.entity {String} Name/ID of user or email address to remove from alert receivers
+parameters.type {String} Type: users or emails
 ```
 
 <a name="testAlertSendDummy">
