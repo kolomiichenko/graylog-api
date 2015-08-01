@@ -11,9 +11,8 @@ For more detail you can look Graylog REST API browser: [localhost:12900/api-brow
 ```javascript
 var graylog = require('graylog-api');
 var api = graylog.connect({
-  basicA
-  tps', // Optional. Default: 'http'. Connection protoc  .adminuth: {
-    username: '',
+  basicAuth: {
+    username: 'admin',
     password: 'secret'
   }, // Optional. Default: null. Basic access authentication
   protocol: 'https', // Optional. Default: 'http'. Connection protocol
@@ -39,9 +38,8 @@ api.searchAbsolute({ // parameters
 updateUserPassword({ // parameters
   old_password: 'secret',
   password: 'qwerty123'
-}, { /
-  .aog(errdmi/ path
-  username: 'n'
+}, { // path
+  username: 'admin'
 }, function (err, data) { // callback
   if (err) {
     console.log(err);
