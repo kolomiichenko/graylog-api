@@ -412,71 +412,71 @@ api.[methodName]([parameters][, path][, callback]);
 
 Get a list of all alarm callbacks for this stream
 
-__Arguments__
-
-```javascript
-path.streamid {String} The id of the stream whose alarm callbacks we want
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __streamid__: {String} The id of the stream whose alarm callbacks we want
+  * _callback_: {Function} Callback function
 
 <a name="createAlarmCallback">
 ### createAlarmCallback(parameters[, path][, callback])
 
 Create an alarm callback
 
-__Arguments__
-
-```javascript
-path.streamid {String} The stream id this new alarm callback belongs to
-parameters.[JSON body] {CreateAlarmCallbackRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {CreateAlarmCallbackRequest}
+  * __path__: {Object}
+    * __streamid__: {String} The stream id this new alarm callback belongs to
+  * _callback_: {Function} Callback function
 
 <a name="getAlarmCallbacksAvailable">
 ### getAlarmCallbacksAvailable(parameters[, path][, callback])
 
 Get a list of all alarm callback types
 
-__Arguments__
-
-```javascript
-path.streamid {String} The id of the stream whose alarm callbacks we want
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __streamid__: {String} The id of the stream whose alarm callbacks we want
+  * _callback_: {Function} Callback function
 
 <a name="getAlarmCallback">
 ### getAlarmCallback(parameters[, path][, callback])
 
 Get a single specified alarm callback for this stream
 
-__Arguments__
-
-```javascript
-path.streamid {String} The id of the stream whose alarm callbacks we want
-path.alarmCallbackId {String} The alarm callback id we are getting
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __streamid__: {String} The id of the stream whose alarm callbacks we want
+    * __alarmCallbackId__: {String} The alarm callback id we are getting
+  * _callback_: {Function} Callback function
 
 <a name="updateAlarmCallback">
 ### updateAlarmCallback(parameters[, path][, callback])
 
 Update an alarm callback
 
-__Arguments__
-
-```javascript
-path.streamid {String} The stream id this alarm callback belongs to
-path.alarmCallbackId {String}  
-parameters.[JSON body] {Map}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {Map}
+  * __path__: {Object}
+    * __streamid__: {String} The stream id this alarm callback belongs to
+    * __alarmCallbackId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="removeAlarmCallback">
 ### removeAlarmCallback(parameters[, path][, callback])
 
 Delete an alarm callback
 
-__Arguments__
-
-```javascript
-path.streamid {String} The stream id this alarm callback belongs to
-path.alarmCallbackId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __streamid__: {String} The stream id this alarm callback belongs to
+    * __alarmCallbackId__: {String}
+  * _callback_: {Function} Callback function
 
 ## AlertConditions: Manage stream alert conditions
 
@@ -485,48 +485,48 @@ path.alarmCallbackId {String}
 
 Create an alert condition
 
-__Arguments__
-
-```javascript
-path.streamId {String} The stream id this new alert condition belongs to
-parameters.[JSON body] {CreateConditionRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {CreateConditionRequest}
+  * __path__: {Object}
+    * __streamId__: {String} The stream id this new alert condition belongs to
+  * _callback_: {Function} Callback function
 
 <a name="getAlertConditions">
 ### getAlertConditions(parameters[, path][, callback])
 
 Get all alert conditions of this stream
 
-__Arguments__
-
-```javascript
-path.streamId {String} The stream id this new alert condition belongs to
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __streamId__: {String} The stream id this new alert condition belongs to
+  * _callback_: {Function} Callback function
 
 <a name="updateAlertCondition">
 ### updateAlertCondition(parameters[, path][, callback])
 
 Modify an alert condition
 
-__Arguments__
-
-```javascript
-path.streamId {String} The stream id the alert condition belongs to
-path.conditionId {String} The alert condition id
-parameters.[JSON body] {CreateConditionRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {CreateConditionRequest}
+  * __path__: {Object}
+    * __streamId__: {String} The stream id the alert condition belongs to
+    * __conditionId__: {String} The alert condition id
+  * _callback_: {Function} Callback function
 
 <a name="removeAlertCondition">
 ### removeAlertCondition(parameters[, path][, callback])
 
 Delete an alert condition
 
-__Arguments__
-
-```javascript
-path.streamId {String} The stream id this new alert condition belongs to
-path.conditionId {String} The stream id this new alert condition belongs to
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __streamId__: {String} The stream id this new alert condition belongs to
+    * __conditionId__: {String} The stream id this new alert condition belongs to
+  * _callback_: {Function} Callback function
 
 ## AlertReceivers: Manage stream alert receivers
 
@@ -535,60 +535,60 @@ path.conditionId {String} The stream id this new alert condition belongs to
 
 Get the 300 most recent alarms of this stream
 
-__Arguments__
-
-```javascript
-path.streamId {String} The stream id this new alert condition belongs to
-parameters.since {Integer} Optional. Optional parameter to define a lower date boundary. (UNIX timestamp)
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * _since_: {Integer} Optional. Optional parameter to define a lower date boundary. (UNIX timestamp)
+  * __path__: {Object}
+    * __streamId__: {String} The stream id this new alert condition belongs to
+  * _callback_: {Function} Callback function
 
 <a name="getAlertsCheck">
 ### getAlertsCheck(parameters[, path][, callback])
 
 Check for triggered alert conditions of this streams. Results cached for 30 seconds
 
-__Arguments__
-
-```javascript
-path.streamId {String} The ID of the stream to check
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __streamId__: {String} The ID of the stream to check
+  * _callback_: {Function} Callback function
 
 <a name="createAlertReceiver">
 ### createAlertReceiver(parameters[, path][, callback])
 
 Add an alert receiver
 
-__Arguments__
-
-```javascript
-path.streamId {String} The stream id this new alert condition belongs to
-parameters.entity {String} Name/ID of user or email address to add as alert receiver
-parameters.type {String} Type: users or emails
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __entity__: {String} Name/ID of user or email address to add as alert receiver
+    * __type__: {String} Type: users or emails
+  * __path__: {Object}
+    * __streamId__: {String} The stream id this new alert condition belongs to
+  * _callback_: {Function} Callback function
 
 <a name="removeAlertReceiver">
 ### removeAlertReceiver(parameters[, path][, callback])
 
 Remove an alert receiver
 
-__Arguments__
-
-```javascript
-path.streamId {String} The stream id this new alert condition belongs to
-parameters.entity {String} Name/ID of user or email address to remove from alert receivers
-parameters.type {String} Type: users or emails
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __type__: {String} Type: users or emails
+    * __entity__: {String} Name/ID of user or email address to remove from alert receivers
+  * __path__: {Object}
+    * __streamId__: {String} The stream id this new alert condition belongs to
+  * _callback_: {Function} Callback function
 
 <a name="testAlertSendDummy">
 ### testAlertSendDummy(parameters[, path][, callback])
 
 Send a test mail for a given stream
 
-__Arguments__
-
-```javascript
-path.streamId {String} The stream id this new alert condition belongs to
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __streamId__: {String} The stream id this new alert condition belongs to
+  * _callback_: {Function} Callback function
 
 ## Alerts: Manage stream alerts
 
@@ -597,60 +597,60 @@ path.streamId {String} The stream id this new alert condition belongs to
 
 Get the 300 most recent alarms of this stream
 
-__Arguments__
-
-```javascript
-path.streamId {String} The stream id this new alert condition belongs to
-parameters.since {Integer} Optional. Optional parameter to define a lower date boundary. (UNIX timestamp)
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * _since_: {Integer} Optional. Optional parameter to define a lower date boundary. (UNIX timestamp)
+  * __path__: {Object}
+    * __streamId__: {String} The stream id this new alert condition belongs to
+  * _callback_: {Function} Callback function
 
 <a name="getAlertsCheck">
 ### getAlertsCheck(parameters[, path][, callback])
 
 Check for triggered alert conditions of this streams. Results cached for 30 seconds
 
-__Arguments__
-
-```javascript
-path.streamId {String} The ID of the stream to check
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __streamId__: {String} The ID of the stream to check
+  * _callback_: {Function} Callback function
 
 <a name="createAlertReceiver">
 ### createAlertReceiver(parameters[, path][, callback])
 
 Add an alert receiver
 
-__Arguments__
-
-```javascript
-path.streamId {String} The stream id this new alert condition belongs to
-parameters.entity {String} Name/ID of user or email address to add as alert receiver
-parameters.type {String} Type: users or emails
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __type__: {String} Type: users or emails
+    * __entity__: {String} Name/ID of user or email address to add as alert receiver
+  * __path__: {Object}
+    * __streamId__: {String} The stream id this new alert condition belongs to
+  * _callback_: {Function} Callback function
 
 <a name="removeAlertReceiver">
 ### removeAlertReceiver(parameters[, path][, callback])
 
 Remove an alert receiver
 
-__Arguments__
-
-```javascript
-path.streamId {String} The stream id this new alert condition belongs to
-parameters.entity {String} Name/ID of user or email address to remove from alert receivers
-parameters.type {String} Type: users or emails
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __type__: {String} Type: users or emails
+    * __entity__: {String} Name/ID of user or email address to remove from alert receivers
+  * __path__: {Object}
+    * __streamId__: {String} The stream id this new alert condition belongs to
+  * _callback_: {Function} Callback function
 
 <a name="testAlertSendDummy">
 ### testAlertSendDummy(parameters[, path][, callback])
 
 Send a test mail for a given stream
 
-__Arguments__
-
-```javascript
-path.streamId {String} The stream id this new alert condition belongs to
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __streamId__: {String} The stream id this new alert condition belongs to
+  * _callback_: {Function} Callback function
 
 ## Counts: Message counts
 
@@ -659,6 +659,9 @@ path.streamId {String} The stream id this new alert condition belongs to
 
 Total number of messages in all your indices
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 ## Dashboards: Manage dashboards
 
 <a name="createDashboard">
@@ -666,137 +669,140 @@ Total number of messages in all your indices
 
 Create a dashboard
 
-__Arguments__
-
-```javascript
-parameters.[JSON body] {CreateDashboardRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {CreateDashboardRequest}
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="getDashboards">
 ### getDashboards([callback])
 
 Get a list of all dashboards and all configurations of their widgets
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="getDashboard">
 ### getDashboard(parameters[, path][, callback])
 
 Get a single dashboards and all configurations of its widgets
 
-__Arguments__
-
-```javascript
-path.dashboardId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __dashboardId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="updateDashboard">
 ### updateDashboard(parameters[, path][, callback])
 
 Update the settings of a dashboard
 
-__Arguments__
-
-```javascript
-path.dashboardId {String}  
-parameters.[JSON body] {UpdateDashboardRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {UpdateDashboardRequest}
+  * __path__: {Object}
+    * __dashboardId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="removeDashboard">
 ### removeDashboard(parameters[, path][, callback])
 
 Delete a dashboard and all its widgets
 
-__Arguments__
-
-```javascript
-path.dashboardId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __dashboardId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="updateDashboardPositions">
 ### updateDashboardPositions(parameters[, path][, callback])
 
 Update/set the positions of dashboard widgets
 
-__Arguments__
-
-```javascript
-path.dashboardId {String}  
-parameters.[JSON body] {WidgetPositionsRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {WidgetPositionsRequest}
+  * __path__: {Object}
+    * __dashboardId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="createDashboardWidget">
 ### createDashboardWidget(parameters[, path][, callback])
 
 Add a widget to a dashboard
 
-__Arguments__
-
-```javascript
-path.dashboardId {String}  
-parameters.[JSON body] {AddWidgetRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {AddWidgetRequest}
+  * __path__: {Object}
+    * __dashboardId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="updateDashboardWidget">
 ### updateDashboardWidget(parameters[, path][, callback])
 
 Update a widget
 
-__Arguments__
-
-```javascript
-path.dashboardId {String}  
-path.widgetId {String}  
-parameters.[JSON body] {AddWidgetRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {AddWidgetRequest}
+  * __path__: {Object}
+    * __dashboardId__: {String}
+    * __widgetId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="removeDashboardWidget">
 ### removeDashboardWidget(parameters[, path][, callback])
 
 Delete a widget
 
-__Arguments__
-
-```javascript
-path.dashboardId {String}  
-path.widgetId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __dashboardId__: {String}
+    * __widgetId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="updateDashboardWidgetCacheTime">
 ### updateDashboardWidgetCacheTime(parameters[, path][, callback])
 
 Update cache time of a widget
 
-__Arguments__
-
-```javascript
-path.dashboardId {String}  
-path.widgetId {String}  
-parameters.[JSON body] {UpdateWidgetRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {UpdateWidgetRequest}
+  * __path__: {Object}
+    * __dashboardId__: {String}
+    * __widgetId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="updateDashboardWidgetDescription">
 ### updateDashboardWidgetDescription(parameters[, path][, callback])
 
 Update description of a widget
 
-__Arguments__
-
-```javascript
-path.dashboardId {String}  
-path.widgetId {String}  
-parameters.[JSON body] {UpdateWidgetRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {UpdateWidgetRequest}
+  * __path__: {Object}
+    * __dashboardId__: {String}
+    * __widgetId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="getDashboardWidgetValue">
 ### getDashboardWidgetValue(parameters[, path][, callback])
 
 Get a single widget value
 
-__Arguments__
-
-```javascript
-path.dashboardId {String}  
-path.widgetId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __dashboardId__: {String}
+    * __widgetId__: {String}
+  * _callback_: {Function} Callback function
 
 ## Extractors: Extractors of an input
 
@@ -805,72 +811,72 @@ path.widgetId {String}
 
 Add an extractor to an input
 
-__Arguments__
-
-```javascript
-path.inputId {String}  
-parameters.[JSON body] {CreateExtractorRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {CreateExtractorRequest}
+  * __path__: {Object}
+    * __inputId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="getInputExtractors">
 ### getInputExtractors(parameters[, path][, callback])
 
 List all extractors of an input
 
-__Arguments__
-
-```javascript
-path.inputId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __inputId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="updateInputExtractorOrder">
 ### updateInputExtractorOrder(parameters[, path][, callback])
 
 Update extractor order of an input
 
-__Arguments__
-
-```javascript
-path.inputId {String} Persist ID (!) of input
-parameters.[JSON body] {OrderExtractorsRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {OrderExtractorsRequest}
+  * __path__: {Object}
+    * __inputId__: {String} Persist ID (!) of input
+  * _callback_: {Function} Callback function
 
 <a name="updateInputExtractor">
 ### updateInputExtractor(parameters[, path][, callback])
 
 Update an extractor
 
-__Arguments__
-
-```javascript
-path.inputId {String}  
-path.extractorId {String}  
-parameters.[JSON body] {CreateExtractorRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {CreateExtractorRequest}
+  * __path__: {Object}
+    * __inputId__: {String}
+    * __extractorId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="removeInputExtractor">
 ### removeInputExtractor(parameters[, path][, callback])
 
 Delete an extractor
 
-__Arguments__
-
-```javascript
-path.inputId {String}  
-path.extractorId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __inputId__: {String}
+    * __extractorId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="getInputExtractor">
 ### getInputExtractor(parameters[, path][, callback])
 
 Get information of a single extractor of an input
 
-__Arguments__
-
-```javascript
-path.inputId {String}  
-path.extractorId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __inputId__: {String}
+    * __extractorId__: {String}
+  * _callback_: {Function} Callback function
 
 ## Filters: Message blacklist filters
 
@@ -881,27 +887,30 @@ Create a blacklist filter
 
 It can take up to a second until the change is applied
 
-__Arguments__
-
-```javascript
-parameters.filterEntry {FilterDescription}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __filterEntry__: {FilterDescription}
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="getBlacklistFilters">
 ### getBlacklistFilters([callback])
 
 Get all blacklist filters
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="getBlacklistFilter">
 ### getBlacklistFilter(parameters[, path][, callback])
 
 Get the existing blacklist filter
 
-__Arguments__
-
-```javascript
-path.filterId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __filterId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="updateBlacklistFilter">
 ### updateBlacklistFilter(parameters[, path][, callback])
@@ -910,12 +919,12 @@ Update an existing blacklist filter
 
 It can take up to a second until the change is applied
 
-__Arguments__
-
-```javascript
-path.filterId {String}  
-parameters.filterEntry {FilterDescription}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __filterEntry__: {FilterDescription}
+  * __path__: {Object}
+    * __filterId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="removeBlacklistFilter">
 ### removeBlacklistFilter(parameters[, path][, callback])
@@ -924,11 +933,11 @@ Remove the existing blacklist filter
 
 It can take up to a second until the change is applied
 
-__Arguments__
-
-```javascript
-path.filterId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __filterId__: {String}
+  * _callback_: {Function} Callback function
 
 ## Indexer/Cluster: Indexer cluster information
 
@@ -937,10 +946,16 @@ path.filterId {String}
 
 Get cluster and shard health overview
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="getClusterName">
 ### getClusterName([callback])
 
 Get the cluster name
+
+__Arguments__:
+  * _callback_: {Function} Callback function
 
 ## Indexer/Failures: Indexer failures
 
@@ -949,23 +964,23 @@ Get the cluster name
 
 Get a list of failed index operations
 
-__Arguments__
-
-```javascript
-parameters.limit {Integer} Limit
-parameters.offset {Integer} Offset
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __limit__: {Integer} Limit
+    * __offset__: {Integer} Offset
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="getFailuresCount">
 ### getFailuresCount(parameters[, path][, callback])
 
 Total count of failed index operations since the given date
 
-__Arguments__
-
-```javascript
-parameters.since {String} ISO8601 date
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __since__: {String} ISO8601 date
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 ## Indexer/Indices: Index information
 
@@ -974,54 +989,60 @@ parameters.since {String} ISO8601 date
 
 Get a list of closed indices that can be reopened
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="getIndicesReopened">
 ### getIndicesReopened([callback])
 
 Get a list of reopened indices, which will not be cleaned by retention cleaning
+
+__Arguments__:
+  * _callback_: {Function} Callback function
 
 <a name="removeIndex">
 ### removeIndex(parameters[, path][, callback])
 
 Delete an index. This will also trigger an index ranges rebuild job
 
-__Arguments__
-
-```javascript
-path.index {String} Optional.  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * _index_: {String} Optional.
+  * _callback_: {Function} Callback function
 
 <a name="getIndices">
 ### getIndices(parameters[, path][, callback])
 
 Get information of an index and its shards
 
-__Arguments__
-
-```javascript
-path.index {String} Optional.  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * _index_: {String} Optional.
+  * _callback_: {Function} Callback function
 
 <a name="closeIndex">
 ### closeIndex(parameters[, path][, callback])
 
 Close an index. This will also trigger an index ranges rebuild job
 
-__Arguments__
-
-```javascript
-path.index {String} Optional.  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * _index_: {String} Optional.
+  * _callback_: {Function} Callback function
 
 <a name="reopenIndex">
 ### reopenIndex(parameters[, path][, callback])
 
 Reopen a closed index. This will also trigger an index ranges rebuild job
 
-__Arguments__
-
-```javascript
-path.index {String} Optional.  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * _index_: {String} Optional.
+  * _callback_: {Function} Callback function
 
 ## Messages: Single messages
 
@@ -1032,24 +1053,24 @@ Analyze a message string
 
 Returns what tokens/terms a message string (message or full_message) is split to
 
-__Arguments__
-
-```javascript
-path.index {String} The index the message containing the string is stored in
-parameters.string {String} The string to analyze
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __string__: {String} The string to analyze
+  * __path__: {Object}
+    * __index__: {String} The index the message containing the string is stored in
+  * _callback_: {Function} Callback function
 
 <a name="getMessage">
 ### getMessage(parameters[, path][, callback])
 
 Get a single message
 
-__Arguments__
-
-```javascript
-path.index {String} The index this message is stored in
-path.messageId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __index__: {String} The index this message is stored in
+    * __messageId__: {String}
+  * _callback_: {Function} Callback function
 
 ## Search/Absolute: Message search
 
@@ -1060,48 +1081,48 @@ Message search with absolute timerange
 
 Search for messages using an absolute timerange, specified as from/to with format yyyy-MM-ddTHH:mm:ss.SSSZ (e.g. 2014-01-23T15:34:49.000Z) or yyyy-MM-dd HH:mm:ss
 
-__Arguments__
-
-```javascript
-parameters.query {String} Query (Lucene syntax)
-parameters.from {String} Timerange start. See description for date format
-parameters.to {String} Timerange end. See description for date format
-parameters.limit {Integer} Optional. Maximum number of messages to return
-parameters.offset {Integer} Optional. Offset
-parameters.filter {String} Optional. Filter
-parameters.fields {String} Comma separated list of fields to return
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __query__: {String} Query (Lucene syntax)
+    * __from__: {String} Timerange start. See description for date format
+    * __to__: {String} Timerange end. See description for date format
+    * _limit_: {Integer} Optional. Maximum number of messages to return
+    * _offset_: {Integer} Optional. Offset
+    * _filter_: {String} Optional. Filter
+    * __fields__: {String} Comma separated list of fields to return
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="searchAbsoluteFieldHistogram">
 ### searchAbsoluteFieldHistogram(parameters[, path][, callback])
 
 Field value histogram of a query using an absolute timerange
 
-__Arguments__
-
-```javascript
-parameters.query {String} Query (Lucene syntax)
-parameters.field {String} Field of whose values to get the histogram of
-parameters.interval {String} Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)
-parameters.from {String} Timerange start. See search method description for date format
-parameters.to {String} Timerange end. See search method description for date format
-parameters.filter {String} Optional. Filter
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __query__: {String} Query (Lucene syntax)
+    * __field__: {String} Field of whose values to get the histogram of
+    * __interval__: {String} Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)
+    * __from__: {String} Timerange start. See search method description for date format
+    * __to__: {String} Timerange end. See search method description for date format
+    * _filter_: {String} Optional. Filter
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="searchAbsoluteHistogram">
 ### searchAbsoluteHistogram(parameters[, path][, callback])
 
 Datetime histogram of a query using an absolute timerange
 
-__Arguments__
-
-```javascript
-parameters.query {String} Query (Lucene syntax)
-parameters.interval {String} Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)
-parameters.from {String} Timerange start. See search method description for date format
-parameters.to {String} Timerange end. See search method description for date format
-parameters.filter {String} Optional. Filter
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __query__: {String} Query (Lucene syntax)
+    * __interval__: {String} Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)
+    * __from__: {String} Timerange start. See search method description for date format
+    * __to__: {String} Timerange end. See search method description for date format
+    * _filter_: {String} Optional. Filter
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="searchAbsoluteStats">
 ### searchAbsoluteStats(parameters[, path][, callback])
@@ -1110,49 +1131,49 @@ Field statistics for a query using an absolute timerange
 
 Returns statistics like min/max or standard deviation of numeric fields over the whole query result set
 
-__Arguments__
-
-```javascript
-parameters.field {String} Message field of numeric type to return statistics for
-parameters.query {String} Query (Lucene syntax)
-parameters.from {String} Timerange start. See search method description for date format
-parameters.to {String} Timerange end. See search method description for date format
-parameters.filter {String} Optional. Filter
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __field__: {String} Message field of numeric type to return statistics for
+    * __query__: {String} Query (Lucene syntax)
+    * __from__: {String} Timerange start. See search method description for date format
+    * __to__: {String} Timerange end. See search method description for date format
+    * _filter_: {String} Optional. Filter
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="searchAbsoluteTerms">
 ### searchAbsoluteTerms(parameters[, path][, callback])
 
 Most common field terms of a query using an absolute timerange
 
-__Arguments__
-
-```javascript
-parameters.field {String} Message field of to return terms of
-parameters.query {String} Query (Lucene syntax)
-parameters.size {Integer} Optional. Maximum number of terms to return
-parameters.from {String} Timerange start. See search method description for date format
-parameters.to {String} Timerange end. See search method description for date format
-parameters.filter {String} Optional. Filter
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __field__: {String} Message field of to return terms of
+    * __query__: {String} Query (Lucene syntax)
+    * _size_: {Integer} Optional. Maximum number of terms to return
+    * __from__: {String} Timerange start. See search method description for date format
+    * __to__: {String} Timerange end. See search method description for date format
+    * _filter_: {String} Optional. Filter
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="searchAbsoluteTermsStats">
 ### searchAbsoluteTermsStats(parameters[, path][, callback])
 
 Ordered field terms of a query computed on another field using an absolute timerange
 
-__Arguments__
-
-```javascript
-parameters.key_field {String} Message field of to return terms of
-parameters.value_field {String} Value field used for computation
-parameters.order {String} What to order on (Allowed values: TERM, REVERSE_TERM, COUNT, REVERSE_COUNT, TOTAL, REVERSE_TOTAL, MIN, REVERSE_MIN, MAX, REVERSE_MAX, MEAN, REVERSE_MEAN)
-parameters.query {String} Query (Lucene syntax)
-parameters.size {Integer} Optional. Maximum number of terms to return
-parameters.from {String} Timerange start. See search method description for date format
-parameters.to {String} Timerange end. See search method description for date format
-parameters.filter {String} Optional. Filter
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __key_field__: {String} Message field of to return terms of
+    * __value_field__: {String} Value field used for computation
+    * __order__: {String} What to order on (Allowed values: TERM, REVERSE_TERM, COUNT, REVERSE_COUNT, TOTAL, REVERSE_TOTAL, MIN, REVERSE_MIN, MAX, REVERSE_MAX, MEAN, REVERSE_MEAN)
+    * __query__: {String} Query (Lucene syntax)
+    * _size_: {Integer} Optional. Maximum number of terms to return
+    * __from__: {String} Timerange start. See search method description for date format
+    * __to__: {String} Timerange end. See search method description for date format
+    * _filter_: {String} Optional. Filter
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 ## Search/Keyword: Message search
 
@@ -1163,46 +1184,46 @@ Message search with keyword as timerange
 
 Search for messages in a timerange defined by a keyword like "yesterday" or "2 weeks ago to wednesday"
 
-__Arguments__
-
-```javascript
-parameters.query {String} Query (Lucene syntax)
-parameters.keyword {String} Range keyword
-parameters.limit {Integer} Optional. Maximum number of messages to return
-parameters.offset {Integer} Optional. Offset
-parameters.filter {String} Optional. Filter
-parameters.fields {String} Optional. Comma separated list of fields to return
-parameters.sort {String} Optional. Sorting (field:asc / field:desc)
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __query__: {String} Query (Lucene syntax)
+    * __keyword__: {String} Range keyword
+    * _limit_: {Integer} Optional. Maximum number of messages to return
+    * _offset_: {Integer} Optional. Offset
+    * _filter_: {String} Optional. Filter
+    * _fields_: {String} Optional. Comma separated list of fields to return
+    * _sort_: {String} Optional. Sorting (field:asc / field:desc)
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="searchKeywordFieldHistogram">
 ### searchKeywordFieldHistogram(parameters[, path][, callback])
 
 Datetime histogram of a query using keyword timerange
 
-__Arguments__
-
-```javascript
-parameters.query {String} Query (Lucene syntax)
-parameters.field {String} Field of whose values to get the histogram of
-parameters.interval {String} Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)
-parameters.keyword {String} Range keyword
-parameters.filter {String} Optional. Filter
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __query__: {String} Query (Lucene syntax)
+    * __field__: {String} Field of whose values to get the histogram of
+    * __interval__: {String} Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)
+    * __keyword__: {String} Range keyword
+    * _filter_: {String} Optional. Filter
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="searchKeywordHistogram">
 ### searchKeywordHistogram(parameters[, path][, callback])
 
 Datetime histogram of a query using keyword timerange
 
-__Arguments__
-
-```javascript
-parameters.query {String} Query (Lucene syntax)
-parameters.interval {String} Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)
-parameters.keyword {String} Range keyword
-parameters.filter {String} Optional. Filter
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __query__: {String} Query (Lucene syntax)
+    * __interval__: {String} Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)
+    * __keyword__: {String} Range keyword
+    * _filter_: {String} Optional. Filter
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="searchKeywordStats">
 ### searchKeywordStats(parameters[, path][, callback])
@@ -1211,46 +1232,46 @@ Field statistics for a query using a keyword timerange
 
 Returns statistics like min/max or standard deviation of numeric fields over the whole query result set
 
-__Arguments__
-
-```javascript
-parameters.field {String} Message field of numeric type to return statistics for
-parameters.query {String} Query (Lucene syntax)
-parameters.keyword {String} Range keyword
-parameters.filter {String} Optional. Filter
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __field__: {String} Message field of numeric type to return statistics for
+    * __query__: {String} Query (Lucene syntax)
+    * __keyword__: {String} Range keyword
+    * _filter_: {String} Optional. Filter
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="searchKeywordTerms">
 ### searchKeywordTerms(parameters[, path][, callback])
 
 Most common field terms of a query using a keyword timerange
 
-__Arguments__
-
-```javascript
-parameters.field {String} Message field of to return terms of
-parameters.query {String} Query (Lucene syntax)
-parameters.size {Integer} Optional. Maximum number of terms to return
-parameters.keyword {String} Range keyword
-parameters.filter {String} Optional. Filter
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __field__: {String} Message field of to return terms of
+    * __query__: {String} Query (Lucene syntax)
+    * _size_: {Integer} Optional. Maximum number of terms to return
+    * __keyword__: {String} Range keyword
+    * _filter_: {String} Optional. Filter
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="searchKeywordTermsStats">
 ### searchKeywordTermsStats(parameters[, path][, callback])
 
 Ordered field terms of a query computed on another field using a keyword timerange
 
-__Arguments__
-
-```javascript
-parameters.key_field {String} Message field of to return terms of
-parameters.value_field {String} Value field used for computation
-parameters.order {String} What to order on (Allowed values: TERM, REVERSE_TERM, COUNT, REVERSE_COUNT, TOTAL, REVERSE_TOTAL, MIN, REVERSE_MIN, MAX, REVERSE_MAX, MEAN, REVERSE_MEAN)
-parameters.query {String} Query (Lucene syntax)
-parameters.size {Integer} Optional. Maximum number of terms to return
-parameters.keyword {String} Keyword timeframe
-parameters.filter {String} Optional. Filter
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __key_field__: {String} Message field of to return terms of
+    * __value_field__: {String} Value field used for computation
+    * __order__: {String} What to order on (Allowed values: TERM, REVERSE_TERM, COUNT, REVERSE_COUNT, TOTAL, REVERSE_TOTAL, MIN, REVERSE_MIN, MAX, REVERSE_MAX, MEAN, REVERSE_MEAN)
+    * __query__: {String} Query (Lucene syntax)
+    * _size_: {Integer} Optional. Maximum number of terms to return
+    * __keyword__: {String} Keyword timeframe
+    * _filter_: {String} Optional. Filter
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 ## Search/Relative: Message search
 
@@ -1261,45 +1282,45 @@ Message search with relative timerange
 
 Search for messages in a relative timerange, specified as seconds from now. Example: 300 means search from 5 minutes ago to now
 
-__Arguments__
-
-```javascript
-parameters.query {String} Query (Lucene syntax)
-parameters.range {Integer} Relative timeframe to search in. See method description
-parameters.limit {Integer} Optional. Maximum number of messages to return
-parameters.offset {Integer} Optional. Offset
-parameters.filter {String} Optional. Filter
-parameters.fields {String} Comma separated list of fields to return
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __query__: {String} Query (Lucene syntax)
+    * __range__: {Integer} Relative timeframe to search in. See method description
+    * _limit_: {Integer} Optional. Maximum number of messages to return
+    * _offset_: {Integer} Optional. Offset
+    * _filter_: {String} Optional. Filter
+    * __fields__: {String} Comma separated list of fields to return
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="searchRelativeFieldHistogram">
 ### searchRelativeFieldHistogram(parameters[, path][, callback])
 
 Field value histogram of a query using a relative timerange
 
-__Arguments__
-
-```javascript
-parameters.query {String} Query (Lucene syntax)
-parameters.field {String} Field of whose values to get the histogram of
-parameters.interval {String} Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)
-parameters.range {Integer} Relative timeframe to search in. See search method description
-parameters.filter {String} Optional. Filter
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __query__: {String} Query (Lucene syntax)
+    * __field__: {String} Field of whose values to get the histogram of
+    * __interval__: {String} Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)
+    * __range__: {Integer} Relative timeframe to search in. See search method description
+    * _filter_: {String} Optional. Filter
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="searchRelativeHistogram">
 ### searchRelativeHistogram(parameters[, path][, callback])
 
 Datetime histogram of a query using a relative timerange
 
-__Arguments__
-
-```javascript
-parameters.query {String} Query (Lucene syntax)
-parameters.interval {String} Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)
-parameters.range {Integer} Relative timeframe to search in. See search method description
-parameters.filter {String} Optional. Filter
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __query__: {String} Query (Lucene syntax)
+    * __interval__: {String} Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)
+    * __range__: {Integer} Relative timeframe to search in. See search method description
+    * _filter_: {String} Optional. Filter
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="searchRelativeStats">
 ### searchRelativeStats(parameters[, path][, callback])
@@ -1308,46 +1329,46 @@ Field statistics for a query using a relative timerange
 
 Returns statistics like min/max or standard deviation of numeric fields over the whole query result set
 
-__Arguments__
-
-```javascript
-parameters.field {String} Message field of numeric type to return statistics for
-parameters.query {String} Query (Lucene syntax)
-parameters.range {Integer} Relative timeframe to search in. See search method description
-parameters.filter {String} Optional. Filter
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __field__: {String} Message field of numeric type to return statistics for
+    * __query__: {String} Query (Lucene syntax)
+    * __range__: {Integer} Relative timeframe to search in. See search method description
+    * _filter_: {String} Optional. Filter
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="searchRelativeTerms">
 ### searchRelativeTerms(parameters[, path][, callback])
 
 Most common field terms of a query using a relative timerange
 
-__Arguments__
-
-```javascript
-parameters.field {String} Message field of to return terms of
-parameters.query {String} Query (Lucene syntax)
-parameters.size {Integer} Optional. Maximum number of terms to return
-parameters.range {Integer} Relative timeframe to search in. See search method description
-parameters.filter {String} Optional. Filter
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __field__: {String} Message field of to return terms of
+    * __query__: {String} Query (Lucene syntax)
+    * _size_: {Integer} Optional. Maximum number of terms to return
+    * __range__: {Integer} Relative timeframe to search in. See search method description
+    * _filter_: {String} Optional. Filter
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="searchRelativeTermsStats">
 ### searchRelativeTermsStats(parameters[, path][, callback])
 
 Ordered field terms of a query computed on another field using a relative timerange
 
-__Arguments__
-
-```javascript
-parameters.key_field {String} Message field of to return terms of
-parameters.value_field {String} Value field used for computation
-parameters.order {String} What to order on (Allowed values: TERM, REVERSE_TERM, COUNT, REVERSE_COUNT, TOTAL, REVERSE_TOTAL, MIN, REVERSE_MIN, MAX, REVERSE_MAX, MEAN, REVERSE_MEAN)
-parameters.query {String} Query (Lucene syntax)
-parameters.size {Integer} Optional. Maximum number of terms to return
-parameters.range {Integer} Relative timeframe to search in. See search method description
-parameters.filter {String} Optional. Filter
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __key_field__: {String} Message field of to return terms of
+    * __value_field__: {String} Value field used for computation
+    * __order__: {String} What to order on (Allowed values: TERM, REVERSE_TERM, COUNT, REVERSE_COUNT, TOTAL, REVERSE_TOTAL, MIN, REVERSE_MIN, MAX, REVERSE_MAX, MEAN, REVERSE_MEAN)
+    * __query__: {String} Query (Lucene syntax)
+    * _size_: {Integer} Optional. Maximum number of terms to return
+    * __range__: {Integer} Relative timeframe to search in. See search method description
+    * _filter_: {String} Optional. Filter
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 ## Search/Saved: Saved searches
 
@@ -1356,50 +1377,53 @@ parameters.filter {String} Optional. Filter
 
 Create a new saved search
 
-__Arguments__
-
-```javascript
-parameters.[JSON body] {CreateSavedSearchRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {CreateSavedSearchRequest}
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="getSearchSavedAll">
 ### getSearchSavedAll([callback])
 
 Get a list of all saved searches
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="getSearchSaved">
 ### getSearchSaved(parameters[, path][, callback])
 
 Get a single saved search
 
-__Arguments__
-
-```javascript
-path.searchId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __searchId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="updateSearchSaved">
 ### updateSearchSaved(parameters[, path][, callback])
 
 Update a saved search
 
-__Arguments__
-
-```javascript
-path.searchId {String}  
-parameters.[JSON body] {CreateSavedSearchRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {CreateSavedSearchRequest}
+  * __path__: {Object}
+    * __searchId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="removeSearchSaved">
 ### removeSearchSaved(parameters[, path][, callback])
 
 Delete a saved search
 
-__Arguments__
-
-```javascript
-path.searchId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __searchId__: {String}
+  * _callback_: {Function} Callback function
 
 ## Sources: Listing message sources (e.g. hosts sending logs)
 
@@ -1410,11 +1434,11 @@ Get a list of all sources (not more than 5000) that have messages in the current
 
 Range: The parameter is in seconds relative to the current time. 86400 means "in the last day", 0 is special and means "across all indices"
 
-__Arguments__
-
-```javascript
-parameters.range {Integer} Relative timeframe to search in. See method description
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __range__: {Integer} Relative timeframe to search in. See method description
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 ## StaticFields: Static fields of an input
 
@@ -1423,24 +1447,24 @@ parameters.range {Integer} Relative timeframe to search in. See method descripti
 
 Add a static field to an input
 
-__Arguments__
-
-```javascript
-path.inputId {String}  
-parameters.[JSON body] {CreateStaticFieldRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {CreateStaticFieldRequest}
+  * __path__: {Object}
+    * __inputId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="removeInputStaticField">
 ### removeInputStaticField(parameters[, path][, callback])
 
 Remove static field of an input
 
-__Arguments__
-
-```javascript
-path.Key {String}  
-path.inputId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __Key__: {String}
+    * __inputId__: {String}
+  * _callback_: {Function} Callback function
 
 ## StreamOutputs: Manage stream outputs for a given stream
 
@@ -1449,46 +1473,46 @@ path.inputId {String}
 
 Associate outputs with a stream
 
-__Arguments__
-
-```javascript
-path.streamid {String} The id of the stream whose outputs we want
-parameters.[JSON body] {AddOutputRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {AddOutputRequest}
+  * __path__: {Object}
+    * __streamid__: {String} The id of the stream whose outputs we want
+  * _callback_: {Function} Callback function
 
 <a name="getStreamOutputs">
 ### getStreamOutputs(parameters[, path][, callback])
 
 Associate outputs with a stream
 
-__Arguments__
-
-```javascript
-path.streamid {String} The id of the stream whose outputs we want
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __streamid__: {String} The id of the stream whose outputs we want
+  * _callback_: {Function} Callback function
 
 <a name="getStreamOutput">
 ### getStreamOutput(parameters[, path][, callback])
 
 Get specific output of a stream
 
-__Arguments__
-
-```javascript
-path.streamid {String} The id of the stream whose outputs we want
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __streamid__: {String} The id of the stream whose outputs we want
+  * _callback_: {Function} Callback function
 
 <a name="removeStreamOutput">
 ### removeStreamOutput(parameters[, path][, callback])
 
 Delete output of a stream
 
-__Arguments__
-
-```javascript
-path.streamid {String} The id of the stream whose outputs we want
-path.outputId {String} The id of the output that should be deleted
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __streamid__: {String} The id of the stream whose outputs we want
+    * __outputId__: {String} The id of the output that should be deleted
+  * _callback_: {Function} Callback function
 
 ## StreamRules: Manage stream rules
 
@@ -1497,60 +1521,60 @@ path.outputId {String} The id of the output that should be deleted
 
 Get a list of all stream rules
 
-__Arguments__
-
-```javascript
-path.streamid {String} The id of the stream whose stream rule we want
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __streamid__: {String} The id of the stream whose stream rule we want
+  * _callback_: {Function} Callback function
 
 <a name="getStreamRule">
 ### getStreamRule(parameters[, path][, callback])
 
 Get a single stream rules
 
-__Arguments__
-
-```javascript
-path.streamid {String} The id of the stream whose stream rule we want
-path.streamRuleId {String} The stream rule id we are getting
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __streamid__: {String} The id of the stream whose stream rule we want
+    * __streamRuleId__: {String} The stream rule id we are getting
+  * _callback_: {Function} Callback function
 
 <a name="createStreamRule">
 ### createStreamRule(parameters[, path][, callback])
 
 Create a stream rule
 
-__Arguments__
-
-```javascript
-path.streamid {String} The stream id this new rule belongs to
-parameters.[JSON body] {CreateStreamRuleRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {CreateStreamRuleRequest}
+  * __path__: {Object}
+    * __streamid__: {String} The stream id this new rule belongs to
+  * _callback_: {Function} Callback function
 
 <a name="updateStreamRule">
 ### updateStreamRule(parameters[, path][, callback])
 
 Update a stream rule
 
-__Arguments__
-
-```javascript
-path.streamid {String} The stream id this rule belongs to
-path.streamRuleId {String} The stream rule id we are updating
-parameters.[JSON body] {CreateStreamRuleRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {CreateStreamRuleRequest}
+  * __path__: {Object}
+    * __streamid__: {String} The stream id this rule belongs to
+    * __streamRuleId__: {String} The stream rule id we are updating
+  * _callback_: {Function} Callback function
 
 <a name="removeStreamRule">
 ### removeStreamRule(parameters[, path][, callback])
 
 Delete a stream rule
 
-__Arguments__
-
-```javascript
-path.streamid {String} The stream id this new rule belongs to
-path.streamRuleId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __streamid__: {String} The stream id this new rule belongs to
+    * __streamRuleId__: {String}
+  * _callback_: {Function} Callback function
 
 ## Streams: Manage streams
 
@@ -1559,117 +1583,126 @@ path.streamRuleId {String}
 
 Get a list of all streams
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="createStream">
 ### createStream(parameters[, path][, callback])
 
 Create a stream
 
-__Arguments__
-
-```javascript
-parameters.[JSON body] {CreateStreamRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {CreateStreamRequest}
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="getStreamsEnabled">
 ### getStreamsEnabled([callback])
 
 Get a list of all enabled streams
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="getStreamThroughput">
 ### getStreamThroughput(parameters[, path][, callback])
 
 Current throughput of this stream on this node in messages per second
 
-__Arguments__
-
-```javascript
-path.streamId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __streamId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="getStreamAllThroughput">
 ### getStreamAllThroughput([callback])
 
 Current throughput of all visible streams on this node in messages per second
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="getStream">
 ### getStream(parameters[, path][, callback])
 
 Get a single stream
 
-__Arguments__
-
-```javascript
-path.streamId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __streamId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="updateStream">
 ### updateStream(parameters[, path][, callback])
 
 Update a stream
 
-__Arguments__
-
-```javascript
-path.streamId {String}  
-parameters.[JSON body] {UpdateStreamRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {UpdateStreamRequest}
+  * __path__: {Object}
+    * __streamId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="removeStream">
 ### removeStream(parameters[, path][, callback])
 
 Delete a stream
 
-__Arguments__
-
-```javascript
-path.streamId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __streamId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="cloneStream">
 ### cloneStream(parameters[, path][, callback])
 
 Clone a stream
 
-__Arguments__
-
-```javascript
-path.streamId {String}  
-parameters.[JSON body] {CloneStreamRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {CloneStreamRequest}
+  * __path__: {Object}
+    * __streamId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="pauseStream">
 ### pauseStream(parameters[, path][, callback])
 
 Pause a stream
 
-__Arguments__
-
-```javascript
-path.streamId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __streamId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="resumeStream">
 ### resumeStream(parameters[, path][, callback])
 
 Resume a stream
 
-__Arguments__
-
-```javascript
-path.streamId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __streamId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="testMatchStream">
 ### testMatchStream(parameters[, path][, callback])
 
 Test matching of a stream against a supplied message
 
-__Arguments__
-
-```javascript
-path.streamId {String}  
-parameters.[JSON body] {Map}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {Map}
+  * __path__: {Object}
+    * __streamId__: {String}
+  * _callback_: {Function} Callback function
 
 ## System: System information of this node
 
@@ -1678,15 +1711,24 @@ parameters.[JSON body] {Map}
 
 Get system overview
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="getJVM">
 ### getJVM([callback])
 
 Get JVM information
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="getThreadDump">
 ### getThreadDump([callback])
 
 Get a thread dump
+
+__Arguments__:
+  * _callback_: {Function} Callback function
 
 ## System/Buffers: Buffer information of this node.
 
@@ -1695,10 +1737,16 @@ Get a thread dump
 
 Get current utilization of buffers and caches of this node
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="getBuffersClasses">
 ### getBuffersClasses([callback])
 
 Get classnames of current buffer implementations
+
+__Arguments__:
+  * _callback_: {Function} Callback function
 
 ## System/Bundles: Content packs
 
@@ -1707,72 +1755,75 @@ Get classnames of current buffer implementations
 
 Upload a content pack
 
-__Arguments__
-
-```javascript
-parameters.Request body {ConfigurationBundle} Content pack
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __Request__ body {ConfigurationBundle} Content pack
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="getBundles">
 ### getBundles([callback])
 
 List available content packs
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="exportBundles">
 ### exportBundles(parameters[, path][, callback])
 
 Export entities as a content pack
 
-__Arguments__
-
-```javascript
-parameters.exportBundle {ExportBundle} Export content pack
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __exportBundle__: {ExportBundle} Export content pack
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="getBundle">
 ### getBundle(parameters[, path][, callback])
 
 Show content pack
 
-__Arguments__
-
-```javascript
-path.bundleId {String} Content pack ID
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __bundleId__: {String} Content pack ID
+  * _callback_: {Function} Callback function
 
 <a name="updateBundle">
 ### updateBundle(parameters[, path][, callback])
 
 Update content pack
 
-__Arguments__
-
-```javascript
-path.bundleId {String} Content pack ID
-parameters.Request body {ConfigurationBundle} Content pack
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __Request__ body {ConfigurationBundle} Content pack
+  * __path__: {Object}
+    * __bundleId__: {String} Content pack ID
+  * _callback_: {Function} Callback function
 
 <a name="removeBundle">
 ### removeBundle(parameters[, path][, callback])
 
 Delete content pack
 
-__Arguments__
-
-```javascript
-path.bundleId {String} Content pack ID
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __bundleId__: {String} Content pack ID
+  * _callback_: {Function} Callback function
 
 <a name="applyBundle">
 ### applyBundle(parameters[, path][, callback])
 
 Set up entities described by content pack
 
-__Arguments__
-
-```javascript
-path.bundleId {String} Content pack ID
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __bundleId__: {String} Content pack ID
+  * _callback_: {Function} Callback function
 
 ## System/Cluster: Node discovery
 
@@ -1788,11 +1839,11 @@ This  de itself to get system information
 
 List all active nodes in this cluster
 
-__Arguments__
-
-```javascript
-path.nodeId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __nodeId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="getNode">
 ### getNode(parameters[, path][, callback])
@@ -1801,11 +1852,11 @@ Information about a node
 
 This is returning information of a node in context to its state in the cluster. Use the system API of the node itself to get system information
 
-__Arguments__
-
-```javascript
-path.nodeId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __nodeId__: {String}
+  * _callback_: {Function} Callback function
 
 ## System/ClusterStats: Cluster stats
 
@@ -1838,16 +1889,19 @@ This aut MongoDB
 
 Lists all existing collector registrations
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="getSystemCollector">
 ### getSystemCollector(parameters[, path][, callback])
 
 Returns at most one collector summary for the specified collector id
 
-__Arguments__
-
-```javascript
-path.collectorId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __collectorId__: {String}
+  * _callback_: {Function} Callback function
 
 ## System/Collectors/Registration: Registration resource for Graylog Collector nodes
 
@@ -1858,12 +1912,12 @@ Create/update an collector registration
 
 This is a stateless method which upserts a collector registration
 
-__Arguments__
-
-```javascript
-path.collectorId {String} The collector id this collector is registering as
-parameters.[JSON body] {CollectorRegistrationRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {CollectorRegistrationRequest}
+  * __path__: {Object}
+    * __collectorId__: {String} The collector id this collector is registering as
+  * _callback_: {Function} Callback function
 
 ## System/Debug/Events: For debugging local and cluster events.
 
@@ -1872,32 +1926,38 @@ parameters.[JSON body] {CollectorRegistrationRequest}
 
 Create and send a cluster debug event
 
-__Arguments__
-
-```javascript
-parameters.text {String} Optional.  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * _text_: {String} Optional.
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="getDebugEventsCluster">
 ### getDebugEventsCluster([callback])
 
 Show last received cluster debug event
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="createDebugEventsLocal">
 ### createDebugEventsLocal(parameters[, path][, callback])
 
 Create and send a local debug event
 
-__Arguments__
-
-```javascript
-parameters.text {String} Optional.  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * _text_: {String} Optional.
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="getDebugEventsLocal">
 ### getDebugEventsLocal([callback])
 
 Show last received local debug event
+
+__Arguments__:
+  * _callback_: {Function} Callback function
 
 ## System/Deflector: Index deflector management
 
@@ -1906,15 +1966,24 @@ Show last received local debug event
 
 Get current deflector status
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="getDeflectorConfig">
 ### getDeflectorConfig([callback])
 
 Get deflector configuration. Only available on master nodes
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="nextDeflectorCycle">
 ### nextDeflectorCycle([callback])
 
 Cycle deflector to new/next index
+
+__Arguments__:
+  * _callback_: {Function} Callback function
 
 ## System/Fields: Get list of message fields that exist.
 
@@ -1925,11 +1994,11 @@ Get list of message fields that exist
 
 This operation is comparably fast because it reads directly from the indexer mapping
 
-__Arguments__
-
-```javascript
-parameters.limit {Integer} Optional. Maximum number of fields to return. Set to 0 for all fields
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * _limit_: {Integer} Optional. Maximum number of fields to return. Set to 0 for all fields
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 ## System/Grok: Manage grok patterns
 
@@ -1938,55 +2007,61 @@ parameters.limit {Integer} Optional. Maximum number of fields to return. Set to 
 
 Get all existing grok patterns
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="getGrok">
 ### getGrok(parameters[, path][, callback])
 
 Get the existing grok pattern
 
-__Arguments__
-
-```javascript
-path.patternId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __patternId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="createGrok">
 ### createGrok(parameters[, path][, callback])
 
 Add a new named pattern
 
-__Arguments__
-
-```javascript
-parameters.pattern {GrokPatternSummary}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __pattern__: {GrokPatternSummary}
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="createGroks">
 ### createGroks(parameters[, path][, callback])
 
 Update an existing pattern
 
-__Arguments__
-
-```javascript
-parameters.patterns {Array}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __patterns__: {Array}
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="updateGrok">
 ### updateGrok(parameters[, path][, callback])
 
 Update an existing pattern
 
-__Arguments__
-
-```javascript
-path.patternId {String}  
-parameters.pattern {GrokPatternSummary}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __pattern__: {GrokPatternSummary}
+  * __path__: {Object}
+    * __patternId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="removeGrok">
 ### removeGrok([callback])
 
 Remove an existing pattern by id
+
+__Arguments__:
+  * _callback_: {Function} Callback function
 
 ## System/IndexRanges: Index timeranges
 
@@ -1994,6 +2069,9 @@ Remove an existing pattern by id
 ### getIndicesRanges([callback])
 
 Get a list of all index ranges
+
+__Arguments__:
+  * _callback_: {Function} Callback function
 
 <a name="rebuildIndicesRanges">
 ### rebuildIndicesRanges(parameters[, path][, callback])
@@ -2009,83 +2087,86 @@ This as in what timeranges. It atomically overwrites already existing meta infor
 
 Launch input on this node
 
-__Arguments__
-
-```javascript
-parameters.[JSON body] {InputLaunchRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {InputLaunchRequest}
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="getInput">
 ### getInput(null, path[, callback])
 
 Get information of a single input on this node
 
-__Arguments__
-
-```javascript
-path.inputId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __inputId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="getInputs">
 ### getInputs([callback])
 
 Get all inputs of this node
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="updateInput">
 ### updateInput(parameters[, path][, callback])
 
 Update input on this node
 
-__Arguments__
-
-```javascript
-parameters.[JSON body] {InputLaunchRequest}  
-path.inputId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {InputLaunchRequest}
+  * __path__: {Object}
+    * __inputId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="removeInput">
 ### removeInput(parameters[, path][, callback])
 
 Terminate input on this node
 
-__Arguments__
-
-```javascript
-path.inputId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __inputId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="launchInput">
 ### launchInput(parameters[, path][, callback])
 
 Launch existing input on this node
 
-__Arguments__
-
-```javascript
-path.inputId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __inputId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="restartInput">
 ### restartInput(parameters[, path][, callback])
 
 Restart existing input on this node
 
-__Arguments__
-
-```javascript
-path.inputId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __inputId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="stopInput">
 ### stopInput(parameters[, path][, callback])
 
 Stop existing input on this node
 
-__Arguments__
-
-```javascript
-path.inputId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __inputId__: {String}
+  * _callback_: {Function} Callback function
 
 ## System/Inputs/Types: Message input types of this node
 
@@ -2094,16 +2175,19 @@ path.inputId {String}
 
 Get information about a single input type
 
-__Arguments__
-
-```javascript
-path.inputType {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __inputType__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="getInputsTypes">
 ### getInputsTypes([callback])
 
 Get all available input types of this node
+
+__Arguments__:
+  * _callback_: {Function} Callback function
 
 ## System/Jobs: System Jobs
 
@@ -2112,27 +2196,30 @@ Get all available input types of this node
 
 Trigger new job
 
-__Arguments__
-
-```javascript
-parameters.[JSON body] {TriggerRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {TriggerRequest}
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="getJobs">
 ### getJobs([callback])
 
 List currently running jobs
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="getJob">
 ### getJob(parameters[, path][, callback])
 
 Get information of a specific currently running job
 
-__Arguments__
-
-```javascript
-path.jobId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __jobId__: {String}
+  * _callback_: {Function} Callback function
 
 ## System/Journal: Message journal information of this node.
 
@@ -2141,6 +2228,9 @@ path.jobId {String}
 
 Get current state of the journal on this node
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 ## System/LDAP: LDAP settings
 
 <a name="getLDAPSettings">
@@ -2148,32 +2238,38 @@ Get current state of the journal on this node
 
 Get the LDAP configuration if it is configured
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="updateLDAPSettings">
 ### updateLDAPSettings(parameters[, path][, callback])
 
 Update the LDAP configuration
 
-__Arguments__
-
-```javascript
-parameters.[JSON body] {LdapSettingsRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {LdapSettingsRequest}
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="removeLDAPSettings">
 ### removeLDAPSettings([callback])
 
 Remove the LDAP configuration
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="testLDAPSettings">
 ### testLDAPSettings(parameters[, path][, callback])
 
 Test LDAP Configuration
 
-__Arguments__
-
-```javascript
-parameters.Configuration to test {LdapTestConfigRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __Configuration__ to test {LdapTestConfigRequest}
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 ## System/LoadBalancers: Status propagation for load balancers
 
@@ -2182,16 +2278,19 @@ parameters.Configuration to test {LdapTestConfigRequest}
 
 Get status of this graylog2-server node for load balancers. Returns either ALIVE with HTTP 200 or DEAD with HTTP 503
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="updateLoadBalancerStatusOverride">
 ### updateLoadBalancerStatusOverride(parameters[, path][, callback])
 
 Override load balancer status of this graylog2-server node. Next lifecycle change will override it again to its default. Set to ALIVE or DEAD
 
-__Arguments__
-
-```javascript
-path.status {String} Optional.  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * _status_: {String} Optional.
+  * _callback_: {Function} Callback function
 
 ## System/Loggers: Internal Graylog loggers
 
@@ -2200,10 +2299,16 @@ path.status {String} Optional.
 
 List all loggers and their current levels
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="getLoggersSubsystems">
 ### getLoggersSubsystems([callback])
 
 List all logger subsystems and their current levels
+
+__Arguments__:
+  * _callback_: {Function} Callback function
 
 <a name="setLoggersSubsystemsLevel">
 ### setLoggersSubsystemsLevel(parameters[, path][, callback])
@@ -2212,12 +2317,12 @@ Set the loglevel of a whole subsystem
 
 Provided level is falling back to DEBUG if it does not exist
 
-__Arguments__
-
-```javascript
-path.subsystem {String}  
-path.level {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __subsystem__: {String}
+    * __level__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="setLoggersLevel">
 ### setLoggersLevel(parameters[, path][, callback])
@@ -2226,12 +2331,13 @@ Set the loglevel of a single logger
 
 Provided level is falling back to DEBUG if it does not exist
 
-__Arguments__
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __loggerName__: {String}
+    * __level__: {String}
+  * _callback_: {Function} Callback function
 
-```javascript
-path.loggerName {String}  
-path.level {String}  
-```
 ## System/Messages: Internal Graylog messages
 
 <a name="getSystemMessages">
@@ -2239,11 +2345,11 @@ path.level {String}
 
 Get internal Graylog system messages
 
-__Arguments__
-
-```javascript
-parameters.page {Integer} Optional. Page
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * _page_: {Integer} Optional. Page
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 ## System/Metrics: Internal Graylog2 metrics
 
@@ -2252,43 +2358,49 @@ parameters.page {Integer} Optional. Page
 
 Get a single metric
 
-__Arguments__
-
-```javascript
-path.metricName {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __metricName__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="getMetrics">
 ### getMetrics([callback])
 
 Get all metrics
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="getMetricsMultiple">
 ### getMetricsMultiple(parameters[, path][, callback])
 
 Get the values of multiple metrics at once
 
-__Arguments__
-
-```javascript
-parameters.Requested metrics {MetricsReadRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __Requested__ metrics {MetricsReadRequest}
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="getMetricsNames">
 ### getMetricsNames([callback])
 
 Get all metrics keys/names
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="getMetricsNamespace">
 ### getMetricsNamespace(parameters[, path][, callback])
 
 Get all metrics of a namespace
 
-__Arguments__
-
-```javascript
-path.namespace {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __namespace__: {String}
+  * _callback_: {Function} Callback function
 
 ## System/Metrics/History: Get history of metrics
 
@@ -2298,12 +2410,12 @@ path.namespace {String}
 Get history of a single metric
 The maximum retention time is currently only 5 minutes
 
-__Arguments__
-
-```javascript
-path.metricName {String}  
-parameters.after {Long} Optional. Only values for after this UTC timestamp (1970 epoch)
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * _after_: {Long} Optional. Only values for after this UTC timestamp (1970 epoch)
+  * __path__: {Object}
+    * __metricName__: {String}
+  * _callback_: {Function} Callback function
 
 ## System/Notifications: Notifications generated by the system
 
@@ -2312,16 +2424,19 @@ parameters.after {Long} Optional. Only values for after this UTC timestamp (1970
 
 Get all active notifications
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="removeNotification">
 ### removeNotification(parameters[, path][, callback])
 
 Delete a notification
 
-__Arguments__
-
-```javascript
-path.notificationType {String} Optional.  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * _notificationType_: {String} Optional.
+  * _callback_: {Function} Callback function
 
 ## System/Outputs: Manage outputs
 
@@ -2330,55 +2445,61 @@ path.notificationType {String} Optional.
 
 Get specific output
 
-__Arguments__
-
-```javascript
-path.outputId {String} The id of the output we want
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __outputId__: {String} The id of the output we want
+  * _callback_: {Function} Callback function
 
 <a name="getOutputs">
 ### getOutputs([callback])
 
 Get a list of all outputs
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="createOutput">
 ### createOutput(parameters[, path][, callback])
 
 Create an output
 
-__Arguments__
-
-```javascript
-parameters.[JSON body] {CreateOutputRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {CreateOutputRequest}
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="getOutputsAvailable">
 ### getOutputsAvailable([callback])
 
 Get all available output modules
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="updateOutput">
 ### updateOutput(parameters[, path][, callback])
 
 Update output
 
-__Arguments__
-
-```javascript
-path.outputId {String} The id of the output that should be deleted
-parameters.[JSON body] {Map}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {Map}
+  * __path__: {Object}
+    * __outputId__: {String} The id of the output that should be deleted
+  * _callback_: {Function} Callback function
 
 <a name="removeOutput">
 ### removeOutput(parameters[, path][, callback])
 
 Delete output
 
-__Arguments__
-
-```javascript
-path.outputId {String} The id of the output that should be deleted
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __outputId__: {String} The id of the output that should be deleted
+  * _callback_: {Function} Callback function
 
 ## System/Permissions: Retrieval of system permissions
 
@@ -2387,16 +2508,19 @@ path.outputId {String} The id of the output that should be deleted
 
 Get all available user permissions
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="getPermissionsReader">
 ### getPermissionsReader(parameters[, path][, callback])
 
 Get the initial permissions assigned to a reader account
 
-__Arguments__
-
-```javascript
-path.username {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __username__: {String}
+  * _callback_: {Function} Callback function
 
 ## System/Plugin: Plugin information
 
@@ -2405,6 +2529,9 @@ path.username {String}
 
 List all installed plugins on this node
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 ## System/Processing: System processing status control
 
 <a name="pauseSystemProcessing">
@@ -2412,10 +2539,16 @@ List all installed plugins on this node
 
 Pauses message processing
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 <a name="resumeSystemProcessing">
 ### resumeSystemProcessing([callback])
 
 Resume message processing
+
+__Arguments__:
+  * _callback_: {Function} Callback function
 
 ## System/Radios: Management of graylog2-radio nodes
 
@@ -2426,16 +2559,19 @@ Information about a radio
 
 This is returning information of a radio in context to its state in the cluster. Use the system API of the node itself to get system information
 
-__Arguments__
-
-```javascript
-path.radioId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __radioId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="getRadios">
 ### getRadios([callback])
 
 List all active radios in this cluster
+
+__Arguments__:
+  * _callback_: {Function} Callback function
 
 <a name="createRadioInput">
 ### createRadioInput(parameters[, path][, callback])
@@ -2444,12 +2580,12 @@ Register input of a radio
 
 Radio inputs register their own inputs here for persistence after they successfully launched it
 
-__Arguments__
-
-```javascript
-path.radioId {String}  
-parameters.[JSON body] {RegisterInputRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {RegisterInputRequest}
+  * __path__: {Object}
+    * __radioId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="getRadioInputs">
 ### getRadioInputs(parameters[, path][, callback])
@@ -2458,11 +2594,11 @@ Persisted inputs of a radio
 
 This is returning the configured persisted inputs of a radio node. This is *not* returning the actually running inputs on a radio node. Radio nodes use this resource to get their configured inputs on startup
 
-__Arguments__
-
-```javascript
-path.radioId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __radioId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="removeRadioInput">
 ### removeRadioInput(parameters[, path][, callback])
@@ -2471,12 +2607,12 @@ Unregister input of a radio
 
 Radios unregister their inputs when they are stopped/terminated on the radio
 
-__Arguments__
-
-```javascript
-path.radioId {String}  
-path.inputId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __radioId__: {String}
+    * __inputId__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="pingRadio">
 ### pingRadio(parameters[, path][, callback])
@@ -2485,12 +2621,12 @@ Ping - Accepts pings of graylog2-radio nodes
 
 Every graylog2-radio node is regularly pinging to announce that it is active
 
-__Arguments__
-
-```javascript
-path.radioId {String}  
-parameters.[JSON body] {PingRequest}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {PingRequest}
+  * __path__: {Object}
+    * __radioId__: {String}
+  * _callback_: {Function} Callback function
 
 ## System/ServiceManager: ServiceManager Status
 
@@ -2499,6 +2635,9 @@ parameters.[JSON body] {PingRequest}
 
 List current status of ServiceManager
 
+__Arguments__:
+  * _callback_: {Function} Callback function
+
 ## System/Sessions: Login for interactive user sessions
 
 <a name="createSession">
@@ -2506,11 +2645,11 @@ List current status of ServiceManager
 
 This request creates a new session for a user or reactivates an existing session: the equivalent of logging in
 
-__Arguments__
-
-```javascript
-parameters.Login request {SessionCreateRequest} Username and credentials
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __Login__ request {SessionCreateRequest} Username and credentials
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="removeSession">
 ### removeSession(parameters[, path][, callback])
@@ -2519,11 +2658,11 @@ Terminate an existing session
 
 Destroys the session with the given ID: the equivalent of logging out
 
-__Arguments__
-
-```javascript
-path.sessionId {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __sessionId__: {String}
+  * _callback_: {Function} Callback function
 
 ## System/Shutdown: Shutdown this node gracefully
 
@@ -2571,7 +2710,6 @@ OS information o this node
 
 This resource returns information about the operating system this node is running on
 
-
 <a name="getStatsProcess">
 ### getStatsProcess(parameters[, path][, callback])
 
@@ -2579,13 +2717,15 @@ Process information about this node
 
 This irunning as
 
-
 ## System/Throughput: Message throughput of this node
 
 <a name="getThroughput">
 ### getThroughput([callback])
 
 Current throughput of this node in messages per second
+
+__Arguments__:
+  * _callback_: {Function} Callback function
 
 ## Users: User accounts
 
@@ -2596,11 +2736,11 @@ Get user details
 
 The user's permissions are only included if a user asks for his own account or for users with the necessary permissions to edit permissions
 
-__Arguments__
-
-```javascript
-path.username {String} The username to return information for
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __username__: {String} The username to return information for
+  * _callback_: {Function} Callback function
 
 <a name="getUsers">
 ### getUsers(parameters[, path][, callback])
@@ -2614,116 +2754,116 @@ The permissions assigned to the users are always included
 
 Create a new user account
 
-__Arguments__
-
-```javascript
-parameters.[JSON body] {CreateUserRequest} Must contain username, full_name, email, password and a list of permissionsteUserRequest'
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {CreateUserRequest} Must contain username, full_name, email, password and a list of permissionsteUserRequest'
+  * __path__: {Object}
+  * _callback_: {Function} Callback function
 
 <a name="updateUser">
 ### updateUser(parameters[, path][, callback])
 
 Modify user details
 
-__Arguments__
-
-```javascript
-path.username {String} The name of the user to modify
-parameters.[JSON body] {ChangeUserRequest} Updated user information
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {ChangeUserRequest} Updated user information
+  * __path__: {Object}
+    * __username__: {String} The name of the user to modify
+  * _callback_: {Function} Callback function
 
 <a name="removeUser">
 ### removeUser(parameters[, path][, callback])
 
 Removes a user account
 
-__Arguments__
-
-```javascript
-path.username {String} The name of the user to delete
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __username__: {String} The name of the user to delete
+  * _callback_: {Function} Callback function
 
 <a name="updateUserPassword">
 ### updateUserPassword(parameters[, path][, callback])
 
 Update the password for a user
 
-__Arguments__
-
-```javascript
-path.username {String} The name of the user whose password to change
-parameters.[JSON body] {ChangePasswordRequest} The old and new passwords
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {ChangePasswordRequest} The old and new passwords
+  * __path__: {Object}
+    * __username__: {String} The name of the user whose password to change
+  * _callback_: {Function} Callback function
 
 <a name="updateUserPermissions">
 ### updateUserPermissions(parameters[, path][, callback])
 
 Update a user's permission set
 
-__Arguments__
-
-```javascript
-path.username {String} The name of the user to modify
-parameters.[JSON body] {PermissionEditRequest} The list of permissions to assign to the user
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {PermissionEditRequest} The list of permissions to assign to the user
+  * __path__: {Object}
+    * __username__: {String} The name of the user to modify
+  * _callback_: {Function} Callback function
 
 <a name="removeUserPermissions">
 ### removeUserPermissions(parameters[, path][, callback])
 
 Revoke all permissions for a user without deleting the account
 
-__Arguments__
-
-```javascript
-path.username {String} The name of the user to modify
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __username__: {String} The name of the user to modify
+  * _callback_: {Function} Callback function
 
 <a name="updateUserPreferences">
 ### updateUserPreferences(parameters[, path][, callback])
 
 Update a user's preferences set
 
-__Arguments__
-
-```javascript
-path.username {String} The name of the user to modify
-parameters.[JSON body] {UpdateUserPreferences} The map of preferences to assign to the user
-```
+__Arguments__:
+  * __parameters__: {Object}
+    * __[JSON body]__: {UpdateUserPreferences} The map of preferences to assign to the user
+  * __path__: {Object}
+    * __username__: {String} The name of the user to modify
+  * _callback_: {Function} Callback function
 
 <a name="getUserTokens">
 ### getUserTokens(parameters[, path][, callback])
 
 Retrieves the list of access tokens for a user
 
-__Arguments__
-
-```javascript
-path.username {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __username__: {String}
+  * _callback_: {Function} Callback function
 
 <a name="createUserToken">
 ### createUserToken(parameters[, path][, callback])
 
 Generates a new access token for a user
 
-__Arguments__
-
-```javascript
-path.username {String}  
-path.name {String} Descriptive name for this token (e.g. "cronjob")
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __username__: {String}
+    * __name__: {String} Descriptive name for this token (e.g. "cronjob")
+  * _callback_: {Function} Callback function
 
 <a name="removeUserToken">
 ### removeUserToken(parameters[, path][, callback])
 
 Removes a token for a user
 
-__Arguments__
-
-```javascript
-path.username {String}  
-path.access token {String}  
-```
+__Arguments__:
+  * __parameters__: {Object}
+  * __path__: {Object}
+    * __username__: {String}
+    * __access__: token {String}
+  * _callback_: {Function} Callback function
 
 ## License
 

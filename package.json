@@ -1,6 +1,6 @@
 {
   "name": "graylog-api",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Node.js module for Graylog2 API",
   "author": {
     "name": "Andrii Kolomiichenko",
