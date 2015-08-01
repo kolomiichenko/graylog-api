@@ -219,7 +219,7 @@ module.exports = {
     ]
   },
   getDashboards: {
-    path: '/dashboards/{dashboardId}',
+    path: '/dashboards',
     summary: 'Get a list of all dashboards and all configurations of their widgets.',
     notes: '',
     method: 'GET',

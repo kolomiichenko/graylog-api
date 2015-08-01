@@ -21,6 +21,7 @@ Object.keys(methods).forEach(function(mName) {
 
   Api.prototype[mName] = function(parameters, path, callback) {
 
+    if (arguments.length === 1) callback = parameters;
     if (arguments.length === 2) callback = path;
 
     if (typeof arguments[1] === 'object') {

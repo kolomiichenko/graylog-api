@@ -47,6 +47,12 @@ updateUserPassword({ // parameters
     console.log(data);
   }
 });
+
+api.getSystem(function(err, data) {  // only callback
+  if (!err) {
+    console.log(data);
+  }
+});
 ```
 
 ## Download
@@ -923,15 +929,9 @@ __Arguments__
 ## Counts: Message counts
 
 <a name="getCountTotal">
-### getCountTotal(parameters[, path][, callback])
+### getCountTotal([callback])
 
 Total number of messages in all your indices
-
-__Arguments__
-
-```javascript
-  []
-```
 
 ## Dashboards: Manage dashboards
 
@@ -955,15 +955,9 @@ __Arguments__
 ```
 
 <a name="getDashboards">
-### getDashboards(parameters[, path][, callback])
+### getDashboards([callback])
 
 Get a list of all dashboards and all configurations of their widgets
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="getDashboard">
 ### getDashboard(parameters[, path][, callback])
@@ -1414,15 +1408,9 @@ __Arguments__
 ```
 
 <a name="getBlacklistFilters">
-### getBlacklistFilters(parameters[, path][, callback])
+### getBlacklistFilters([callback])
 
 Get all blacklist filters
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="getBlacklistFilter">
 ### getBlacklistFilter(parameters[, path][, callback])
@@ -1495,26 +1483,14 @@ __Arguments__
 ## Indexer/Cluster: Indexer cluster information
 
 <a name="getClusterHealth">
-### getClusterHealth(parameters[, path][, callback])
+### getClusterHealth([callback])
 
 Get cluster and shard health overview
 
-__Arguments__
-
-```javascript
-  []
-```
-
 <a name="getClusterName">
-### getClusterName(parameters[, path][, callback])
+### getClusterName([callback])
 
 Get the cluster name
-
-__Arguments__
-
-```javascript
-  []
-```
 
 ## Indexer/Failures: Indexer failures
 
@@ -1566,26 +1542,14 @@ __Arguments__
 ## Indexer/Indices: Index information
 
 <a name="getIndicesClosed">
-### getIndicesClosed(parameters[, path][, callback])
+### getIndicesClosed([callback])
 
 Get a list of closed indices that can be reopened
 
-__Arguments__
-
-```javascript
-  []
-```
-
 <a name="getIndicesReopened">
-### getIndicesReopened(parameters[, path][, callback])
+### getIndicesReopened([callback])
 
 Get a list of reopened indices, which will not be cleaned by retention cleaning
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="removeIndex">
 ### removeIndex(parameters[, path][, callback])
@@ -2675,15 +2639,9 @@ __Arguments__
 ```
 
 <a name="getSearchSavedAll">
-### getSearchSavedAll(parameters[, path][, callback])
+### getSearchSavedAll([callback])
 
 Get a list of all saved searches
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="getSearchSaved">
 ### getSearchSaved(parameters[, path][, callback])
@@ -3053,15 +3011,9 @@ __Arguments__
 ## Streams: Manage streams
 
 <a name="getStreams">
-### getStreams(parameters[, path][, callback])
+### getStreams([callback])
 
 Get a list of all streams
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="createStream">
 ### createStream(parameters[, path][, callback])
@@ -3083,15 +3035,9 @@ __Arguments__
 ```
 
 <a name="getStreamsEnabled">
-### getStreamsEnabled(parameters[, path][, callback])
+### getStreamsEnabled([callback])
 
 Get a list of all enabled streams
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="getStreamThroughput">
 ### getStreamThroughput(parameters[, path][, callback])
@@ -3113,15 +3059,9 @@ __Arguments__
 ```
 
 <a name="getStreamAllThroughput">
-### getStreamAllThroughput(parameters[, path][, callback])
+### getStreamAllThroughput([callback])
 
 Current throughput of all visible streams on this node in messages per second
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="getStream">
 ### getStream(parameters[, path][, callback])
@@ -3280,61 +3220,31 @@ __Arguments__
 ## System: System information of this node
 
 <a name="getSystem">
-### getSystem(parameters[, path][, callback])
+### getSystem([callback])
 
 Get system overview
 
-__Arguments__
-
-```javascript
-  []
-```
-
 <a name="getJVM">
-### getJVM(parameters[, path][, callback])
+### getJVM([callback])
 
 Get JVM information
 
-__Arguments__
-
-```javascript
-  []
-```
-
 <a name="getThreadDump">
-### getThreadDump(parameters[, path][, callback])
+### getThreadDump([callback])
 
 Get a thread dump
-
-__Arguments__
-
-```javascript
-  []
-```
 
 ## System/Buffers: Buffer information of this node.
 
 <a name="getBuffers">
-### getBuffers(parameters[, path][, callback])
+### getBuffers([callback])
 
 Get current utilization of buffers and caches of this node
 
-__Arguments__
-
-```javascript
-  []
-```
-
 <a name="getBuffersClasses">
-### getBuffersClasses(parameters[, path][, callback])
+### getBuffersClasses([callback])
 
 Get classnames of current buffer implementations
-
-__Arguments__
-
-```javascript
-  []
-```
 
 ## System/Bundles: Content packs
 
@@ -3358,15 +3268,9 @@ __Arguments__
 ```
 
 <a name="getBundles">
-### getBundles(parameters[, path][, callback])
+### getBundles([callback])
 
 List available content packs
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="exportBundles">
 ### exportBundles(parameters[, path][, callback])
@@ -3477,13 +3381,7 @@ __Arguments__
 
 Information about this node
 
-This is returning information of this node in context to its state in the cluster. Use the system API of the node itself to get system information
-
-__Arguments__
-
-```javascript
-  []
-```
+This  de itself to get system information
 
 <a name="getNodes">
 ### getNodes(parameters[, path][, callback])
@@ -3530,55 +3428,31 @@ __Arguments__
 <a name="getClusterStats">
 ### getClusterStats(parameters[, path][, callback])
 
-Cluster status information
+Cluster snformation
 
 This resource returns information about the Graylog cluster
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="getClusterStatsElasticsearch">
 ### getClusterStatsElasticsearch(parameters[, path][, callback])
 
-Elasticsearch information
+Elasticsearciormation
 
 This resource returns information about the Elasticsearch Cluster
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="getClusterStatsMongo">
 ### getClusterStatsMongo(parameters[, path][, callback])
 
 MongoDB information
 
-This resource returns information about MongoDB
+This aut MongoDB
 
-__Arguments__
-
-
-```javascript
-  []
-```
 
 ## System/Collectors: Management of Graylog Collectors
 
 <a name="getSystemCollectors">
-### getSystemCollectors(parameters[, path][, callback])
+### getSystemCollectors([callback])
 
 Lists all existing collector registrations
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="getSystemCollector">
 ### getSystemCollector(parameters[, path][, callback])
@@ -3651,15 +3525,9 @@ __Arguments__
 ```
 
 <a name="getDebugEventsCluster">
-### getDebugEventsCluster(parameters[, path][, callback])
+### getDebugEventsCluster([callback])
 
 Show last received cluster debug event
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="createDebugEventsLocal">
 ### createDebugEventsLocal(parameters[, path][, callback])
@@ -3681,50 +3549,26 @@ __Arguments__
 ```
 
 <a name="getDebugEventsLocal">
-### getDebugEventsLocal(parameters[, path][, callback])
+### getDebugEventsLocal([callback])
 
 Show last received local debug event
-
-__Arguments__
-
-```javascript
-  []
-```
 
 ## System/Deflector: Index deflector management
 
 <a name="getDeflector">
-### getDeflector(parameters[, path][, callback])
+### getDeflector([callback])
 
 Get current deflector status
 
-__Arguments__
-
-```javascript
-  []
-```
-
 <a name="getDeflectorConfig">
-### getDeflectorConfig(parameters[, path][, callback])
+### getDeflectorConfig([callback])
 
 Get deflector configuration. Only available on master nodes
 
-__Arguments__
-
-```javascript
-  []
-```
-
 <a name="nextDeflectorCycle">
-### nextDeflectorCycle(parameters[, path][, callback])
+### nextDeflectorCycle([callback])
 
 Cycle deflector to new/next index
-
-__Arguments__
-
-```javascript
-  []
-```
 
 ## System/Fields: Get list of message fields that exist.
 
@@ -3752,15 +3596,9 @@ __Arguments__
 ## System/Grok: Manage grok patterns
 
 <a name="getGroks">
-### getGroks(parameters[, path][, callback])
+### getGroks([callback])
 
 Get all existing grok patterns
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="getGrok">
 ### getGrok(parameters[, path][, callback])
@@ -3846,41 +3684,23 @@ __Arguments__
 ```
 
 <a name="removeGrok">
-### removeGrok(parameters[, path][, callback])
+### removeGrok([callback])
 
 Remove an existing pattern by id
-
-__Arguments__
-
-```javascript
-  []
-```
 
 ## System/IndexRanges: Index timeranges
 
 <a name="getIndicesRanges">
-### getIndicesRanges(parameters[, path][, callback])
+### getIndicesRanges([callback])
 
 Get a list of all index ranges
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="rebuildIndicesRanges">
 ### rebuildIndicesRanges(parameters[, path][, callback])
 
 Rebuild/sync index range information
 
-This triggers a systemjob that scans every index and stores meta information about what indices contain messages in what timeranges. It atomically overwrites already existing meta information
-
-__Arguments__
-
-```javascript
-  []
-```
+This as in what timeranges. It atomically overwrites already existing meta information
 
 ## System/Inputs: Message inputs of this node
 
@@ -3923,15 +3743,9 @@ __Arguments__
 ```
 
 <a name="getInputs">
-### getInputs(parameters[, path][, callback])
+### getInputs([callback])
 
 Get all inputs of this node
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="updateInput">
 ### updateInput(parameters[, path][, callback])
@@ -4057,15 +3871,9 @@ __Arguments__
 ```
 
 <a name="getInputsTypes">
-### getInputsTypes(parameters[, path][, callback])
+### getInputsTypes([callback])
 
 Get all available input types of this node
-
-__Arguments__
-
-```javascript
-  []
-```
 
 ## System/Jobs: System Jobs
 
@@ -4089,15 +3897,9 @@ __Arguments__
 ```
 
 <a name="getJobs">
-### getJobs(parameters[, path][, callback])
+### getJobs([callback])
 
 List currently running jobs
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="getJob">
 ### getJob(parameters[, path][, callback])
@@ -4121,28 +3923,16 @@ __Arguments__
 ## System/Journal: Message journal information of this node.
 
 <a name="getJournal">
-### getJournal(parameters[, path][, callback])
+### getJournal([callback])
 
 Get current state of the journal on this node
-
-__Arguments__
-
-```javascript
-  []
-```
 
 ## System/LDAP: LDAP settings
 
 <a name="getLDAPSettings">
-### getLDAPSettings(parameters[, path][, callback])
+### getLDAPSettings([callback])
 
 Get the LDAP configuration if it is configured
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="updateLDAPSettings">
 ### updateLDAPSettings(parameters[, path][, callback])
@@ -4164,15 +3954,9 @@ __Arguments__
 ```
 
 <a name="removeLDAPSettings">
-### removeLDAPSettings(parameters[, path][, callback])
+### removeLDAPSettings([callback])
 
 Remove the LDAP configuration
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="testLDAPSettings">
 ### testLDAPSettings(parameters[, path][, callback])
@@ -4196,15 +3980,9 @@ __Arguments__
 ## System/LoadBalancers: Status propagation for load balancers
 
 <a name="getLoadBalancerStatus">
-### getLoadBalancerStatus(parameters[, path][, callback])
+### getLoadBalancerStatus([callback])
 
 Get status of this graylog2-server node for load balancers. Returns either ALIVE with HTTP 200 or DEAD with HTTP 503
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="updateLoadBalancerStatusOverride">
 ### updateLoadBalancerStatusOverride(parameters[, path][, callback])
@@ -4228,26 +4006,14 @@ __Arguments__
 ## System/Loggers: Internal Graylog loggers
 
 <a name="getLoggers">
-### getLoggers(parameters[, path][, callback])
+### getLoggers([callback])
 
 List all loggers and their current levels
 
-__Arguments__
-
-```javascript
-  []
-```
-
 <a name="getLoggersSubsystems">
-### getLoggersSubsystems(parameters[, path][, callback])
+### getLoggersSubsystems([callback])
 
 List all logger subsystems and their current levels
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="setLoggersSubsystemsLevel">
 ### setLoggersSubsystemsLevel(parameters[, path][, callback])
@@ -4347,15 +4113,9 @@ __Arguments__
 ```
 
 <a name="getMetrics">
-### getMetrics(parameters[, path][, callback])
+### getMetrics([callback])
 
 Get all metrics
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="getMetricsMultiple">
 ### getMetricsMultiple(parameters[, path][, callback])
@@ -4377,15 +4137,9 @@ __Arguments__
 ```
 
 <a name="getMetricsNames">
-### getMetricsNames(parameters[, path][, callback])
+### getMetricsNames([callback])
 
 Get all metrics keys/names
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="getMetricsNamespace">
 ### getMetricsNamespace(parameters[, path][, callback])
@@ -4438,15 +4192,9 @@ __Arguments__
 ## System/Notifications: Notifications generated by the system
 
 <a name="getNotifications">
-### getNotifications(parameters[, path][, callback])
+### getNotifications([callback])
 
 Get all active notifications
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="removeNotification">
 ### removeNotification(parameters[, path][, callback])
@@ -4489,15 +4237,9 @@ __Arguments__
 ```
 
 <a name="getOutputs">
-### getOutputs(parameters[, path][, callback])
+### getOutputs([callback])
 
 Get a list of all outputs
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="createOutput">
 ### createOutput(parameters[, path][, callback])
@@ -4519,15 +4261,9 @@ __Arguments__
 ```
 
 <a name="getOutputsAvailable">
-### getOutputsAvailable(parameters[, path][, callback])
+### getOutputsAvailable([callback])
 
 Get all available output modules
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="updateOutput">
 ### updateOutput(parameters[, path][, callback])
@@ -4577,15 +4313,9 @@ __Arguments__
 ## System/Permissions: Retrieval of system permissions
 
 <a name="getPermissions">
-### getPermissions(parameters[, path][, callback])
+### getPermissions([callback])
 
 Get all available user permissions
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="getPermissionsReader">
 ### getPermissionsReader(parameters[, path][, callback])
@@ -4609,39 +4339,21 @@ __Arguments__
 ## System/Plugin: Plugin information
 
 <a name="getSystemPlugins">
-### getSystemPlugins(parameters[, path][, callback])
+### getSystemPlugins([callback])
 
 List all installed plugins on this node
-
-__Arguments__
-
-```javascript
-  []
-```
 
 ## System/Processing: System processing status control
 
 <a name="pauseSystemProcessing">
-### pauseSystemProcessing(parameters[, path][, callback])
+### pauseSystemProcessing([callback])
 
 Pauses message processing
 
-__Arguments__
-
-```javascript
-  []
-```
-
 <a name="resumeSystemProcessing">
-### resumeSystemProcessing(parameters[, path][, callback])
+### resumeSystemProcessing([callback])
 
 Resume message processing
-
-__Arguments__
-
-```javascript
-  []
-```
 
 ## System/Radios: Management of graylog2-radio nodes
 
@@ -4667,15 +4379,9 @@ __Arguments__
 ```
 
 <a name="getRadios">
-### getRadios(parameters[, path][, callback])
+### getRadios([callback])
 
 List all active radios in this cluster
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="createRadioInput">
 ### createRadioInput(parameters[, path][, callback])
@@ -4785,15 +4491,9 @@ __Arguments__
 ## System/ServiceManager: ServiceManager Status
 
 <a name="getServiceManager">
-### getServiceManager(parameters[, path][, callback])
+### getServiceManager([callback])
 
 List current status of ServiceManager
-
-__Arguments__
-
-```javascript
-  []
-```
 
 ## System/Sessions: Login for interactive user sessions
 
@@ -4844,80 +4544,44 @@ __Arguments__
 
 Shutdown this node gracefully
 
-Attempts to process all buffered and cached messages before exiting, shuts down inputs first to make sure that no new messages are accepted
-
-__Arguments__
-
-```javascript
-  []
-```
+Attempts  at no new messages are accepted
 
 ## System/Stats: Node system stats
 
 <a name="getStats">
 ### getStats(parameters[, path][, callback])
 
-System information about this node
+System o this node
 
 This resource returns information about the system this node is running on
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="getStatsFs">
 ### getStatsFs(parameters[, path][, callback])
 
-Filesystem information about this node
+Filesystem o this node
 
 This resource returns information about the filesystems of this node
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="getStatsJvm">
 ### getStatsJvm(parameters[, path][, callback])
 
-JVM information about this node
+JVM information o this node
 
 This resource returns information about the Java Virtual Machine of this node
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="getStatsNetwork">
 ### getStatsNetwork(parameters[, path][, callback])
 
-Networking information about this node
+Networking o this node
 
 This resource returns information about the networking system this node is running with
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="getStatsOs">
 ### getStatsOs(parameters[, path][, callback])
 
-OS information about this node
+OS information o this node
 
 This resource returns information about the operating system this node is running on
-
-__Arguments__
-
-```javascript
-  []
-```
 
 
 <a name="getStatsProcess">
@@ -4925,27 +4589,15 @@ __Arguments__
 
 Process information about this node
 
-This resource returns information about the process this node is running as
+This irunning as
 
-
-__Arguments__
-
-```javascript
-  []
-```
 
 ## System/Throughput: Message throughput of this node
 
 <a name="getThroughput">
-### getThroughput(parameters[, path][, callback])
+### getThroughput([callback])
 
 Current throughput of this node in messages per second
-
-__Arguments__
-
-```javascript
-  []
-```
 
 ## Users: User accounts
 
@@ -4973,15 +4625,9 @@ __Arguments__
 <a name="getUsers">
 ### getUsers(parameters[, path][, callback])
 
-List all users
+Lurs
 
 The permissions assigned to the users are always included
-
-__Arguments__
-
-```javascript
-  []
-```
 
 <a name="createUser">
 ### createUser(parameters[, path][, callback])
