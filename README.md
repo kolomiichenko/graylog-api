@@ -11,8 +11,9 @@ For more detail you can look Graylog REST API browser: [localhost:12900/api-brow
 ```javascript
 var graylog = require('graylog-api');
 var api = graylog.connect({
-  basicAuth: {
-    username: 'admin',
+  basicA
+  tps', // Optional. Default: 'http'. Connection protoc  .adminuth: {
+    username: '',
     password: 'secret'
   }, // Optional. Default: null. Basic access authentication
   protocol: 'https', // Optional. Default: 'http'. Connection protocol
@@ -38,8 +39,9 @@ api.searchAbsolute({ // parameters
 updateUserPassword({ // parameters
   old_password: 'secret',
   password: 'qwerty123'
-}, { // path
-  username: 'admin'
+}, { /
+  .aog(errdmi/ path
+  username: 'n'
 }, function (err, data) { // callback
   if (err) {
     console.log(err);
@@ -70,7 +72,7 @@ Alternatively, you can install using Node Package Manager (`npm`):
 API object expression has the same this syntax:
 
 ```javascript
-api.[methodName](parameters[, path][, callback]);
+api.[methodName]([parameters][, path][, callback]);
 ```
 
 * `methodName` - The method name
@@ -415,7 +417,7 @@ Get a list of all alarm callbacks for this stream
 __Arguments__
 
 ```javascript
-path.streamid {String} Optional. The id of the stream whose alarm callbacks we want
+path.streamid {String} The id of the stream whose alarm callbacks we want
 ```
 
 <a name="createAlarmCallback">
@@ -426,8 +428,8 @@ Create an alarm callback
 __Arguments__
 
 ```javascript
-path.streamid {String} Optional. The stream id this new alarm callback belongs to
-parameters.[JSON body] {CreateAlarmCallbackRequest} Optional.  
+path.streamid {String} The stream id this new alarm callback belongs to
+parameters.[JSON body] {CreateAlarmCallbackRequest}  
 ```
 
 <a name="getAlarmCallbacksAvailable">
@@ -438,7 +440,7 @@ Get a list of all alarm callback types
 __Arguments__
 
 ```javascript
-path.streamid {String} Optional. The id of the stream whose alarm callbacks we want
+path.streamid {String} The id of the stream whose alarm callbacks we want
 ```
 
 <a name="getAlarmCallback">
@@ -449,8 +451,8 @@ Get a single specified alarm callback for this stream
 __Arguments__
 
 ```javascript
-path.streamid {String} Optional. The id of the stream whose alarm callbacks we want
-path.alarmCallbackId {String} Optional. The alarm callback id we are getting
+path.streamid {String} The id of the stream whose alarm callbacks we want
+path.alarmCallbackId {String} The alarm callback id we are getting
 ```
 
 <a name="updateAlarmCallback">
@@ -461,9 +463,9 @@ Update an alarm callback
 __Arguments__
 
 ```javascript
-path.streamid {String} Optional. The stream id this alarm callback belongs to
-path.alarmCallbackId {String} Optional.  
-parameters.[JSON body] {Map} Optional.  
+path.streamid {String} The stream id this alarm callback belongs to
+path.alarmCallbackId {String}  
+parameters.[JSON body] {Map}  
 ```
 
 <a name="removeAlarmCallback">
@@ -474,8 +476,8 @@ Delete an alarm callback
 __Arguments__
 
 ```javascript
-path.streamid {String} Optional. The stream id this alarm callback belongs to
-path.alarmCallbackId {String} Optional.  
+path.streamid {String} The stream id this alarm callback belongs to
+path.alarmCallbackId {String}  
 ```
 
 ## AlertConditions: Manage stream alert conditions
@@ -488,8 +490,8 @@ Create an alert condition
 __Arguments__
 
 ```javascript
-path.streamId {String} Optional. The stream id this new alert condition belongs to
-parameters.[JSON body] {CreateConditionRequest} Optional.  
+path.streamId {String} The stream id this new alert condition belongs to
+parameters.[JSON body] {CreateConditionRequest}  
 ```
 
 <a name="getAlertConditions">
@@ -500,7 +502,7 @@ Get all alert conditions of this stream
 __Arguments__
 
 ```javascript
-path.streamId {String} Optional. The stream id this new alert condition belongs to
+path.streamId {String} The stream id this new alert condition belongs to
 ```
 
 <a name="updateAlertCondition">
@@ -511,9 +513,9 @@ Modify an alert condition
 __Arguments__
 
 ```javascript
-path.streamId {String} Optional. The stream id the alert condition belongs to
-path.conditionId {String} Optional. The alert condition id
-parameters.[JSON body] {CreateConditionRequest} Optional.  
+path.streamId {String} The stream id the alert condition belongs to
+path.conditionId {String} The alert condition id
+parameters.[JSON body] {CreateConditionRequest}  
 ```
 
 <a name="removeAlertCondition">
@@ -524,8 +526,8 @@ Delete an alert condition
 __Arguments__
 
 ```javascript
-path.streamId {String} Optional. The stream id this new alert condition belongs to
-path.conditionId {String} Optional. The stream id this new alert condition belongs to
+path.streamId {String} The stream id this new alert condition belongs to
+path.conditionId {String} The stream id this new alert condition belongs to
 ```
 
 ## AlertReceivers: Manage stream alert receivers
@@ -538,8 +540,8 @@ Get the 300 most recent alarms of this stream
 __Arguments__
 
 ```javascript
-path.streamId {String} Optional. The stream id this new alert condition belongs to
-query.since {Integer} Optional parameter to define a lower date boundary. (UNIX timestamp)
+path.streamId {String} The stream id this new alert condition belongs to
+query.since {Integer} Optional. Optional parameter to define a lower date boundary. (UNIX timestamp)
 ```
 
 <a name="getAlertsCheck">
@@ -550,7 +552,7 @@ Check for triggered alert conditions of this streams. Results cached for 30 seco
 __Arguments__
 
 ```javascript
-path.streamId {String} Optional. The ID of the stream to check
+path.streamId {String} The ID of the stream to check
 ```
 
 <a name="createAlertReceiver">
@@ -561,9 +563,9 @@ Add an alert receiver
 __Arguments__
 
 ```javascript
-path.streamId {String} Optional. The stream id this new alert condition belongs to
-query.entity {String} Optional. Name/ID of user or email address to add as alert receiver
-query.type {String} Optional. Type: users or emails
+path.streamId {String} The stream id this new alert condition belongs to
+query.entity {String} Name/ID of user or email address to add as alert receiver
+query.type {String} Type: users or emails
 ```
 
 <a name="removeAlertReceiver">
@@ -574,9 +576,9 @@ Remove an alert receiver
 __Arguments__
 
 ```javascript
-path.streamId {String} Optional. The stream id this new alert condition belongs to
-query.entity {String} Optional. Name/ID of user or email address to remove from alert receivers
-query.type {String} Optional. Type: users or emails
+path.streamId {String} The stream id this new alert condition belongs to
+query.entity {String} Name/ID of user or email address to remove from alert receivers
+query.type {String} Type: users or emails
 ```
 
 <a name="testAlertSendDummy">
@@ -587,7 +589,7 @@ Send a test mail for a given stream
 __Arguments__
 
 ```javascript
-path.streamId {String} Optional. The stream id this new alert condition belongs to
+path.streamId {String} The stream id this new alert condition belongs to
 ```
 
 ## Alerts: Manage stream alerts
@@ -600,8 +602,8 @@ Get the 300 most recent alarms of this stream
 __Arguments__
 
 ```javascript
-path.streamId {String} Optional. The stream id this new alert condition belongs to
-parameters.since {Integer} Optional parameter to define a lower date boundary. (UNIX timestamp)
+path.streamId {String} The stream id this new alert condition belongs to
+parameters.since {Integer} Optional. Optional parameter to define a lower date boundary. (UNIX timestamp)
 ```
 
 <a name="getAlertsCheck">
@@ -612,7 +614,7 @@ Check for triggered alert conditions of this streams. Results cached for 30 seco
 __Arguments__
 
 ```javascript
-path.streamId {String} Optional. The ID of the stream to check
+path.streamId {String} The ID of the stream to check
 ```
 
 <a name="createAlertReceiver">
@@ -623,9 +625,9 @@ Add an alert receiver
 __Arguments__
 
 ```javascript
-path.streamId {String} Optional. The stream id this new alert condition belongs to
-parameters.entity {String} Optional. Name/ID of user or email address to add as alert receiver
-parameters.type {String} Optional. Type: users or emails
+path.streamId {String} The stream id this new alert condition belongs to
+parameters.entity {String} Name/ID of user or email address to add as alert receiver
+parameters.type {String} Type: users or emails
 ```
 
 <a name="removeAlertReceiver">
@@ -636,9 +638,9 @@ Remove an alert receiver
 __Arguments__
 
 ```javascript
-path.streamId {String} Optional. The stream id this new alert condition belongs to
-parameters.entity {String} Optional. Name/ID of user or email address to remove from alert receivers
-parameters.type {String} Optional. Type: users or emails
+path.streamId {String} The stream id this new alert condition belongs to
+parameters.entity {String} Name/ID of user or email address to remove from alert receivers
+parameters.type {String} Type: users or emails
 ```
 
 <a name="testAlertSendDummy">
@@ -649,7 +651,7 @@ Send a test mail for a given stream
 __Arguments__
 
 ```javascript
-path.streamId {String} Optional. The stream id this new alert condition belongs to
+path.streamId {String} The stream id this new alert condition belongs to
 ```
 
 ## Counts: Message counts
@@ -669,7 +671,7 @@ Create a dashboard
 __Arguments__
 
 ```javascript
-parameters.[JSON body] {CreateDashboardRequest} Optional.  
+parameters.[JSON body] {CreateDashboardRequest}  
 ```
 
 <a name="getDashboards">
@@ -685,7 +687,7 @@ Get a single dashboards and all configurations of its widgets
 __Arguments__
 
 ```javascript
-path.dashboardId {String} Optional.  
+path.dashboardId {String}  
 ```
 
 <a name="updateDashboard">
@@ -696,8 +698,8 @@ Update the settings of a dashboard
 __Arguments__
 
 ```javascript
-path.dashboardId {String} Optional.  
-parameters.[JSON body] {UpdateDashboardRequest} Optional.  
+path.dashboardId {String}  
+parameters.[JSON body] {UpdateDashboardRequest}  
 ```
 
 <a name="removeDashboard">
@@ -708,7 +710,7 @@ Delete a dashboard and all its widgets
 __Arguments__
 
 ```javascript
-path.dashboardId {String} Optional.  
+path.dashboardId {String}  
 ```
 
 <a name="updateDashboardPositions">
@@ -719,8 +721,8 @@ Update/set the positions of dashboard widgets
 __Arguments__
 
 ```javascript
-path.dashboardId {String} Optional.  
-parameters.[JSON body] {WidgetPositionsRequest} Optional.  
+path.dashboardId {String}  
+parameters.[JSON body] {WidgetPositionsRequest}  
 ```
 
 <a name="createDashboardWidget">
@@ -731,8 +733,8 @@ Add a widget to a dashboard
 __Arguments__
 
 ```javascript
-path.dashboardId {String} Optional.  
-parameters.[JSON body] {AddWidgetRequest} Optional.  
+path.dashboardId {String}  
+parameters.[JSON body] {AddWidgetRequest}  
 ```
 
 <a name="updateDashboardWidget">
@@ -743,9 +745,9 @@ Update a widget
 __Arguments__
 
 ```javascript
-path.dashboardId {String} Optional.  
-path.widgetId {String} Optional.  
-parameters.[JSON body] {AddWidgetRequest} Optional.  
+path.dashboardId {String}  
+path.widgetId {String}  
+parameters.[JSON body] {AddWidgetRequest}  
 ```
 
 <a name="removeDashboardWidget">
@@ -756,8 +758,8 @@ Delete a widget
 __Arguments__
 
 ```javascript
-path.dashboardId {String} Optional.  
-path.widgetId {String} Optional.  
+path.dashboardId {String}  
+path.widgetId {String}  
 ```
 
 <a name="updateDashboardWidgetCacheTime">
@@ -768,9 +770,9 @@ Update cache time of a widget
 __Arguments__
 
 ```javascript
-path.dashboardId {String} Optional.  
-path.widgetId {String} Optional.  
-parameters.[JSON body] {UpdateWidgetRequest} Optional.  
+path.dashboardId {String}  
+path.widgetId {String}  
+parameters.[JSON body] {UpdateWidgetRequest}  
 ```
 
 <a name="updateDashboardWidgetDescription">
@@ -781,9 +783,9 @@ Update description of a widget
 __Arguments__
 
 ```javascript
-path.dashboardId {String} Optional.  
-path.widgetId {String} Optional.  
-parameters.[JSON body] {UpdateWidgetRequest} Optional.  
+path.dashboardId {String}  
+path.widgetId {String}  
+parameters.[JSON body] {UpdateWidgetRequest}  
 ```
 
 <a name="getDashboardWidgetValue">
@@ -794,8 +796,8 @@ Get a single widget value
 __Arguments__
 
 ```javascript
-path.dashboardId {String} Optional.  
-path.widgetId {String} Optional.  
+path.dashboardId {String}  
+path.widgetId {String}  
 ```
 
 ## Extractors: Extractors of an input
@@ -808,8 +810,8 @@ Add an extractor to an input
 __Arguments__
 
 ```javascript
-path.inputId {String} Optional.  
-parameters.[JSON body] {CreateExtractorRequest} Optional.  
+path.inputId {String}  
+parameters.[JSON body] {CreateExtractorRequest}  
 ```
 
 <a name="getInputExtractors">
@@ -820,7 +822,7 @@ List all extractors of an input
 __Arguments__
 
 ```javascript
-path.inputId {String} Optional.  
+path.inputId {String}  
 ```
 
 <a name="updateInputExtractorOrder">
@@ -831,8 +833,8 @@ Update extractor order of an input
 __Arguments__
 
 ```javascript
-path.inputId {String} Optional. Persist ID (!) of input
-parameters.[JSON body] {OrderExtractorsRequest} Optional.  
+path.inputId {String} Persist ID (!) of input
+parameters.[JSON body] {OrderExtractorsRequest}  
 ```
 
 <a name="updateInputExtractor">
@@ -843,9 +845,9 @@ Update an extractor
 __Arguments__
 
 ```javascript
-path.inputId {String} Optional.  
-path.extractorId {String} Optional.  
-parameters.[JSON body] {CreateExtractorRequest} Optional.  
+path.inputId {String}  
+path.extractorId {String}  
+parameters.[JSON body] {CreateExtractorRequest}  
 ```
 
 <a name="removeInputExtractor">
@@ -856,8 +858,8 @@ Delete an extractor
 __Arguments__
 
 ```javascript
-path.inputId {String} Optional.  
-path.extractorId {String} Optional.  
+path.inputId {String}  
+path.extractorId {String}  
 ```
 
 <a name="getInputExtractor">
@@ -867,11 +869,9 @@ Get information of a single extractor of an input
 
 __Arguments__
 
-``javascript
-  [
-    {
-      path.inputId {String} Optional.  
-path.extractorId {String} Optional.  
+```javascript
+path.inputId {String}  
+path.extractorId {String}  
 ```
 
 ## Filters: Message blacklist filters
@@ -886,7 +886,7 @@ It can take up to a second until the change is applied
 __Arguments__
 
 ```javascript
-parameters.filterEntry {FilterDescription} Optional.  
+parameters.filterEntry {FilterDescription}  
 ```
 
 <a name="getBlacklistFilters">
@@ -902,7 +902,7 @@ Get the existing blacklist filter
 __Arguments__
 
 ```javascript
-path.filterId {String} Optional.  
+path.filterId {String}  
 ```
 
 <a name="updateBlacklistFilter">
@@ -915,8 +915,8 @@ It can take up to a second until the change is applied
 __Arguments__
 
 ```javascript
-path.filterId {String} Optional.  
-parameters.filterEntry {FilterDescription} Optional.  
+path.filterId {String}  
+parameters.filterEntry {FilterDescription}  
 ```
 
 <a name="removeBlacklistFilter">
@@ -929,7 +929,7 @@ It can take up to a second until the change is applied
 __Arguments__
 
 ```javascript
-path.filterId {String} Optional.  
+path.filterId {String}  
 ```
 
 ## Indexer/Cluster: Indexer cluster information
@@ -954,8 +954,8 @@ Get a list of failed index operations
 __Arguments__
 
 ```javascript
-parameters.limit {Integer} Optional. Limit
-parameters.offset {Integer} Optional. Offset
+parameters.limit {Integer} Limit
+parameters.offset {Integer} Offset
 ```
 
 <a name="getFailuresCount">
@@ -966,7 +966,7 @@ Total count of failed index operations since the given date
 __Arguments__
 
 ```javascript
-parameters.since {String} Optional. ISO8601 date
+parameters.since {String} ISO8601 date
 ```
 
 ## Indexer/Indices: Index information
@@ -989,7 +989,7 @@ Delete an index. This will also trigger an index ranges rebuild job
 __Arguments__
 
 ```javascript
-path.index {String}  
+path.index {String} Optional.  
 ```
 
 <a name="getIndices">
@@ -1000,7 +1000,7 @@ Get information of an index and its shards
 __Arguments__
 
 ```javascript
-path.index {String}  
+path.index {String} Optional.  
 ```
 
 <a name="closeIndex">
@@ -1011,7 +1011,7 @@ Close an index. This will also trigger an index ranges rebuild job
 __Arguments__
 
 ```javascript
-path.index {String}  
+path.index {String} Optional.  
 ```
 
 <a name="reopenIndex">
@@ -1022,7 +1022,7 @@ Reopen a closed index. This will also trigger an index ranges rebuild job
 __Arguments__
 
 ```javascript
-path.index {String}  
+path.index {String} Optional.  
 ```
 
 ## Messages: Single messages
@@ -1037,8 +1037,8 @@ Returns what tokens/terms a message string (message or full_message) is split to
 __Arguments__
 
 ```javascript
-path.index {String} Optional. The index the message containing the string is stored in
-parameters.string {String} Optional. The string to analyze
+path.index {String} The index the message containing the string is stored in
+parameters.string {String} The string to analyze
 ```
 
 <a name="getMessage">
@@ -1049,8 +1049,8 @@ Get a single message
 __Arguments__
 
 ```javascript
-path.index {String} Optional. The index this message is stored in
-path.messageId {String} Optional.  
+path.index {String} The index this message is stored in
+path.messageId {String}  
 ```
 
 ## Search/Absolute: Message search
@@ -1065,13 +1065,13 @@ Search for messages using an absolute timerange, specified as from/to with forma
 __Arguments__
 
 ```javascript
-parameters.query {String} Optional. Query (Lucene syntax)
-parameters.from {String} Optional. Timerange start. See description for date format
-parameters.to {String} Optional. Timerange end. See description for date format
-parameters.limit {Integer} Maximum number of messages to return
-parameters.offset {Integer} Offset
-parameters.filter {String} Filter
-parameters.fields {String} Optional. Comma separated list of fields to return
+parameters.query {String} Query (Lucene syntax)
+parameters.from {String} Timerange start. See description for date format
+parameters.to {String} Timerange end. See description for date format
+parameters.limit {Integer} Optional. Maximum number of messages to return
+parameters.offset {Integer} Optional. Offset
+parameters.filter {String} Optional. Filter
+parameters.fields {String} Comma separated list of fields to return
 ```
 
 <a name="searchAbsoluteFieldHistogram">
@@ -1082,12 +1082,12 @@ Field value histogram of a query using an absolute timerange
 __Arguments__
 
 ```javascript
-parameters.query {String} Optional. Query (Lucene syntax)
-parameters.field {String} Optional. Field of whose values to get the histogram of
-parameters.interval {String} Optional. Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)String'
-parameters.from {String} Optional. Timerange start. See search method description for date format
-parameters.to {String} Optional. Timerange end. See search method description for date format
-parameters.filter {String} Filter
+parameters.query {String} Query (Lucene syntax)
+parameters.field {String} Field of whose values to get the histogram of
+parameters.interval {String} Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)
+parameters.from {String} Timerange start. See search method description for date format
+parameters.to {String} Timerange end. See search method description for date format
+parameters.filter {String} Optional. Filter
 ```
 
 <a name="searchAbsoluteHistogram">
@@ -1098,11 +1098,11 @@ Datetime histogram of a query using an absolute timerange
 __Arguments__
 
 ```javascript
-parameters.query {String} Optional. Query (Lucene syntax)
-parameters.interval {String} Optional. Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)String'
-parameters.from {String} Optional. Timerange start. See search method description for date format
-parameters.to {String} Optional. Timerange end. See search method description for date format
-parameters.filter {String} Filter
+parameters.query {String} Query (Lucene syntax)
+parameters.interval {String} Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)
+parameters.from {String} Timerange start. See search method description for date format
+parameters.to {String} Timerange end. See search method description for date format
+parameters.filter {String} Optional. Filter
 ```
 
 <a name="searchAbsoluteStats">
@@ -1115,11 +1115,11 @@ Returns statistics like min/max or standard deviation of numeric fields over the
 __Arguments__
 
 ```javascript
-parameters.field {String} Optional. Message field of numeric type to return statistics for
-parameters.query {String} Optional. Query (Lucene syntax)
-parameters.from {String} Optional. Timerange start. See search method description for date format
-parameters.to {String} Optional. Timerange end. See search method description for date format
-parameters.filter {String} Filter
+parameters.field {String} Message field of numeric type to return statistics for
+parameters.query {String} Query (Lucene syntax)
+parameters.from {String} Timerange start. See search method description for date format
+parameters.to {String} Timerange end. See search method description for date format
+parameters.filter {String} Optional. Filter
 ```
 
 <a name="searchAbsoluteTerms">
@@ -1130,12 +1130,12 @@ Most common field terms of a query using an absolute timerange
 __Arguments__
 
 ```javascript
-parameters.field {String} Optional. Message field of to return terms of
-parameters.query {String} Optional. Query (Lucene syntax)
-parameters.size {Integer} Maximum number of terms to return
-parameters.from {String} Optional. Timerange start. See search method description for date format
-parameters.to {String} Optional. Timerange end. See search method description for date format
-parameters.filter {String} Filter
+parameters.field {String} Message field of to return terms of
+parameters.query {String} Query (Lucene syntax)
+parameters.size {Integer} Optional. Maximum number of terms to return
+parameters.from {String} Timerange start. See search method description for date format
+parameters.to {String} Timerange end. See search method description for date format
+parameters.filter {String} Optional. Filter
 ```
 
 <a name="searchAbsoluteTermsStats">
@@ -1146,15 +1146,14 @@ Ordered field terms of a query computed on another field using an absolute timer
 __Arguments__
 
 ```javascript
-parameters.key_field {String} Optional. Message field of to return terms of
-parameters.value_field {String} Optional. Value field used for computation
-ru.order
-      name: '', {String} Optional. IN, MAX, REVERSE_MAX, MEAN, REVERSE_MEAN)
-parameters.query {String} Optional. Query (Lucene syntax)
-parameters.size {Integer} Maximum number of terms to return
-parameters.from {String} Optional. Timerange start. See search method description for date format
-parameters.to {String} Optional. Timerange end. See search method description for date format
-parameters.filter {String} Filter
+parameters.key_field {String} Message field of to return terms of
+parameters.value_field {String} Value field used for computation
+parameters.order {String} What to order on (Allowed values: TERM, REVERSE_TERM, COUNT, REVERSE_COUNT, TOTAL, REVERSE_TOTAL, MIN, REVERSE_MIN, MAX, REVERSE_MAX, MEAN, REVERSE_MEAN)
+parameters.query {String} Query (Lucene syntax)
+parameters.size {Integer} Optional. Maximum number of terms to return
+parameters.from {String} Timerange start. See search method description for date format
+parameters.to {String} Timerange end. See search method description for date format
+parameters.filter {String} Optional. Filter
 ```
 
 ## Search/Keyword: Message search
@@ -1169,13 +1168,13 @@ Search for messages in a timerange defined by a keyword like "yesterday" or "2 w
 __Arguments__
 
 ```javascript
-parameters.query {String} Optional. Query (Lucene syntax)
-parameters.keyword {String} Optional. Range keyword
-parameters.limit {Integer} Maximum number of messages to return
-parameters.offset {Integer} Offset
-parameters.filter {String} Filter
-parameters.fields {String} Comma separated list of fields to return
-parameters.sort {String} Sorting (field:asc / field:desc)
+parameters.query {String} Query (Lucene syntax)
+parameters.keyword {String} Range keyword
+parameters.limit {Integer} Optional. Maximum number of messages to return
+parameters.offset {Integer} Optional. Offset
+parameters.filter {String} Optional. Filter
+parameters.fields {String} Optional. Comma separated list of fields to return
+parameters.sort {String} Optional. Sorting (field:asc / field:desc)
 ```
 
 <a name="searchKeywordFieldHistogram">
@@ -1186,11 +1185,11 @@ Datetime histogram of a query using keyword timerange
 __Arguments__
 
 ```javascript
-parameters.query {String} Optional. Query (Lucene syntax)
-parameters.field {String} Optional. Field of whose values to get the histogram of
-parameters.interval {String} Optional. Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)String'
-parameters.keyword {String} Optional. Range keyword
-parameters.filter {String} Filter
+parameters.query {String} Query (Lucene syntax)
+parameters.field {String} Field of whose values to get the histogram of
+parameters.interval {String} Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)
+parameters.keyword {String} Range keyword
+parameters.filter {String} Optional. Filter
 ```
 
 <a name="searchKeywordHistogram">
@@ -1201,10 +1200,10 @@ Datetime histogram of a query using keyword timerange
 __Arguments__
 
 ```javascript
-parameters.query {String} Optional. Query (Lucene syntax)
-parameters.interval {String} Optional. Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)String'
-parameters.keyword {String} Optional. Range keyword
-parameters.filter {String} Filter
+parameters.query {String} Query (Lucene syntax)
+parameters.interval {String} Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)
+parameters.keyword {String} Range keyword
+parameters.filter {String} Optional. Filter
 ```
 
 <a name="searchKeywordStats">
@@ -1217,10 +1216,10 @@ Returns statistics like min/max or standard deviation of numeric fields over the
 __Arguments__
 
 ```javascript
-parameters.field {String} Optional. Message field of numeric type to return statistics for
-parameters.query {String} Optional. Query (Lucene syntax)
-parameters.keyword {String} Optional. Range keyword
-parameters.filter {String} Filter
+parameters.field {String} Message field of numeric type to return statistics for
+parameters.query {String} Query (Lucene syntax)
+parameters.keyword {String} Range keyword
+parameters.filter {String} Optional. Filter
 ```
 
 <a name="searchKeywordTerms">
@@ -1231,11 +1230,11 @@ Most common field terms of a query using a keyword timerange
 __Arguments__
 
 ```javascript
-parameters.field {String} Optional. Message field of to return terms of
-parameters.query {String} Optional. Query (Lucene syntax)
-parameters.size {Integer} Maximum number of terms to return
-parameters.keyword {String} Optional. Range keyword
-parameters.filter {String} Filter
+parameters.field {String} Message field of to return terms of
+parameters.query {String} Query (Lucene syntax)
+parameters.size {Integer} Optional. Maximum number of terms to return
+parameters.keyword {String} Range keyword
+parameters.filter {String} Optional. Filter
 ```
 
 <a name="searchKeywordTermsStats">
@@ -1246,14 +1245,13 @@ Ordered field terms of a query computed on another field using a keyword timeran
 __Arguments__
 
 ```javascript
-parameters.key_field {String} Optional. Message field of to return terms of
-parameters.value_field {String} Optional. Value field used for computation
-ru.order
-      name: '', {String} Optional. IN, MAX, REVERSE_MAX, MEAN, REVERSE_MEAN)
-parameters.query {String} Optional. Query (Lucene syntax)
-parameters.size {Integer} Maximum number of terms to return
-parameters.keyword {String} Optional. Keyword timeframe
-parameters.filter {String} Filter
+parameters.key_field {String} Message field of to return terms of
+parameters.value_field {String} Value field used for computation
+parameters.order {String} What to order on (Allowed values: TERM, REVERSE_TERM, COUNT, REVERSE_COUNT, TOTAL, REVERSE_TOTAL, MIN, REVERSE_MIN, MAX, REVERSE_MAX, MEAN, REVERSE_MEAN)
+parameters.query {String} Query (Lucene syntax)
+parameters.size {Integer} Optional. Maximum number of terms to return
+parameters.keyword {String} Keyword timeframe
+parameters.filter {String} Optional. Filter
 ```
 
 ## Search/Relative: Message search
@@ -1267,15 +1265,13 @@ Search for messages in a relative timerange, specified as seconds from now. Exam
 
 __Arguments__
 
-``javascript
-  [
-    {
-      parameters.query {String} Optional. Query (Lucene syntax)
-parameters.range {Integer} Optional. Relative timeframe to search in. See method description
-parameters.limit {Integer} Maximum number of messages to return
-parameters.offset {Integer} Offset
-parameters.filter {String} Filter
-parameters.fields {String} Optional. Comma separated list of fields to return
+```javascript
+parameters.query {String} Query (Lucene syntax)
+parameters.range {Integer} Relative timeframe to search in. See method description
+parameters.limit {Integer} Optional. Maximum number of messages to return
+parameters.offset {Integer} Optional. Offset
+parameters.filter {String} Optional. Filter
+parameters.fields {String} Comma separated list of fields to return
 ```
 
 <a name="searchRelativeFieldHistogram">
@@ -1286,11 +1282,11 @@ Field value histogram of a query using a relative timerange
 __Arguments__
 
 ```javascript
-parameters.query {String} Optional. Query (Lucene syntax)
-parameters.field {String} Optional. Field of whose values to get the histogram of
-parameters.interval {String} Optional. Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)String'
-parameters.range {Integer} Optional. Relative timeframe to search in. See search method description
-parameters.filter {String} Filter
+parameters.query {String} Query (Lucene syntax)
+parameters.field {String} Field of whose values to get the histogram of
+parameters.interval {String} Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)
+parameters.range {Integer} Relative timeframe to search in. See search method description
+parameters.filter {String} Optional. Filter
 ```
 
 <a name="searchRelativeHistogram">
@@ -1301,10 +1297,10 @@ Datetime histogram of a query using a relative timerange
 __Arguments__
 
 ```javascript
-parameters.query {String} Optional. Query (Lucene syntax)
-parameters.interval {String} Optional. Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)String'
-parameters.range {Integer} Optional. Relative timeframe to search in. See search method description
-parameters.filter {String} Filter
+parameters.query {String} Query (Lucene syntax)
+parameters.interval {String} Histogram interval / bucket size. (year, quarter, month, week, day, hour or minute)
+parameters.range {Integer} Relative timeframe to search in. See search method description
+parameters.filter {String} Optional. Filter
 ```
 
 <a name="searchRelativeStats">
@@ -1317,10 +1313,10 @@ Returns statistics like min/max or standard deviation of numeric fields over the
 __Arguments__
 
 ```javascript
-parameters.field {String} Optional. Message field of numeric type to return statistics for
-parameters.query {String} Optional. Query (Lucene syntax)
-parameters.range {Integer} Optional. Relative timeframe to search in. See search method description
-parameters.filter {String} Filter
+parameters.field {String} Message field of numeric type to return statistics for
+parameters.query {String} Query (Lucene syntax)
+parameters.range {Integer} Relative timeframe to search in. See search method description
+parameters.filter {String} Optional. Filter
 ```
 
 <a name="searchRelativeTerms">
@@ -1331,11 +1327,11 @@ Most common field terms of a query using a relative timerange
 __Arguments__
 
 ```javascript
-parameters.field {String} Optional. Message field of to return terms of
-parameters.query {String} Optional. Query (Lucene syntax)
-parameters.size {Integer} Maximum number of terms to return
-parameters.range {Integer} Optional. Relative timeframe to search in. See search method description
-parameters.filter {String} Filter
+parameters.field {String} Message field of to return terms of
+parameters.query {String} Query (Lucene syntax)
+parameters.size {Integer} Optional. Maximum number of terms to return
+parameters.range {Integer} Relative timeframe to search in. See search method description
+parameters.filter {String} Optional. Filter
 ```
 
 <a name="searchRelativeTermsStats">
@@ -1346,14 +1342,13 @@ Ordered field terms of a query computed on another field using a relative timera
 __Arguments__
 
 ```javascript
-parameters.key_field {String} Optional. Message field of to return terms of
-parameters.value_field {String} Optional. Value field used for computation
-ru.order
-      name: '', {String} Optional. IN, MAX, REVERSE_MAX, MEAN, REVERSE_MEAN)
-parameters.query {String} Optional. Query (Lucene syntax)
-parameters.size {Integer} Maximum number of terms to return
-parameters.range {Integer} Optional. Relative timeframe to search in. See search method description
-parameters.filter {String} Filter
+parameters.key_field {String} Message field of to return terms of
+parameters.value_field {String} Value field used for computation
+parameters.order {String} What to order on (Allowed values: TERM, REVERSE_TERM, COUNT, REVERSE_COUNT, TOTAL, REVERSE_TOTAL, MIN, REVERSE_MIN, MAX, REVERSE_MAX, MEAN, REVERSE_MEAN)
+parameters.query {String} Query (Lucene syntax)
+parameters.size {Integer} Optional. Maximum number of terms to return
+parameters.range {Integer} Relative timeframe to search in. See search method description
+parameters.filter {String} Optional. Filter
 ```
 
 ## Search/Saved: Saved searches
@@ -1366,7 +1361,7 @@ Create a new saved search
 __Arguments__
 
 ```javascript
-parameters.[JSON body] {CreateSavedSearchRequest} Optional.  
+parameters.[JSON body] {CreateSavedSearchRequest}  
 ```
 
 <a name="getSearchSavedAll">
@@ -1382,7 +1377,7 @@ Get a single saved search
 __Arguments__
 
 ```javascript
-path.searchId {String} Optional.  
+path.searchId {String}  
 ```
 
 <a name="updateSearchSaved">
@@ -1393,8 +1388,8 @@ Update a saved search
 __Arguments__
 
 ```javascript
-path.searchId {String} Optional.  
-parameters.[JSON body] {CreateSavedSearchRequest} Optional.  
+path.searchId {String}  
+parameters.[JSON body] {CreateSavedSearchRequest}  
 ```
 
 <a name="removeSearchSaved">
@@ -1405,7 +1400,7 @@ Delete a saved search
 __Arguments__
 
 ```javascript
-path.searchId {String} Optional.  
+path.searchId {String}  
 ```
 
 ## Sources: Listing message sources (e.g. hosts sending logs)
@@ -1420,7 +1415,7 @@ Range: The parameter is in seconds relative to the current time. 86400 means "in
 __Arguments__
 
 ```javascript
-parameters.range {Integer} Optional. Relative timeframe to search in. See method description
+parameters.range {Integer} Relative timeframe to search in. See method description
 ```
 
 ## StaticFields: Static fields of an input
@@ -1433,8 +1428,8 @@ Add a static field to an input
 __Arguments__
 
 ```javascript
-path.inputId {String} Optional.  
-parameters.[JSON body] {CreateStaticFieldRequest} Optional.  
+path.inputId {String}  
+parameters.[JSON body] {CreateStaticFieldRequest}  
 ```
 
 <a name="removeInputStaticField">
@@ -1445,8 +1440,8 @@ Remove static field of an input
 __Arguments__
 
 ```javascript
-path.Key {String} Optional.  
-path.inputId {String} Optional.  
+path.Key {String}  
+path.inputId {String}  
 ```
 
 ## StreamOutputs: Manage stream outputs for a given stream
@@ -1459,8 +1454,8 @@ Associate outputs with a stream
 __Arguments__
 
 ```javascript
-path.streamid {String} Optional. The id of the stream whose outputs we want
-parameters.[JSON body] {AddOutputRequest} Optional.  
+path.streamid {String} The id of the stream whose outputs we want
+parameters.[JSON body] {AddOutputRequest}  
 ```
 
 <a name="getStreamOutputs">
@@ -1471,7 +1466,7 @@ Associate outputs with a stream
 __Arguments__
 
 ```javascript
-path.streamid {String} Optional. The id of the stream whose outputs we want
+path.streamid {String} The id of the stream whose outputs we want
 ```
 
 <a name="getStreamOutput">
@@ -1482,7 +1477,7 @@ Get specific output of a stream
 __Arguments__
 
 ```javascript
-path.streamid {String} Optional. The id of the stream whose outputs we want
+path.streamid {String} The id of the stream whose outputs we want
 ```
 
 <a name="removeStreamOutput">
@@ -1493,8 +1488,8 @@ Delete output of a stream
 __Arguments__
 
 ```javascript
-path.streamid {String} Optional. The id of the stream whose outputs we want
-path.outputId {String} Optional. The id of the output that should be deleted
+path.streamid {String} The id of the stream whose outputs we want
+path.outputId {String} The id of the output that should be deleted
 ```
 
 ## StreamRules: Manage stream rules
@@ -1507,7 +1502,7 @@ Get a list of all stream rules
 __Arguments__
 
 ```javascript
-path.streamid {String} Optional. The id of the stream whose stream rule we want
+path.streamid {String} The id of the stream whose stream rule we want
 ```
 
 <a name="getStreamRule">
@@ -1518,8 +1513,8 @@ Get a single stream rules
 __Arguments__
 
 ```javascript
-path.streamid {String} Optional. The id of the stream whose stream rule we want
-path.streamRuleId {String} Optional. The stream rule id we are getting
+path.streamid {String} The id of the stream whose stream rule we want
+path.streamRuleId {String} The stream rule id we are getting
 ```
 
 <a name="createStreamRule">
@@ -1530,8 +1525,8 @@ Create a stream rule
 __Arguments__
 
 ```javascript
-path.streamid {String} Optional. The stream id this new rule belongs to
-parameters.[JSON body] {CreateStreamRuleRequest} Optional.  
+path.streamid {String} The stream id this new rule belongs to
+parameters.[JSON body] {CreateStreamRuleRequest}  
 ```
 
 <a name="updateStreamRule">
@@ -1542,9 +1537,9 @@ Update a stream rule
 __Arguments__
 
 ```javascript
-path.streamid {String} Optional. The stream id this rule belongs to
-path.streamRuleId {String} Optional. The stream rule id we are updating
-parameters.[JSON body] {CreateStreamRuleRequest} Optional.  
+path.streamid {String} The stream id this rule belongs to
+path.streamRuleId {String} The stream rule id we are updating
+parameters.[JSON body] {CreateStreamRuleRequest}  
 ```
 
 <a name="removeStreamRule">
@@ -1555,8 +1550,8 @@ Delete a stream rule
 __Arguments__
 
 ```javascript
-path.streamid {String} Optional. The stream id this new rule belongs to
-path.streamRuleId {String} Optional.  
+path.streamid {String} The stream id this new rule belongs to
+path.streamRuleId {String}  
 ```
 
 ## Streams: Manage streams
@@ -1574,7 +1569,7 @@ Create a stream
 __Arguments__
 
 ```javascript
-parameters.[JSON body] {CreateStreamRequest} Optional.  
+parameters.[JSON body] {CreateStreamRequest}  
 ```
 
 <a name="getStreamsEnabled">
@@ -1590,7 +1585,7 @@ Current throughput of this stream on this node in messages per second
 __Arguments__
 
 ```javascript
-path.streamId {String} Optional.  
+path.streamId {String}  
 ```
 
 <a name="getStreamAllThroughput">
@@ -1606,7 +1601,7 @@ Get a single stream
 __Arguments__
 
 ```javascript
-path.streamId {String} Optional.  
+path.streamId {String}  
 ```
 
 <a name="updateStream">
@@ -1617,8 +1612,8 @@ Update a stream
 __Arguments__
 
 ```javascript
-path.streamId {String} Optional.  
-parameters.[JSON body] {UpdateStreamRequest} Optional.  
+path.streamId {String}  
+parameters.[JSON body] {UpdateStreamRequest}  
 ```
 
 <a name="removeStream">
@@ -1629,7 +1624,7 @@ Delete a stream
 __Arguments__
 
 ```javascript
-path.streamId {String} Optional.  
+path.streamId {String}  
 ```
 
 <a name="cloneStream">
@@ -1640,8 +1635,8 @@ Clone a stream
 __Arguments__
 
 ```javascript
-path.streamId {String} Optional.  
-parameters.[JSON body] {CloneStreamRequest} Optional.  
+path.streamId {String}  
+parameters.[JSON body] {CloneStreamRequest}  
 ```
 
 <a name="pauseStream">
@@ -1652,7 +1647,7 @@ Pause a stream
 __Arguments__
 
 ```javascript
-path.streamId {String} Optional.  
+path.streamId {String}  
 ```
 
 <a name="resumeStream">
@@ -1663,7 +1658,7 @@ Resume a stream
 __Arguments__
 
 ```javascript
-path.streamId {String} Optional.  
+path.streamId {String}  
 ```
 
 <a name="testMatchStream">
@@ -1674,8 +1669,8 @@ Test matching of a stream against a supplied message
 __Arguments__
 
 ```javascript
-path.streamId {String} Optional.  
-parameters.[JSON body] {Map} Optional.  
+path.streamId {String}  
+parameters.[JSON body] {Map}  
 ```
 
 ## System: System information of this node
@@ -1717,7 +1712,7 @@ Upload a content pack
 __Arguments__
 
 ```javascript
-parameters.Request body {ConfigurationBundle} Optional. Content pack
+parameters.Request body {ConfigurationBundle} Content pack
 ```
 
 <a name="getBundles">
@@ -1733,7 +1728,7 @@ Export entities as a content pack
 __Arguments__
 
 ```javascript
-parameters.exportBundle {ExportBundle} Optional. Export content pack
+parameters.exportBundle {ExportBundle} Export content pack
 ```
 
 <a name="getBundle">
@@ -1744,7 +1739,7 @@ Show content pack
 __Arguments__
 
 ```javascript
-path.bundleId {String} Optional. Content pack ID
+path.bundleId {String} Content pack ID
 ```
 
 <a name="updateBundle">
@@ -1755,8 +1750,8 @@ Update content pack
 __Arguments__
 
 ```javascript
-path.bundleId {String} Optional. Content pack ID
-parameters.Request body {ConfigurationBundle} Optional. Content pack
+path.bundleId {String} Content pack ID
+parameters.Request body {ConfigurationBundle} Content pack
 ```
 
 <a name="removeBundle">
@@ -1767,7 +1762,7 @@ Delete content pack
 __Arguments__
 
 ```javascript
-path.bundleId {String} Optional. Content pack ID
+path.bundleId {String} Content pack ID
 ```
 
 <a name="applyBundle">
@@ -1778,7 +1773,7 @@ Set up entities described by content pack
 __Arguments__
 
 ```javascript
-path.bundleId {String} Optional. Content pack ID
+path.bundleId {String} Content pack ID
 ```
 
 ## System/Cluster: Node discovery
@@ -1798,7 +1793,7 @@ List all active nodes in this cluster
 __Arguments__
 
 ```javascript
-path.nodeId {String} Optional.  
+path.nodeId {String}  
 ```
 
 <a name="getNode">
@@ -1811,7 +1806,7 @@ This is returning information of a node in context to its state in the cluster. 
 __Arguments__
 
 ```javascript
-path.nodeId {String} Optional.  
+path.nodeId {String}  
 ```
 
 ## System/ClusterStats: Cluster stats
@@ -1853,7 +1848,7 @@ Returns at most one collector summary for the specified collector id
 __Arguments__
 
 ```javascript
-path.collectorId {String} Optional.  
+path.collectorId {String}  
 ```
 
 ## System/Collectors/Registration: Registration resource for Graylog Collector nodes
@@ -1868,8 +1863,8 @@ This is a stateless method which upserts a collector registration
 __Arguments__
 
 ```javascript
-path.collectorId {String} Optional. The collector id this collector is registering as
-parameters.[JSON body] {CollectorRegistrationRequest} Optional.  
+path.collectorId {String} The collector id this collector is registering as
+parameters.[JSON body] {CollectorRegistrationRequest}  
 ```
 
 ## System/Debug/Events: For debugging local and cluster events.
@@ -1882,7 +1877,7 @@ Create and send a cluster debug event
 __Arguments__
 
 ```javascript
-parameters.text {String}  
+parameters.text {String} Optional.  
 ```
 
 <a name="getDebugEventsCluster">
@@ -1898,7 +1893,7 @@ Create and send a local debug event
 __Arguments__
 
 ```javascript
-parameters.text {String}  
+parameters.text {String} Optional.  
 ```
 
 <a name="getDebugEventsLocal">
@@ -1935,7 +1930,7 @@ This operation is comparably fast because it reads directly from the indexer map
 __Arguments__
 
 ```javascript
-parameters.limit {Integer} Maximum number of fields to return. Set to 0 for all fields
+parameters.limit {Integer} Optional. Maximum number of fields to return. Set to 0 for all fields
 ```
 
 ## System/Grok: Manage grok patterns
@@ -1953,7 +1948,7 @@ Get the existing grok pattern
 __Arguments__
 
 ```javascript
-path.patternId {String} Optional.  
+path.patternId {String}  
 ```
 
 <a name="createGrok">
@@ -1964,7 +1959,7 @@ Add a new named pattern
 __Arguments__
 
 ```javascript
-parameters.pattern {GrokPatternSummary} Optional.  
+parameters.pattern {GrokPatternSummary}  
 ```
 
 <a name="createGroks">
@@ -1975,7 +1970,7 @@ Update an existing pattern
 __Arguments__
 
 ```javascript
-parameters.patterns {Array} Optional.  
+parameters.patterns {Array}  
 ```
 
 <a name="updateGrok">
@@ -1986,8 +1981,8 @@ Update an existing pattern
 __Arguments__
 
 ```javascript
-path.patternId {String} Optional.  
-parameters.pattern {GrokPatternSummary} Optional.  
+path.patternId {String}  
+parameters.pattern {GrokPatternSummary}  
 ```
 
 <a name="removeGrok">
@@ -2019,7 +2014,7 @@ Launch input on this node
 __Arguments__
 
 ```javascript
-parameters.[JSON body] {InputLaunchRequest} Optional.  
+parameters.[JSON body] {InputLaunchRequest}  
 ```
 
 <a name="getInput">
@@ -2030,7 +2025,7 @@ Get information of a single input on this node
 __Arguments__
 
 ```javascript
-path.inputId {String} Optional.  
+path.inputId {String}  
 ```
 
 <a name="getInputs">
@@ -2046,8 +2041,8 @@ Update input on this node
 __Arguments__
 
 ```javascript
-parameters.[JSON body] {InputLaunchRequest} Optional.  
-path.inputId {String} Optional.  
+parameters.[JSON body] {InputLaunchRequest}  
+path.inputId {String}  
 ```
 
 <a name="removeInput">
@@ -2058,7 +2053,7 @@ Terminate input on this node
 __Arguments__
 
 ```javascript
-path.inputId {String} Optional.  
+path.inputId {String}  
 ```
 
 <a name="launchInput">
@@ -2069,7 +2064,7 @@ Launch existing input on this node
 __Arguments__
 
 ```javascript
-path.inputId {String} Optional.  
+path.inputId {String}  
 ```
 
 <a name="restartInput">
@@ -2080,7 +2075,7 @@ Restart existing input on this node
 __Arguments__
 
 ```javascript
-path.inputId {String} Optional.  
+path.inputId {String}  
 ```
 
 <a name="stopInput">
@@ -2091,7 +2086,7 @@ Stop existing input on this node
 __Arguments__
 
 ```javascript
-path.inputId {String} Optional.  
+path.inputId {String}  
 ```
 
 ## System/Inputs/Types: Message input types of this node
@@ -2104,7 +2099,7 @@ Get information about a single input type
 __Arguments__
 
 ```javascript
-path.inputType {String} Optional.  
+path.inputType {String}  
 ```
 
 <a name="getInputsTypes">
@@ -2122,7 +2117,7 @@ Trigger new job
 __Arguments__
 
 ```javascript
-parameters.[JSON body] {TriggerRequest} Optional.  
+parameters.[JSON body] {TriggerRequest}  
 ```
 
 <a name="getJobs">
@@ -2138,7 +2133,7 @@ Get information of a specific currently running job
 __Arguments__
 
 ```javascript
-path.jobId {String} Optional.  
+path.jobId {String}  
 ```
 
 ## System/Journal: Message journal information of this node.
@@ -2163,7 +2158,7 @@ Update the LDAP configuration
 __Arguments__
 
 ```javascript
-parameters.[JSON body] {LdapSettingsRequest} Optional.  
+parameters.[JSON body] {LdapSettingsRequest}  
 ```
 
 <a name="removeLDAPSettings">
@@ -2179,7 +2174,7 @@ Test LDAP Configuration
 __Arguments__
 
 ```javascript
-parameters.Configuration to test {LdapTestConfigRequest} Optional.  
+parameters.Configuration to test {LdapTestConfigRequest}  
 ```
 
 ## System/LoadBalancers: Status propagation for load balancers
@@ -2197,7 +2192,7 @@ Override load balancer status of this graylog2-server node. Next lifecycle chang
 __Arguments__
 
 ```javascript
-path.status {String}  
+path.status {String} Optional.  
 ```
 
 ## System/Loggers: Internal Graylog loggers
@@ -2222,8 +2217,8 @@ Provided level is falling back to DEBUG if it does not exist
 __Arguments__
 
 ```javascript
-path.subsystem {String} Optional.  
-path.level {String} Optional.  
+path.subsystem {String}  
+path.level {String}  
 ```
 
 <a name="setLoggersLevel">
@@ -2235,9 +2230,9 @@ Provided level is falling back to DEBUG if it does not exist
 
 __Arguments__
 
-* `-````javascript
-  [loggerName {String} Optional.  
-path.level {String} Optional.  
+```javascript
+path.loggerName {String}  
+path.level {String}  
 ```
 ## System/Messages: Internal Graylog messages
 
@@ -2249,7 +2244,7 @@ Get internal Graylog system messages
 __Arguments__
 
 ```javascript
-parameters.page {Integer} Page
+parameters.page {Integer} Optional. Page
 ```
 
 ## System/Metrics: Internal Graylog2 metrics
@@ -2262,7 +2257,7 @@ Get a single metric
 __Arguments__
 
 ```javascript
-path.metricName {String} Optional.  
+path.metricName {String}  
 ```
 
 <a name="getMetrics">
@@ -2278,7 +2273,7 @@ Get the values of multiple metrics at once
 __Arguments__
 
 ```javascript
-parameters.Requested metrics {MetricsReadRequest} Optional.  
+parameters.Requested metrics {MetricsReadRequest}  
 ```
 
 <a name="getMetricsNames">
@@ -2294,7 +2289,7 @@ Get all metrics of a namespace
 __Arguments__
 
 ```javascript
-path.namespace {String} Optional.  
+path.namespace {String}  
 ```
 
 ## System/Metrics/History: Get history of metrics
@@ -2308,8 +2303,8 @@ The maximum retention time is currently only 5 minutes
 __Arguments__
 
 ```javascript
-path.metricName {String} Optional.  
-parameters.after {Long} Only values for after this UTC timestamp (1970 epoch)
+path.metricName {String}  
+parameters.after {Long} Optional. Only values for after this UTC timestamp (1970 epoch)
 ```
 
 ## System/Notifications: Notifications generated by the system
@@ -2327,7 +2322,7 @@ Delete a notification
 __Arguments__
 
 ```javascript
-path.notificationType {String}  
+path.notificationType {String} Optional.  
 ```
 
 ## System/Outputs: Manage outputs
@@ -2340,7 +2335,7 @@ Get specific output
 __Arguments__
 
 ```javascript
-path.outputId {String} Optional. The id of the output we want
+path.outputId {String} The id of the output we want
 ```
 
 <a name="getOutputs">
@@ -2356,7 +2351,7 @@ Create an output
 __Arguments__
 
 ```javascript
-parameters.[JSON body] {CreateOutputRequest} Optional.  
+parameters.[JSON body] {CreateOutputRequest}  
 ```
 
 <a name="getOutputsAvailable">
@@ -2372,8 +2367,8 @@ Update output
 __Arguments__
 
 ```javascript
-path.outputId {String} Optional. The id of the output that should be deleted
-parameters.[JSON body] {Map} Optional.  
+path.outputId {String} The id of the output that should be deleted
+parameters.[JSON body] {Map}  
 ```
 
 <a name="removeOutput">
@@ -2384,7 +2379,7 @@ Delete output
 __Arguments__
 
 ```javascript
-path.outputId {String} Optional. The id of the output that should be deleted
+path.outputId {String} The id of the output that should be deleted
 ```
 
 ## System/Permissions: Retrieval of system permissions
@@ -2402,7 +2397,7 @@ Get the initial permissions assigned to a reader account
 __Arguments__
 
 ```javascript
-path.username {String} Optional.  
+path.username {String}  
 ```
 
 ## System/Plugin: Plugin information
@@ -2436,7 +2431,7 @@ This is returning information of a radio in context to its state in the cluster.
 __Arguments__
 
 ```javascript
-path.radioId {String} Optional.  
+path.radioId {String}  
 ```
 
 <a name="getRadios">
@@ -2454,8 +2449,8 @@ Radio inputs register their own inputs here for persistence after they successfu
 __Arguments__
 
 ```javascript
-path.radioId {String} Optional.  
-parameters.[JSON body] {RegisterInputRequest} Optional.  
+path.radioId {String}  
+parameters.[JSON body] {RegisterInputRequest}  
 ```
 
 <a name="getRadioInputs">
@@ -2468,7 +2463,7 @@ This is returning the configured persisted inputs of a radio node. This is *not*
 __Arguments__
 
 ```javascript
-path.radioId {String} Optional.  
+path.radioId {String}  
 ```
 
 <a name="removeRadioInput">
@@ -2481,8 +2476,8 @@ Radios unregister their inputs when they are stopped/terminated on the radio
 __Arguments__
 
 ```javascript
-path.radioId {String} Optional.  
-path.inputId {String} Optional.  
+path.radioId {String}  
+path.inputId {String}  
 ```
 
 <a name="pingRadio">
@@ -2495,8 +2490,8 @@ Every graylog2-radio node is regularly pinging to announce that it is active
 __Arguments__
 
 ```javascript
-path.radioId {String} Optional.  
-parameters.[JSON body] {PingRequest} Optional.  
+path.radioId {String}  
+parameters.[JSON body] {PingRequest}  
 ```
 
 ## System/ServiceManager: ServiceManager Status
@@ -2516,7 +2511,7 @@ This request creates a new session for a user or reactivates an existing session
 __Arguments__
 
 ```javascript
-parameters.Login request {SessionCreateRequest} Optional. Username and credentials
+parameters.Login request {SessionCreateRequest} Username and credentials
 ```
 
 <a name="removeSession">
@@ -2529,7 +2524,7 @@ Destroys the session with the given ID: the equivalent of logging out
 __Arguments__
 
 ```javascript
-path.sessionId {String} Optional.  
+path.sessionId {String}  
 ```
 
 ## System/Shutdown: Shutdown this node gracefully
@@ -2606,7 +2601,7 @@ The user's permissions are only included if a user asks for his own account or f
 __Arguments__
 
 ```javascript
-path.username {String} Optional. The username to return information for
+path.username {String} The username to return information for
 ```
 
 <a name="getUsers">
@@ -2624,7 +2619,7 @@ Create a new user account
 __Arguments__
 
 ```javascript
-parameters.[JSON body] {CreateUserRequest} Optional. Must contain username, full_name, email, password and a list of permissionsteUserRequest'
+parameters.[JSON body] {CreateUserRequest} Must contain username, full_name, email, password and a list of permissionsteUserRequest'
 ```
 
 <a name="updateUser">
@@ -2635,8 +2630,8 @@ Modify user details
 __Arguments__
 
 ```javascript
-path.username {String} Optional. The name of the user to modify
-parameters.[JSON body] {ChangeUserRequest} Optional. Updated user information
+path.username {String} The name of the user to modify
+parameters.[JSON body] {ChangeUserRequest} Updated user information
 ```
 
 <a name="removeUser">
@@ -2647,7 +2642,7 @@ Removes a user account
 __Arguments__
 
 ```javascript
-path.username {String} Optional. The name of the user to delete
+path.username {String} The name of the user to delete
 ```
 
 <a name="updateUserPassword">
@@ -2658,8 +2653,8 @@ Update the password for a user
 __Arguments__
 
 ```javascript
-path.username {String} Optional. The name of the user whose password to change
-parameters.[JSON body] {ChangePasswordRequest} Optional. The old and new passwords
+path.username {String} The name of the user whose password to change
+parameters.[JSON body] {ChangePasswordRequest} The old and new passwords
 ```
 
 <a name="updateUserPermissions">
@@ -2670,8 +2665,8 @@ Update a user's permission set
 __Arguments__
 
 ```javascript
-path.username {String} Optional. The name of the user to modify
-parameters.[JSON body] {PermissionEditRequest} Optional. The list of permissions to assign to the user
+path.username {String} The name of the user to modify
+parameters.[JSON body] {PermissionEditRequest} The list of permissions to assign to the user
 ```
 
 <a name="removeUserPermissions">
@@ -2682,7 +2677,7 @@ Revoke all permissions for a user without deleting the account
 __Arguments__
 
 ```javascript
-path.username {String} Optional. The name of the user to modify
+path.username {String} The name of the user to modify
 ```
 
 <a name="updateUserPreferences">
@@ -2693,8 +2688,8 @@ Update a user's preferences set
 __Arguments__
 
 ```javascript
-path.username {String} Optional. The name of the user to modify
-parameters.[JSON body] {UpdateUserPreferences} Optional. The map of preferences to assign to the user
+path.username {String} The name of the user to modify
+parameters.[JSON body] {UpdateUserPreferences} The map of preferences to assign to the user
 ```
 
 <a name="getUserTokens">
@@ -2705,7 +2700,7 @@ Retrieves the list of access tokens for a user
 __Arguments__
 
 ```javascript
-path.username {String} Optional.  
+path.username {String}  
 ```
 
 <a name="createUserToken">
@@ -2716,8 +2711,8 @@ Generates a new access token for a user
 __Arguments__
 
 ```javascript
-path.username {String} Optional.  
-path.name {String} Optional. Descriptive name for this token (e.g. "cronjob")
+path.username {String}  
+path.name {String} Descriptive name for this token (e.g. "cronjob")
 ```
 
 <a name="removeUserToken">
@@ -2728,8 +2723,8 @@ Removes a token for a user
 __Arguments__
 
 ```javascript
-path.username {String} Optional.  
-path.access token {String} Optional.  
+path.username {String}  
+path.access token {String}  
 ```
 
 ## License
