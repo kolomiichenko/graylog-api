@@ -408,7 +408,7 @@ api.[methodName]([parameters][, path][, callback]);
 ## AlarmCallbacks: Manage stream alarm callbacks
 
 <a name="getAlarmCallbacks">
-### getAlarmCallbacks(parameters[, path][, callback])
+### getAlarmCallbacks(parameters, path[, callback])
 
 Get a list of all alarm callbacks for this stream
 
@@ -419,7 +419,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="createAlarmCallback">
-### createAlarmCallback(parameters[, path][, callback])
+### createAlarmCallback(parameters, path[, callback])
 
 Create an alarm callback
 
@@ -430,7 +430,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="getAlarmCallbacksAvailable">
-### getAlarmCallbacksAvailable(parameters[, path][, callback])
+### getAlarmCallbacksAvailable(parameters, path[, callback])
 
 Get a list of all alarm callback types
 
@@ -441,7 +441,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="getAlarmCallback">
-### getAlarmCallback(parameters[, path][, callback])
+### getAlarmCallback(parameters, path[, callback])
 
 Get a single specified alarm callback for this stream
 
@@ -453,7 +453,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="updateAlarmCallback">
-### updateAlarmCallback(parameters[, path][, callback])
+### updateAlarmCallback(parameters, path[, callback])
 
 Update an alarm callback
 
@@ -465,7 +465,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="removeAlarmCallback">
-### removeAlarmCallback(parameters[, path][, callback])
+### removeAlarmCallback(parameters, path[, callback])
 
 Delete an alarm callback
 
@@ -479,7 +479,7 @@ __Arguments__:
 ## AlertConditions: Manage stream alert conditions
 
 <a name="createAlertCondition">
-### createAlertCondition(parameters[, path][, callback])
+### createAlertCondition(parameters, path[, callback])
 
 Create an alert condition
 
@@ -490,7 +490,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="getAlertConditions">
-### getAlertConditions(parameters[, path][, callback])
+### getAlertConditions(parameters, path[, callback])
 
 Get all alert conditions of this stream
 
@@ -501,7 +501,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="updateAlertCondition">
-### updateAlertCondition(parameters[, path][, callback])
+### updateAlertCondition(parameters, path[, callback])
 
 Modify an alert condition
 
@@ -513,7 +513,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="removeAlertCondition">
-### removeAlertCondition(parameters[, path][, callback])
+### removeAlertCondition(parameters, path[, callback])
 
 Delete an alert condition
 
@@ -527,7 +527,7 @@ __Arguments__:
 ## AlertReceivers: Manage stream alert receivers
 
 <a name="getAlerts">
-### getAlerts(parameters[, path][, callback])
+### getAlerts(parameters, path[, callback])
 
 Get the 300 most recent alarms of this stream
 
@@ -539,7 +539,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="getAlertsCheck">
-### getAlertsCheck(parameters[, path][, callback])
+### getAlertsCheck(parameters, path[, callback])
 
 Check for triggered alert conditions of this streams. Results cached for 30 seconds
 
@@ -550,7 +550,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="createAlertReceiver">
-### createAlertReceiver(parameters[, path][, callback])
+### createAlertReceiver(parameters, path[, callback])
 
 Add an alert receiver
 
@@ -563,7 +563,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="removeAlertReceiver">
-### removeAlertReceiver(parameters[, path][, callback])
+### removeAlertReceiver(parameters, path[, callback])
 
 Remove an alert receiver
 
@@ -576,7 +576,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="testAlertSendDummy">
-### testAlertSendDummy(parameters[, path][, callback])
+### testAlertSendDummy(parameters, path[, callback])
 
 Send a test mail for a given stream
 
@@ -589,7 +589,7 @@ __Arguments__:
 ## Alerts: Manage stream alerts
 
 <a name="getAlerts">
-### getAlerts(parameters[, path][, callback])
+### getAlerts(parameters, path[, callback])
 
 Get the 300 most recent alarms of this stream
 
@@ -601,7 +601,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="getAlertsCheck">
-### getAlertsCheck(parameters[, path][, callback])
+### getAlertsCheck(parameters, path[, callback])
 
 Check for triggered alert conditions of this streams. Results cached for 30 seconds
 
@@ -612,7 +612,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="createAlertReceiver">
-### createAlertReceiver(parameters[, path][, callback])
+### createAlertReceiver(parameters, path[, callback])
 
 Add an alert receiver
 
@@ -625,7 +625,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="removeAlertReceiver">
-### removeAlertReceiver(parameters[, path][, callback])
+### removeAlertReceiver(parameters, path[, callback])
 
 Remove an alert receiver
 
@@ -638,7 +638,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="testAlertSendDummy">
-### testAlertSendDummy(parameters[, path][, callback])
+### testAlertSendDummy(parameters, path[, callback])
 
 Send a test mail for a given stream
 
@@ -678,7 +678,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="getDashboard">
-### getDashboard(parameters[, path][, callback])
+### getDashboard(parameters, path[, callback])
 
 Get a single dashboards and all configurations of its widgets
 
@@ -689,7 +689,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="updateDashboard">
-### updateDashboard(parameters[, path][, callback])
+### updateDashboard(parameters, path[, callback])
 
 Update the settings of a dashboard
 
@@ -700,7 +700,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="removeDashboard">
-### removeDashboard(parameters[, path][, callback])
+### removeDashboard(parameters, path[, callback])
 
 Delete a dashboard and all its widgets
 
@@ -711,7 +711,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="updateDashboardPositions">
-### updateDashboardPositions(parameters[, path][, callback])
+### updateDashboardPositions(parameters, path[, callback])
 
 Update/set the positions of dashboard widgets
 
@@ -722,7 +722,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="createDashboardWidget">
-### createDashboardWidget(parameters[, path][, callback])
+### createDashboardWidget(parameters, path[, callback])
 
 Add a widget to a dashboard
 
@@ -733,7 +733,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="updateDashboardWidget">
-### updateDashboardWidget(parameters[, path][, callback])
+### updateDashboardWidget(parameters, path[, callback])
 
 Update a widget
 
@@ -745,7 +745,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="removeDashboardWidget">
-### removeDashboardWidget(parameters[, path][, callback])
+### removeDashboardWidget(parameters, path[, callback])
 
 Delete a widget
 
@@ -757,7 +757,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="updateDashboardWidgetCacheTime">
-### updateDashboardWidgetCacheTime(parameters[, path][, callback])
+### updateDashboardWidgetCacheTime(parameters, path[, callback])
 
 Update cache time of a widget
 
@@ -769,7 +769,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="updateDashboardWidgetDescription">
-### updateDashboardWidgetDescription(parameters[, path][, callback])
+### updateDashboardWidgetDescription(parameters, path[, callback])
 
 Update description of a widget
 
@@ -781,7 +781,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="getDashboardWidgetValue">
-### getDashboardWidgetValue(parameters[, path][, callback])
+### getDashboardWidgetValue(parameters, path[, callback])
 
 Get a single widget value
 
@@ -795,7 +795,7 @@ __Arguments__:
 ## Extractors: Extractors of an input
 
 <a name="createInputExtractor">
-### createInputExtractor(parameters[, path][, callback])
+### createInputExtractor(parameters, path[, callback])
 
 Add an extractor to an input
 
@@ -806,7 +806,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="getInputExtractors">
-### getInputExtractors(parameters[, path][, callback])
+### getInputExtractors(parameters, path[, callback])
 
 List all extractors of an input
 
@@ -817,7 +817,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="updateInputExtractorOrder">
-### updateInputExtractorOrder(parameters[, path][, callback])
+### updateInputExtractorOrder(parameters, path[, callback])
 
 Update extractor order of an input
 
@@ -828,7 +828,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="updateInputExtractor">
-### updateInputExtractor(parameters[, path][, callback])
+### updateInputExtractor(parameters, path[, callback])
 
 Update an extractor
 
@@ -840,7 +840,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="removeInputExtractor">
-### removeInputExtractor(parameters[, path][, callback])
+### removeInputExtractor(parameters, path[, callback])
 
 Delete an extractor
 
@@ -852,7 +852,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="getInputExtractor">
-### getInputExtractor(parameters[, path][, callback])
+### getInputExtractor(parameters, path[, callback])
 
 Get information of a single extractor of an input
 
@@ -886,7 +886,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="getBlacklistFilter">
-### getBlacklistFilter(parameters[, path][, callback])
+### getBlacklistFilter(parameters, path[, callback])
 
 Get the existing blacklist filter
 
@@ -897,7 +897,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="updateBlacklistFilter">
-### updateBlacklistFilter(parameters[, path][, callback])
+### updateBlacklistFilter(parameters, path[, callback])
 
 Update an existing blacklist filter
 
@@ -911,7 +911,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="removeBlacklistFilter">
-### removeBlacklistFilter(parameters[, path][, callback])
+### removeBlacklistFilter(parameters, path[, callback])
 
 Remove the existing blacklist filter
 
@@ -983,7 +983,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="removeIndex">
-### removeIndex(parameters[, path][, callback])
+### removeIndex(parameters, path[, callback])
 
 Delete an index. This will also trigger an index ranges rebuild job
 
@@ -994,7 +994,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="getIndices">
-### getIndices(parameters[, path][, callback])
+### getIndices(parameters, path[, callback])
 
 Get information of an index and its shards
 
@@ -1005,7 +1005,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="closeIndex">
-### closeIndex(parameters[, path][, callback])
+### closeIndex(parameters, path[, callback])
 
 Close an index. This will also trigger an index ranges rebuild job
 
@@ -1016,7 +1016,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="reopenIndex">
-### reopenIndex(parameters[, path][, callback])
+### reopenIndex(parameters, path[, callback])
 
 Reopen a closed index. This will also trigger an index ranges rebuild job
 
@@ -1029,7 +1029,7 @@ __Arguments__:
 ## Messages: Single messages
 
 <a name="analyzeMessage">
-### analyzeMessage(parameters[, path][, callback])
+### analyzeMessage(parameters, path[, callback])
 
 Analyze a message string
 
@@ -1043,7 +1043,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="getMessage">
-### getMessage(parameters[, path][, callback])
+### getMessage(parameters, path[, callback])
 
 Get a single message
 
@@ -1354,7 +1354,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="getSearchSaved">
-### getSearchSaved(parameters[, path][, callback])
+### getSearchSaved(parameters, path[, callback])
 
 Get a single saved search
 
@@ -1365,7 +1365,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="updateSearchSaved">
-### updateSearchSaved(parameters[, path][, callback])
+### updateSearchSaved(parameters, path[, callback])
 
 Update a saved search
 
@@ -1376,7 +1376,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="removeSearchSaved">
-### removeSearchSaved(parameters[, path][, callback])
+### removeSearchSaved(parameters, path[, callback])
 
 Delete a saved search
 
@@ -1403,7 +1403,7 @@ __Arguments__:
 ## StaticFields: Static fields of an input
 
 <a name="createInputStaticField">
-### createInputStaticField(parameters[, path][, callback])
+### createInputStaticField(parameters, path[, callback])
 
 Add a static field to an input
 
@@ -1414,7 +1414,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="removeInputStaticField">
-### removeInputStaticField(parameters[, path][, callback])
+### removeInputStaticField(parameters, path[, callback])
 
 Remove static field of an input
 
@@ -1428,7 +1428,7 @@ __Arguments__:
 ## StreamOutputs: Manage stream outputs for a given stream
 
 <a name="createStreamOutput">
-### createStreamOutput(parameters[, path][, callback])
+### createStreamOutput(parameters, path[, callback])
 
 Associate outputs with a stream
 
@@ -1439,7 +1439,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="getStreamOutputs">
-### getStreamOutputs(parameters[, path][, callback])
+### getStreamOutputs(parameters, path[, callback])
 
 Associate outputs with a stream
 
@@ -1450,7 +1450,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="getStreamOutput">
-### getStreamOutput(parameters[, path][, callback])
+### getStreamOutput(parameters, path[, callback])
 
 Get specific output of a stream
 
@@ -1461,7 +1461,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="removeStreamOutput">
-### removeStreamOutput(parameters[, path][, callback])
+### removeStreamOutput(parameters, path[, callback])
 
 Delete output of a stream
 
@@ -1475,7 +1475,7 @@ __Arguments__:
 ## StreamRules: Manage stream rules
 
 <a name="getStreamRules">
-### getStreamRules(parameters[, path][, callback])
+### getStreamRules(parameters, path[, callback])
 
 Get a list of all stream rules
 
@@ -1486,7 +1486,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="getStreamRule">
-### getStreamRule(parameters[, path][, callback])
+### getStreamRule(parameters, path[, callback])
 
 Get a single stream rules
 
@@ -1498,7 +1498,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="createStreamRule">
-### createStreamRule(parameters[, path][, callback])
+### createStreamRule(parameters, path[, callback])
 
 Create a stream rule
 
@@ -1509,7 +1509,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="updateStreamRule">
-### updateStreamRule(parameters[, path][, callback])
+### updateStreamRule(parameters, path[, callback])
 
 Update a stream rule
 
@@ -1521,7 +1521,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="removeStreamRule">
-### removeStreamRule(parameters[, path][, callback])
+### removeStreamRule(parameters, path[, callback])
 
 Delete a stream rule
 
@@ -1560,7 +1560,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="getStreamThroughput">
-### getStreamThroughput(parameters[, path][, callback])
+### getStreamThroughput(parameters, path[, callback])
 
 Current throughput of this stream on this node in messages per second
 
@@ -1579,7 +1579,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="getStream">
-### getStream(parameters[, path][, callback])
+### getStream(parameters, path[, callback])
 
 Get a single stream
 
@@ -1590,7 +1590,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="updateStream">
-### updateStream(parameters[, path][, callback])
+### updateStream(parameters, path[, callback])
 
 Update a stream
 
@@ -1601,7 +1601,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="removeStream">
-### removeStream(parameters[, path][, callback])
+### removeStream(parameters, path[, callback])
 
 Delete a stream
 
@@ -1612,7 +1612,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="cloneStream">
-### cloneStream(parameters[, path][, callback])
+### cloneStream(parameters, path[, callback])
 
 Clone a stream
 
@@ -1623,7 +1623,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="pauseStream">
-### pauseStream(parameters[, path][, callback])
+### pauseStream(parameters, path[, callback])
 
 Pause a stream
 
@@ -1634,7 +1634,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="resumeStream">
-### resumeStream(parameters[, path][, callback])
+### resumeStream(parameters, path[, callback])
 
 Resume a stream
 
@@ -1645,7 +1645,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="testMatchStream">
-### testMatchStream(parameters[, path][, callback])
+### testMatchStream(parameters, path[, callback])
 
 Test matching of a stream against a supplied message
 
@@ -1730,7 +1730,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="getBundle">
-### getBundle(parameters[, path][, callback])
+### getBundle(parameters, path[, callback])
 
 Show content pack
 
@@ -1741,7 +1741,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="updateBundle">
-### updateBundle(parameters[, path][, callback])
+### updateBundle(parameters, path[, callback])
 
 Update content pack
 
@@ -1753,7 +1753,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="removeBundle">
-### removeBundle(parameters[, path][, callback])
+### removeBundle(parameters, path[, callback])
 
 Delete content pack
 
@@ -1764,7 +1764,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="applyBundle">
-### applyBundle(parameters[, path][, callback])
+### applyBundle(parameters, path[, callback])
 
 Set up entities described by content pack
 
@@ -1787,7 +1787,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="getNodes">
-### getNodes(parameters[, path][, callback])
+### getNodes(parameters, path[, callback])
 
 List all active nodes in this cluster
 
@@ -1798,7 +1798,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="getNode">
-### getNode(parameters[, path][, callback])
+### getNode(parameters, path[, callback])
 
 Information about a node
 
@@ -1853,7 +1853,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="getSystemCollector">
-### getSystemCollector(parameters[, path][, callback])
+### getSystemCollector(parameters, path[, callback])
 
 Returns at most one collector summary for the specified collector id
 
@@ -1866,7 +1866,7 @@ __Arguments__:
 ## System/Collectors/Registration: Registration resource for Graylog Collector nodes
 
 <a name="changeCollector">
-### changeCollector(parameters[, path][, callback])
+### changeCollector(parameters, path[, callback])
 
 Create/update an collector registration
 
@@ -1967,7 +1967,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="getGrok">
-### getGrok(parameters[, path][, callback])
+### getGrok(parameters, path[, callback])
 
 Get the existing grok pattern
 
@@ -1998,7 +1998,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="updateGrok">
-### updateGrok(parameters[, path][, callback])
+### updateGrok(parameters, path[, callback])
 
 Update an existing pattern
 
@@ -2068,7 +2068,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="updateInput">
-### updateInput(parameters[, path][, callback])
+### updateInput(parameters, path[, callback])
 
 Update input on this node
 
@@ -2079,7 +2079,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="removeInput">
-### removeInput(parameters[, path][, callback])
+### removeInput(parameters, path[, callback])
 
 Terminate input on this node
 
@@ -2090,7 +2090,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="launchInput">
-### launchInput(parameters[, path][, callback])
+### launchInput(parameters, path[, callback])
 
 Launch existing input on this node
 
@@ -2101,7 +2101,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="restartInput">
-### restartInput(parameters[, path][, callback])
+### restartInput(parameters, path[, callback])
 
 Restart existing input on this node
 
@@ -2112,7 +2112,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="stopInput">
-### stopInput(parameters[, path][, callback])
+### stopInput(parameters, path[, callback])
 
 Stop existing input on this node
 
@@ -2125,7 +2125,7 @@ __Arguments__:
 ## System/Inputs/Types: Message input types of this node
 
 <a name="getInputsType">
-### getInputsType(parameters[, path][, callback])
+### getInputsType(parameters, path[, callback])
 
 Get information about a single input type
 
@@ -2163,7 +2163,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="getJob">
-### getJob(parameters[, path][, callback])
+### getJob(parameters, path[, callback])
 
 Get information of a specific currently running job
 
@@ -2231,7 +2231,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="updateLoadBalancerStatusOverride">
-### updateLoadBalancerStatusOverride(parameters[, path][, callback])
+### updateLoadBalancerStatusOverride(parameters, path[, callback])
 
 Override load balancer status of this graylog2-server node. Next lifecycle change will override it again to its default. Set to ALIVE or DEAD
 
@@ -2260,7 +2260,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="setLoggersSubsystemsLevel">
-### setLoggersSubsystemsLevel(parameters[, path][, callback])
+### setLoggersSubsystemsLevel(parameters, path[, callback])
 
 Set the loglevel of a whole subsystem
 
@@ -2274,7 +2274,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="setLoggersLevel">
-### setLoggersLevel(parameters[, path][, callback])
+### setLoggersLevel(parameters, path[, callback])
 
 Set the loglevel of a single logger
 
@@ -2302,7 +2302,7 @@ __Arguments__:
 ## System/Metrics: Internal Graylog2 metrics
 
 <a name="getMetric">
-### getMetric(parameters[, path][, callback])
+### getMetric(parameters, path[, callback])
 
 Get a single metric
 
@@ -2339,7 +2339,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="getMetricsNamespace">
-### getMetricsNamespace(parameters[, path][, callback])
+### getMetricsNamespace(parameters, path[, callback])
 
 Get all metrics of a namespace
 
@@ -2352,7 +2352,7 @@ __Arguments__:
 ## System/Metrics/History: Get history of metrics
 
 <a name="getMetricsHistory">
-### getMetricsHistory(parameters[, path][, callback])
+### getMetricsHistory(parameters, path[, callback])
 
 Get history of a single metric
 The maximum retention time is currently only 5 minutes
@@ -2375,7 +2375,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="removeNotification">
-### removeNotification(parameters[, path][, callback])
+### removeNotification(parameters, path[, callback])
 
 Delete a notification
 
@@ -2388,7 +2388,7 @@ __Arguments__:
 ## System/Outputs: Manage outputs
 
 <a name="getOutput">
-### getOutput(parameters[, path][, callback])
+### getOutput(parameters, path[, callback])
 
 Get specific output
 
@@ -2424,7 +2424,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="updateOutput">
-### updateOutput(parameters[, path][, callback])
+### updateOutput(parameters, path[, callback])
 
 Update output
 
@@ -2435,7 +2435,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="removeOutput">
-### removeOutput(parameters[, path][, callback])
+### removeOutput(parameters, path[, callback])
 
 Delete output
 
@@ -2456,7 +2456,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="getPermissionsReader">
-### getPermissionsReader(parameters[, path][, callback])
+### getPermissionsReader(parameters, path[, callback])
 
 Get the initial permissions assigned to a reader account
 
@@ -2497,7 +2497,7 @@ __Arguments__:
 ## System/Radios: Management of graylog2-radio nodes
 
 <a name="getRadio">
-### getRadio(parameters[, path][, callback])
+### getRadio(parameters, path[, callback])
 
 Information about a radio
 
@@ -2518,7 +2518,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="createRadioInput">
-### createRadioInput(parameters[, path][, callback])
+### createRadioInput(parameters, path[, callback])
 
 Register input of a radio
 
@@ -2531,7 +2531,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="getRadioInputs">
-### getRadioInputs(parameters[, path][, callback])
+### getRadioInputs(parameters, path[, callback])
 
 Persisted inputs of a radio
 
@@ -2544,7 +2544,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="removeRadioInput">
-### removeRadioInput(parameters[, path][, callback])
+### removeRadioInput(parameters, path[, callback])
 
 Unregister input of a radio
 
@@ -2558,7 +2558,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="pingRadio">
-### pingRadio(parameters[, path][, callback])
+### pingRadio(parameters, path[, callback])
 
 Ping - Accepts pings of graylog2-radio nodes
 
@@ -2593,7 +2593,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="removeSession">
-### removeSession(parameters[, path][, callback])
+### removeSession(parameters, path[, callback])
 
 Terminate an existing session
 
@@ -2692,7 +2692,7 @@ __Arguments__:
 ## Users: User accounts
 
 <a name="getUser">
-### getUser(parameters[, path][, callback])
+### getUser(parameters, path[, callback])
 
 Get user details
 
@@ -2724,7 +2724,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="updateUser">
-### updateUser(parameters[, path][, callback])
+### updateUser(parameters, path[, callback])
 
 Modify user details
 
@@ -2735,7 +2735,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="removeUser">
-### removeUser(parameters[, path][, callback])
+### removeUser(parameters, path[, callback])
 
 Removes a user account
 
@@ -2746,7 +2746,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="updateUserPassword">
-### updateUserPassword(parameters[, path][, callback])
+### updateUserPassword(parameters, path[, callback])
 
 Update the password for a user
 
@@ -2757,7 +2757,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="updateUserPermissions">
-### updateUserPermissions(parameters[, path][, callback])
+### updateUserPermissions(parameters, path[, callback])
 
 Update a user's permission set
 
@@ -2768,7 +2768,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="removeUserPermissions">
-### removeUserPermissions(parameters[, path][, callback])
+### removeUserPermissions(parameters, path[, callback])
 
 Revoke all permissions for a user without deleting the account
 
@@ -2779,7 +2779,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="updateUserPreferences">
-### updateUserPreferences(parameters[, path][, callback])
+### updateUserPreferences(parameters, path[, callback])
 
 Update a user's preferences set
 
@@ -2790,7 +2790,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="getUserTokens">
-### getUserTokens(parameters[, path][, callback])
+### getUserTokens(parameters, path[, callback])
 
 Retrieves the list of access tokens for a user
 
@@ -2801,7 +2801,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="createUserToken">
-### createUserToken(parameters[, path][, callback])
+### createUserToken(parameters, path[, callback])
 
 Generates a new access token for a user
 
@@ -2813,7 +2813,7 @@ __Arguments__:
   * _callback_: {Function} Optional. Callback function
 
 <a name="removeUserToken">
-### removeUserToken(parameters[, path][, callback])
+### removeUserToken(parameters, path[, callback])
 
 Removes a token for a user
 
