@@ -62,7 +62,7 @@ The source is available for download from
 Alternatively, you can install using Node Package Manager (`npm`):
 
 ```bash
-  npm install async
+  npm install graylog-api
 ```
 
 ## Documentation
