@@ -39,6 +39,9 @@ Object.keys(methods).forEach(function(mName) {
     var opts = {
       url: reqUri,
       method: m.method,
+      headers: {
+        Accept: 'application/json'
+      },
       body: (m.method !== 'GET' && parameters) ? parameters : null,
       json: false
     };
