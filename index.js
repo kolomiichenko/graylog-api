@@ -47,10 +47,15 @@ Object.keys(methods).forEach(function(mName) {
     };
 
     request(opts, function(error, response, body) {
-      if (!error) {
+      if (error) {
+        return callback([error, body]);
+      }
+
+      try {
         callback(null, JSON.parse(body));
-      } else {
-        callback((error === null && body === '') ? 'Unknown error' : [error, body]);
+      }
+      catch (err) {
+        callback(['Bad response', err, reqUri]);
       }
     });
   };
