@@ -24,13 +24,14 @@ Object.keys(methods).forEach(function(mName) {
     if (arguments.length === 1) callback = parameters;
     if (arguments.length === 2) callback = path;
 
+    var computedPath = m.basePath;
     if (typeof arguments[1] === 'object') {
-      m.path = m.path.replace(/{([^}]*)}/g, function(s, p) {
+      computedPath = m.basePath.replace(/{([^}]*)}/g, function(s, p) {
         return path[p];
       });
     }
 
-    var reqUri = this._uri + m.path;
+    var reqUri = this._uri + computedPath;
 
     if (m.method === 'GET' && parameters) {
       reqUri = reqUri + '?' + serializeObjToUri(parameters);
