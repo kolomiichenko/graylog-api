@@ -40,7 +40,8 @@ Object.keys(methods).forEach(function(mName) {
       url: reqUri,
       method: m.method,
       headers: {
-        Accept: 'application/json'
+        Accept: 'application/json',
+        "Content-Type": 'application/json'
       },
       body: (m.method !== 'GET' && parameters) ? parameters : null,
       json: false
