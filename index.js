@@ -7,12 +7,16 @@ function serializeObjToUri(obj) {
   }).join('&');
 }
 
+function buildBasicAuthHeader(obj) {
+  return 'Basic ' + new Buffer(obj.username + ':' + obj.password).toString('base64');
+}
+
 var Api = function(config) {
   this._protocol = config.protocol || 'http'; // or https
-  this._auth = (config.basicAuth) ? config.basicAuth.username + ':' + config.basicAuth.password + '@' : '';
+  this._auth = (config.basicAuth) ? buildBasicAuthHeader(config.basicAuth) : '';
   this._host = config.host || 'localhost';
   this._port = config.port || '12900';
-  this._uri = this._protocol + '://' + this._auth + this._host + ':' + this._port;
+  this._uri = this._protocol + '://' + this._host + ':' + this._port;
 };
 
 Object.keys(methods).forEach(function(mName) {
@@ -42,7 +46,8 @@ Object.keys(methods).forEach(function(mName) {
       method: m.method,
       headers: {
         Accept: 'application/json',
-        "Content-Type": 'application/json'
+        'Content-Type': 'application/json',
+        Authorization: this._auth
       },
       body: (m.method !== 'GET' && parameters) ? parameters : null,
       json: false
