@@ -18,7 +18,7 @@ var api = graylog.connect({
   protocol: 'https', // Optional. Default: 'http'. Connection protocol
   host: 'example.com', // Optional. Default: 'localhost'. API hostname
   port: '12900', // Optional. Default: '12900'. API port
-  path: '/api', // Optional. Default: ''. API Path
+  path: '/api' // Optional. Default: ''. API Path
 });
 
 api.searchAbsolute({ // parameters

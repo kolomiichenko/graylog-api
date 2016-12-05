@@ -1,6 +1,6 @@
 {
   "name": "graylog-api",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Node.js module for Graylog2 API",
   "author": {
     "name": "Andrii Kolomiichenko",
@@ -15,6 +15,10 @@
     {
       "name": "Aleksander Szmigiel",
       "email": "leksander.szmigiel@esky.pl"
+    },
+    {
+      "name": "Soedarsono",
+      "email": "soedar.sg@gmail.com"
     }
   ],
   "dependencies": {
