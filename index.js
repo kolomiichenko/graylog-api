@@ -29,9 +29,9 @@ Object.keys(methods).forEach(function(mName) {
     if (arguments.length === 1) callback = parameters;
     if (arguments.length === 2) callback = path;
 
-    var computedPath = m.basePath;
+    var computedPath = m.path;
     if (typeof arguments[1] === 'object') {
-      computedPath = m.basePath.replace(/{([^}]*)}/g, function(s, p) {
+      computedPath = m.path.replace(/{([^}]*)}/g, function(s, p) {
         return path[p];
       });
     }
