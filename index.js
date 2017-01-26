@@ -60,6 +60,12 @@ Object.keys(methods).forEach(function(mName) {
       }
 
       try {
+        /*
+        removeStream() will respond an empty body;
+        we need a fallback to prevent JSON.parse(body) to fail
+         */
+        if(body === '')
+            body = '{}';
         callback(null, JSON.parse(body));
       }
       catch (err) {
