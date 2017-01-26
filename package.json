@@ -1,6 +1,6 @@
 {
   "name": "graylog-api",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Node.js module for Graylog2 API",
   "author": {
     "name": "Andrii Kolomiichenko",
@@ -8,10 +8,6 @@
     "url": "http://github.com/kolomiichenko"
   },
   "contributors": [
-    {
-      "name": "Andrii Kolomiichenko",
-      "email": "bboywilld@gmail.com"
-    },
     {
       "name": "Aleksander Szmigiel",
       "email": "leksander.szmigiel@esky.pl"
@@ -45,7 +41,6 @@
     "logs",
     "logger"
   ],
-  "author": "Andrii Kolomiichenko <bboywilld@gmail.com> (http://github.com/kolomiichenko)",
   "license": "MIT",
   "bugs": {
     "url": "http://github.com/kolomiichenko/graylog-api/issues"
