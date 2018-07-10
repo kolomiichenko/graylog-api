@@ -45,7 +45,6 @@ Object.keys(methods).forEach(function(mName) {
       body: (m.method !== 'GET' && parameters) ? parameters : null,
       json: false
     };
-    console.log(opts)
     request(opts, function(error, response, body) {
       if (error) {
         return callback([error, body]);
