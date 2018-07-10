@@ -3681,10 +3681,6 @@ module.exports = {
     method: 'GET',
     parameters: []
   },
-
-
-/// Mine methods
-
   getSystemIndicesIndex_sets: {
     path: '/system/indices/index_sets',
     summary: 'Get a list of all index sets',
