@@ -7,17 +7,9 @@ function serializeObjToUri(obj) {
   }).join('&');
 }
 
-function buildBasicAuthHeader(obj) {
-  return 'Basic ' + new Buffer(obj.username + ':' + obj.password).toString('base64');
-}
 
 var Api = function(config) {
-  this._protocol = config.protocol || 'http'; // or https
-  this._auth = (config.basicAuth) ? buildBasicAuthHeader(config.basicAuth) : '';
-  this._host = config.host || 'localhost';
-  this._port = config.port || '12900';
-  this._path = config.path || '';
-  this._uri = this._protocol + '://' + this._host + ':' + this._port + this._path;
+  this._uri = config.uri
 };
 
 Object.keys(methods).forEach(function(mName) {
@@ -48,17 +40,16 @@ Object.keys(methods).forEach(function(mName) {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
-        Authorization: this._auth
+
       },
       body: (m.method !== 'GET' && parameters) ? parameters : null,
       json: false
     };
-
+    console.log(opts)
     request(opts, function(error, response, body) {
       if (error) {
         return callback([error, body]);
       }
-
       try {
         /*
         removeStream() will respond an empty body;
