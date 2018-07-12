@@ -3681,14 +3681,14 @@ module.exports = {
     method: 'GET',
     parameters: []
   },
-  getSystemIndicesIndex_sets: {
+  getSystemIndicesIndexSets: {
     path: '/system/indices/index_sets',
     summary: 'Get a list of all index sets',
     notes: '',
     method: 'GET',
     parameters: []
   },
-  updateSystemIndicesIndex_sets: {
+  updateSystemIndicesIndexSets: {
     path: '/system/indices/index_sets/{indexdId}',
     summary: 'Update index set.',
     notes: '',
@@ -3710,7 +3710,7 @@ module.exports = {
       }
     ]
   },
-  createSystemIndicesIndex_sets: {
+  createSystemIndicesIndexSets: {
     path: '/system/indices/index_sets',
     summary: 'Create index set',
     notes: '',
