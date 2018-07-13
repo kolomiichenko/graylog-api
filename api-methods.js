@@ -3680,6 +3680,79 @@ module.exports = {
     notes: '',
     method: 'GET',
     parameters: []
+  },
+  getSystemIndicesIndexSets: {
+    path: '/system/indices/index_sets',
+    summary: 'Get a list of all index sets',
+    notes: '',
+    method: 'GET',
+    parameters: []
+  },
+  updateSystemIndicesIndexSets: {
+    path: '/system/indices/index_sets/{indexdId}',
+    summary: 'Update index set.',
+    notes: '',
+    method: 'PUT',
+    parameters: [
+     {
+        name: 'indexdId',
+        description: '',
+        required: true,
+        paramType: 'path',
+        type: 'String'
+      },
+      {
+        name: 'JSON body',
+        description: '',
+        required: true,
+        paramType: 'body',
+        type: 'IndexSetUpdateRequest'
+      }
+    ]
+  },
+  createSystemIndicesIndexSets: {
+    path: '/system/indices/index_sets',
+    summary: 'Create index set',
+    notes: '',
+    method: 'POST',
+    parameters: [
+      {
+        name: 'JSON body',
+        description: '',
+        required: true,
+        paramType: 'body',
+        type: 'IndexSetSummary'
+      }
+    ]
+  },
+  updateLDAPGroupMappings: {
+    path: '/system/ldap/settings/groups',
+    summary: 'Update the LDAP group to Graylog role mapping',
+    notes: '',
+    method: 'PUT',
+    parameters: [
+      {
+        name: 'JSON body',
+        description: '',
+        required: true,
+        paramType: 'body',
+        type: 'LdapGroupSettingsRequest'
+      }
+    ]
+  },
+  createRole: {
+    path: '/roles',
+    summary: 'Create a role',
+    notes: '',
+    method: 'POST',
+    parameters: [
+      {
+        name: 'JSON body',
+        description: '',
+        required: true,
+        paramType: 'body',
+        type: 'RoleResponse'
+      }
+    ]
   }
-
 };
