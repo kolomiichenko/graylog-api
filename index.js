@@ -10,7 +10,13 @@ function serializeObjToUri(obj) {
 }
 
 var Api = function(config) {
-  this._uri = this.uri;
+  config = config || {}
+  const basicAuthToken = config.basicAuth ?
+    config.basicAuth.username + ':' + config.basicAuth.password + '@' : ''
+
+  this._uri = (config.protocol || 'http') + '://' + basicAuthToken +
+    (config.host || 'localhost') + ':' + (config.port || '12900') +
+    (config.path || '')
 };
 
 Object.keys(methods).forEach(function(mName) {
