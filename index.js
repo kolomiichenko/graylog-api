@@ -57,11 +57,15 @@ Object.keys(methods).forEach(function(mName) {
       if (response.statusCode === 403) {
         return callback([JSON.parse(body).message, body]);
       }
+
+      var parsedBody;
       try {
-        callback(null, JSON.parse(body));
+        parsedBody = JSON.parse(body);
       } catch (err) {
         callback(["Bad response", err, reqUri]);
       }
+      
+      callback(null, parsedBody);
     });
   };
 });
